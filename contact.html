@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Izabela Ostatek</title>
+  <meta name="description" content="Get in touch with Izabela Ostatek — architecture and interior design enquiries.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-header">
+    <p class="section-label">Contact</p>
+    <h1>Let's <em>talk</em></h1>
+    <p>Tell me about your project. I'll get back to you within 48 hours.</p>
+  </div>
+
+  <section>
+    <div class="contact-split">
+
+      <div class="contact-info fade-in">
+        <h2>Currently accepting<br><em>new commissions</em></h2>
+        <p>
+          Based in London, available internationally. I work with clients across Europe,
+          the Americas, and wherever good architecture is needed.
+        </p>
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <span>Email</span>
+            <span>hello@izabelaostatek.com</span>
+          </div>
+          <div class="contact-detail-item">
+            <span>Based</span>
+            <span>London, UK</span>
+          </div>
+          <div class="contact-detail-item">
+            <span>Availability</span>
+            <span>Open to new projects</span>
+          </div>
+          <div class="contact-detail-item">
+            <span>Services</span>
+            <span>Architecture · Interiors · Concept</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fade-in">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service" name="service">
+              <option value="" disabled selected>What are you looking for?</option>
+              <option value="architecture">Architecture</option>
+              <option value="interior">Interior Design</option>
+              <option value="concept">Concept & Vision</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Brief</label>
+            <textarea id="message" name="message" required placeholder="Tell me about your project — location, scale, timeline, what you're hoping to achieve."></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent" style="align-self: flex-start; cursor: pointer; font-family: var(--body);">Send Message</button>
+        </form>
+        <div class="form-success">
+          <p>Message received. I'll be in touch shortly.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2024 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
