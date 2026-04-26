@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coastal Residence, Costa Rica — Izabela Ostatek</title>
+  <meta name="description" content="Architecture and interior design for a coastal residence in Costa Rica. Sustainable tropical architecture with LSD Architects.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-hero {
+      height: 90vh;
+      overflow: hidden;
+      position: relative;
+      margin-top: var(--nav-h);
+    }
+    .project-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .project-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      padding: 80px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-meta-list { display: flex; flex-direction: column; gap: 24px; }
+    .project-meta-item span:first-child {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .project-meta-item span:last-child { font-size: 14px; }
+    .project-description h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+    .project-description h2 em { font-style: italic; }
+    .project-description p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      max-width: 640px;
+    }
+    .project-gallery {
+      padding: 0 48px 80px;
+    }
+    .gallery-full img {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: cover;
+    }
+    .gallery-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .gallery-two img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .gallery-one {
+      margin-top: 2px;
+    }
+    .gallery-one img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .project-nav {
+      padding: 60px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-nav a {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .project-nav a:hover { color: var(--text); }
+    @media (max-width: 768px) {
+      .project-intro { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .project-gallery { padding: 0 24px 60px; }
+      .gallery-two { grid-template-columns: 1fr; }
+      .project-nav { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="project-hero">
+    <img src="images/costa-rica-1.jpg" alt="Coastal Residence Costa Rica — aerial view">
+  </div>
+
+  <!-- INTRO -->
+  <div class="project-intro">
+    <div class="project-meta-list fade-in">
+      <div class="project-meta-item">
+        <span>Project</span>
+        <span>Coastal Residence</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Location</span>
+        <span>Costa Rica</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Type</span>
+        <span>Architecture & Interiors</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Construction</span>
+        <span>Concrete & Steel</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Year</span>
+        <span>2023</span>
+      </div>
+    </div>
+    <div class="project-description fade-in">
+      <h2>Tropical architecture built<br><em>with its landscape</em></h2>
+      <p>
+        A private coastal residence on the Pacific coast of Costa Rica — designed to live
+        with the jungle rather than clear it. The brief was for a family compound that
+        felt open, connected to the outdoors, and genuinely sustainable without performing it.
+      </p>
+      <p>
+        The plan responds to the irregular site geometry, stepping across the terrain and
+        orienting key living spaces toward the water. Natural stone cladding, timber soffits,
+        and full-height glazing dissolve the boundary between inside and out. The pool
+        runs along the social edge of the house, becoming both the visual and physical
+        centre of the compound.
+      </p>
+      <p>
+        Materials were sourced locally where possible — block concrete and steel structure,
+        limestone cladding, hardwood decking. The green roof reduces heat gain and integrates
+        the building into the hillside when viewed from above.
+      </p>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="project-gallery">
+    <div class="gallery-two fade-in" style="margin-top: 0;">
+      <img src="images/costa-rica-2.jpg" alt="Pool and timber deck">
+      <img src="images/costa-rica-3.jpg" alt="Courtyard and living area">
+    </div>
+    <div class="gallery-one fade-in">
+      <img src="images/costa-rica-plan.jpg" alt="Floor plan" style="object-fit: contain; background: #f5f3f0; padding: 40px;">
+    </div>
+  </div>
+
+  <!-- PROJECT NAV -->
+  <div class="project-nav">
+    <a href="portfolio.html">← All Projects</a>
+    <a href="penthouse-london.html">Next Project →</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2024 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
