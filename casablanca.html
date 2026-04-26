@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annasr Satellite City, Casablanca — Izabela Ostatek</title>
+  <meta name="description" content="Sustainable urban design master plan for Annasr satellite city, Casablanca, Morocco. Mixed-use residential and commercial development. 2013.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-hero {
+      height: 90vh;
+      overflow: hidden;
+      position: relative;
+      margin-top: var(--nav-h);
+    }
+    .project-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .project-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      padding: 80px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-meta-list { display: flex; flex-direction: column; gap: 24px; }
+    .project-meta-item span:first-child {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .project-meta-item span:last-child { font-size: 14px; }
+    .project-description h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+    .project-description h2 em { font-style: italic; }
+    .project-description p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      max-width: 640px;
+    }
+    .project-gallery { padding: 0 48px 80px; }
+    .gallery-full { margin-bottom: 2px; }
+    .gallery-full img {
+      width: 100%;
+      max-height: 78vh;
+      object-fit: cover;
+    }
+    .gallery-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .gallery-two img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .gallery-three {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .gallery-three img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .gallery-one { margin-top: 2px; }
+    .gallery-one img {
+      width: 100%;
+      max-height: 72vh;
+      object-fit: cover;
+    }
+    .project-nav {
+      padding: 60px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-nav a {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .project-nav a:hover { color: var(--text); }
+    @media (max-width: 768px) {
+      .project-intro { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .project-gallery { padding: 0 24px 60px; }
+      .gallery-two, .gallery-three { grid-template-columns: 1fr; }
+      .project-nav { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="project-hero">
+    <img src="images/casablanca-render.jpg" alt="Annasr Satellite City — 3D masterplan render, Casablanca Morocco">
+  </div>
+
+  <!-- INTRO -->
+  <div class="project-intro">
+    <div class="project-meta-list fade-in">
+      <div class="project-meta-item">
+        <span>Project</span>
+        <span>Annasr Satellite City</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Location</span>
+        <span>Casablanca, Morocco</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Type</span>
+        <span>Urban Design Master Plan</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Scale</span>
+        <span>407,304 m² SHON</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Client</span>
+        <span>Agence Urbaine de Casablanca</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Year</span>
+        <span>2013</span>
+      </div>
+    </div>
+    <div class="project-description fade-in">
+      <h2>A new city<br><em>designed from the ground up</em></h2>
+      <p>
+        The Annasr master plan is a full urban design framework for a satellite city
+        on the outskirts of Casablanca, commissioned by the Agence Urbaine de Casablanca
+        and the Ministère de l'Intérieur as part of Morocco's national programme for
+        sustainable urban expansion.
+      </p>
+      <p>
+        The plan covers over 103,000 m² of land across multiple residential and
+        commercial zones — RC2 and RC3 classifications — with a total authorised built
+        floor area of 407,304 m². Seven mixed-use sectors integrate R+6 residential
+        towers with ground-floor commercial frontage, structured underground parking,
+        and generous public realm provision including tree-lined boulevards, children's
+        play areas, and accessible promenades.
+      </p>
+      <p>
+        The architectural language draws on Moroccan Art Deco heritage — mashrabiya
+        window screens, rounded corner facades, and warm terracotta tones — while
+        meeting contemporary standards for density, walkability, and passive environmental
+        performance. The street-level render captures the ambition of the brief: a
+        genuinely liveable urban quarter that serves both residents and the wider city.
+      </p>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="project-gallery">
+    <div class="gallery-full fade-in">
+      <img src="images/casablanca-plan.jpg" alt="Annasr — site masterplan with zone boundaries">
+    </div>
+    <div class="gallery-two fade-in">
+      <img src="images/casablanca-highend.jpg" alt="Annasr — high-end residential typology">
+      <img src="images/casablanca-boulevard.jpg" alt="Annasr — boulevard streetscape">
+    </div>
+    <div class="gallery-full fade-in">
+      <img src="images/casablanca-1.jpg" alt="Annasr — street-level architectural render with fountains">
+    </div>
+    <div class="gallery-three fade-in">
+      <img src="images/casablanca-2.jpg" alt="Annasr — detail view">
+      <img src="images/casablanca-3.jpg" alt="Annasr — residential block">
+      <img src="images/casablanca-4.jpg" alt="Annasr — public realm">
+    </div>
+  </div>
+
+  <!-- PROJECT NAV -->
+  <div class="project-nav">
+    <a href="portfolio.html">← All Projects</a>
+    <a href="costa-rica.html">Next Project →</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2025 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
