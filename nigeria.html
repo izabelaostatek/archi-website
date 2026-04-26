@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Home, Lagos Nigeria — Izabela Ostatek</title>
+  <meta name="description" content="Architecture and interior design for a contemporary African family residence in Lagos, Nigeria.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-hero {
+      height: 90vh;
+      overflow: hidden;
+      position: relative;
+      margin-top: var(--nav-h);
+    }
+    .project-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .project-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      padding: 80px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-meta-list { display: flex; flex-direction: column; gap: 24px; }
+    .project-meta-item span:first-child {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .project-meta-item span:last-child { font-size: 14px; }
+    .project-description h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+    .project-description h2 em { font-style: italic; }
+    .project-description p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      max-width: 640px;
+    }
+    .project-gallery { padding: 0 48px 80px; }
+    .gallery-full { margin-bottom: 2px; }
+    .gallery-full img {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: cover;
+    }
+    .gallery-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .gallery-two img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .gallery-one { margin-top: 2px; }
+    .gallery-one img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: cover;
+    }
+    .gallery-plan {
+      margin-top: 2px;
+      background: #f5f3f0;
+      padding: 48px;
+    }
+    .gallery-plan img {
+      width: 100%;
+      object-fit: contain;
+      max-height: 60vh;
+    }
+    .gallery-plans-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .gallery-plans-two .plan-box {
+      background: #f5f3f0;
+      padding: 32px;
+    }
+    .gallery-plans-two img {
+      width: 100%;
+      object-fit: contain;
+    }
+    .gallery-moodboards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .gallery-moodboards img {
+      width: 100%;
+      object-fit: cover;
+      background: #fafaf8;
+    }
+    .section-divider {
+      margin: 48px 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .section-divider span {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .project-nav {
+      padding: 60px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-nav a {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .project-nav a:hover { color: var(--text); }
+    @media (max-width: 768px) {
+      .project-intro { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .project-gallery { padding: 0 24px 60px; }
+      .gallery-two, .gallery-plans-two, .gallery-moodboards { grid-template-columns: 1fr; }
+      .project-nav { padding: 40px 24px; }
+      .gallery-plan { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="project-hero">
+    <img src="images/nigeria-foyer.jpg" alt="Contemporary African Family Home Lagos — entrance foyer">
+  </div>
+
+  <!-- INTRO -->
+  <div class="project-intro">
+    <div class="project-meta-list fade-in">
+      <div class="project-meta-item">
+        <span>Project</span>
+        <span>Family Residence</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Location</span>
+        <span>Lagos, Nigeria</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Type</span>
+        <span>Architecture & Interiors</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Style</span>
+        <span>Contemporary African</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Scope</span>
+        <span>Full Design — Concept to Completion</span>
+      </div>
+      <div class="project-meta-item">
+        <span>Year</span>
+        <span>2019</span>
+      </div>
+    </div>
+    <div class="project-description fade-in">
+      <h2>A contemporary family home<br><em>rooted in African identity</em></h2>
+      <p>
+        A large-scale residential project in Lagos — a full family home designed from the
+        ground up with a Contemporary African design language. The brief was ambitious:
+        a home that felt unmistakably luxurious, functional for a large family, and
+        grounded in African material culture without falling back on cliché.
+      </p>
+      <p>
+        The ground floor organises a generous living, dining and bar area around the pool deck,
+        with a dedicated arts room, guest suite, kitchen and service areas. The first floor
+        separates the private family living zone from the master suite, children's rooms,
+        prayer room and a fully specified media room — all developed with detailed furniture
+        and material specifications per room.
+      </p>
+      <p>
+        Interior concepts were presented as full room-by-room mood boards with Roberto Cavalli
+        Home furniture selections, custom material palettes, and bespoke wallcovering proposals.
+        Every space was specified: from the Aruba modular sofa in elephant leather to the Maui
+        bar cabinet in black lacquer with gold leaf detailing.
+      </p>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="project-gallery">
+
+    <!-- Renders -->
+    <div class="gallery-two fade-in" style="margin-top:0;">
+      <img src="images/nigeria-theater.jpg" alt="Media room / home cinema">
+      <img src="images/nigeria-living.jpg" alt="Living room">
+    </div>
+
+    <div class="gallery-one fade-in">
+      <img src="images/nigeria-kitchen.jpg" alt="Kitchen">
+    </div>
+
+    <!-- Floor Plans -->
+    <div class="section-divider fade-in"><span>Floor Plans</span></div>
+    <div class="gallery-plans-two fade-in">
+      <div class="plan-box">
+        <img src="images/nigeria-plan-ground.jpg" alt="Ground floor plan — Contemporary African">
+      </div>
+      <div class="plan-box">
+        <img src="images/nigeria-plan-first.jpg" alt="First floor plan — Contemporary African">
+      </div>
+    </div>
+
+    <!-- Mood Boards -->
+    <div class="section-divider fade-in"><span>Interior Concepts</span></div>
+    <div class="gallery-moodboards fade-in">
+      <img src="images/nigeria-moodboard-living.jpg" alt="Living room mood board — Contemporary African">
+      <img src="images/nigeria-moodboard-media.jpg" alt="Media room mood board — Contemporary African">
+    </div>
+
+  </div>
+
+  <!-- PROJECT NAV -->
+  <div class="project-nav">
+    <a href="portfolio.html">← All Projects</a>
+    <a href="penthouse-london.html">Next Project →</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2024 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
