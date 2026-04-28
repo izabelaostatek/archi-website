@@ -13,6 +13,22 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Technical drawings — sharper rendering for plans/sections */
+img.drawing {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  object-fit: contain;
+  background: #fff;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
