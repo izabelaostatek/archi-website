@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Properties & Land in Mérida, Yucatán — Izabela Ostatek</title>
-  <meta name="description" content="Exclusive land, villas and properties in Mérida, Yucatán, Mexico. Curated by Izabela Ostatek.">
+  <meta name="description" content="Exclusive land and properties in Mérida, Yucatán, Mexico. Ciudad Colorín — Mexico's first Smart City. Curated by Izabela Ostatek.">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .mx-hero {
-      height: 85vh;
+      height: 88vh;
       overflow: hidden;
       position: relative;
       margin-top: var(--nav-h);
@@ -22,7 +22,7 @@
     .mx-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.58) 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -33,7 +33,7 @@
     .mx-hero-overlay .section-label { color: rgba(255,255,255,0.8); }
     .mx-hero-overlay h1 {
       font-family: var(--heading);
-      font-size: clamp(40px, 6vw, 80px);
+      font-size: clamp(42px, 6vw, 82px);
       font-weight: 300;
       color: #fff;
       line-height: 1.05;
@@ -43,7 +43,7 @@
     .mx-hero-overlay p {
       font-size: 16px;
       color: rgba(255,255,255,0.8);
-      max-width: 500px;
+      max-width: 480px;
       line-height: 1.7;
       margin-bottom: 36px;
     }
@@ -60,36 +60,32 @@
     }
     .btn-ghost:hover { background: rgba(255,255,255,0.15); }
 
-    /* INTRO SPLIT */
+    /* INTRO */
     .mx-intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       padding: 90px 48px;
-      align-items: center;
       border-bottom: 1px solid var(--border);
+      align-items: start;
     }
     .mx-intro h2 {
       font-family: var(--heading);
-      font-size: clamp(28px, 3.5vw, 46px);
+      font-size: clamp(28px, 3.5vw, 44px);
       font-weight: 300;
       line-height: 1.15;
       margin-bottom: 24px;
     }
     .mx-intro h2 em { font-style: italic; }
-    .mx-intro p {
-      font-size: 15px;
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
+    .mx-intro p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 16px; }
+
     .mx-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0;
-      margin-top: 40px;
       border-top: 1px solid var(--border);
       padding-top: 32px;
+      margin-top: 8px;
     }
     .mx-stat-num {
       font-family: var(--heading);
@@ -98,19 +94,15 @@
       line-height: 1;
       margin-bottom: 6px;
     }
-    .mx-stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-    .mx-destinations-text {
+    .mx-stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+
+    .mx-also {
       background: #f0ede8;
-      padding: 28px 32px;
+      padding: 20px 28px;
       border-left: 2px solid var(--accent);
+      margin-top: 32px;
     }
-    .mx-destinations-text p {
-      font-size: 13px;
-      color: #555;
-      line-height: 1.8;
-      margin: 0;
-    }
-    .mx-destinations-text strong {
+    .mx-also strong {
       display: block;
       font-size: 10px;
       letter-spacing: 0.18em;
@@ -119,6 +111,7 @@
       margin-bottom: 8px;
       font-weight: 500;
     }
+    .mx-also p { font-size: 13px; color: #555; line-height: 1.7; margin: 0; }
 
     /* 3-IMAGE ROW */
     .mx-gallery {
@@ -132,72 +125,155 @@
     }
     .mx-gallery-item img {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 3/4;
       object-fit: cover;
+      object-position: center top;
       display: block;
-      transition: transform 0.6s ease;
+      transition: transform 0.7s ease;
     }
     .mx-gallery-item:hover img { transform: scale(1.04); }
-    .mx-gallery-item-overlay {
+    .mx-gallery-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.35);
-      transition: background 0.4s;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
     }
-    .mx-gallery-item:hover .mx-gallery-item-overlay { background: rgba(0,0,0,0.15); }
     .mx-gallery-caption {
       position: absolute;
-      bottom: 20px;
-      left: 20px;
-      font-size: 11px;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+    }
+    .mx-gallery-caption h4 {
+      font-family: var(--heading);
+      font-size: 22px;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .mx-gallery-caption h4 em { font-style: italic; }
+    .mx-gallery-caption span {
+      font-size: 10px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.7);
     }
 
-    /* PROPERTY TYPES */
-    .mx-types {
+    /* AMENITIES */
+    .mx-amenities {
       padding: 90px 48px;
+      background: #f0ede8;
     }
-    .mx-types-grid {
+    .mx-amenities-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2px;
       margin-top: 56px;
     }
-    .mx-type-card {
-      padding: 40px 36px;
+    .mx-amenity-card {
+      background: #fff;
+      padding: 32px 28px;
+    }
+    .mx-amenity-card h4 {
+      font-family: var(--heading);
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+    .mx-amenity-card h4 em { font-style: italic; }
+    .mx-amenity-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .mx-amenity-list li {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      padding: 5px 0;
+      border-bottom: 1px solid #f0ede8;
+      padding-left: 12px;
+      position: relative;
+    }
+    .mx-amenity-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 10px;
+    }
+    .mx-amenity-list li:last-child { border-bottom: none; }
+
+    /* PRICING */
+    .mx-pricing {
+      padding: 90px 48px;
+    }
+    .mx-pricing-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 56px;
+      align-items: center;
+    }
+    .mx-pricing-intro h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .mx-pricing-intro h2 em { font-style: italic; }
+    .mx-pricing-intro p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 12px; }
+    .mx-pricing-highlight {
+      background: #1a1a1a;
+      padding: 40px;
+      color: #fff;
+    }
+    .mx-pricing-highlight .big { font-family: var(--heading); font-size: 52px; font-weight: 300; line-height: 1; margin-bottom: 8px; }
+    .mx-pricing-highlight .sub { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+    .mx-pricing-highlight p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+    .mx-phases {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+    }
+    .mx-phase {
+      padding: 28px 24px;
       border: 1px solid var(--border);
       transition: border-color 0.2s, background 0.2s;
     }
-    .mx-type-card:hover { border-color: var(--accent); background: #faf8f5; }
-    .mx-type-num { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-    .mx-type-card h3 { font-family: var(--heading); font-size: 24px; font-weight: 300; margin-bottom: 14px; }
-    .mx-type-card h3 em { font-style: italic; }
-    .mx-type-card p { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 22px; }
-    .mx-type-from { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-    .mx-type-price { font-family: var(--heading); font-size: 22px; font-weight: 300; }
+    .mx-phase:hover { border-color: var(--accent); background: #faf8f5; }
+    .mx-phase-name {
+      font-family: var(--heading);
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .mx-phase h5 { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; color: var(--muted); font-weight: 400; }
+    .mx-phase p { font-size: 12px; color: #555; line-height: 1.65; }
+    .mx-phase p strong { font-weight: 600; color: var(--text); }
 
     /* ENQUIRY */
     .mx-enquiry {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      background: #f0ede8;
     }
-    .mx-enquiry-text {
+    .mx-enquiry-img { overflow: hidden; }
+    .mx-enquiry-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .mx-enquiry-form {
       padding: 80px 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background: #f0ede8;
     }
-    .mx-enquiry-text h2 { font-family: var(--heading); font-size: clamp(28px, 3vw, 42px); font-weight: 300; margin-bottom: 16px; }
-    .mx-enquiry-text h2 em { font-style: italic; }
-    .mx-enquiry-text p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 16px; max-width: 440px; }
+    .mx-enquiry-form h2 { font-family: var(--heading); font-size: clamp(26px, 2.8vw, 40px); font-weight: 300; margin-bottom: 14px; }
+    .mx-enquiry-form h2 em { font-style: italic; }
+    .mx-enquiry-form > p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 32px; max-width: 420px; }
     .mx-form { display: flex; flex-direction: column; gap: 14px; }
     .mx-form label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 6px; }
-    .mx-form input,
-    .mx-form select,
-    .mx-form textarea {
+    .mx-form input, .mx-form select, .mx-form textarea {
       width: 100%;
       padding: 13px 16px;
       border: 1px solid var(--border);
@@ -209,26 +285,17 @@
       transition: border-color 0.2s;
     }
     .mx-form input:focus, .mx-form select:focus, .mx-form textarea:focus { outline: none; border-color: var(--accent); }
-    .mx-form textarea { height: 90px; resize: vertical; }
+    .mx-form textarea { height: 80px; resize: vertical; }
     .mx-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .mx-enquiry-img {
-      overflow: hidden;
-    }
-    .mx-enquiry-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
 
     @media (max-width: 900px) {
-      .mx-intro, .mx-enquiry { grid-template-columns: 1fr; gap: 40px; }
-      .mx-intro, .mx-types { padding: 60px 24px; }
+      .mx-intro, .mx-pricing-intro, .mx-enquiry { grid-template-columns: 1fr; gap: 40px; }
+      .mx-intro, .mx-amenities, .mx-pricing { padding: 60px 24px; }
       .mx-gallery { grid-template-columns: 1fr; }
-      .mx-types-grid { grid-template-columns: 1fr; }
-      .mx-enquiry-text { padding: 56px 24px; }
+      .mx-amenities-grid { grid-template-columns: 1fr 1fr; }
+      .mx-phases { grid-template-columns: 1fr 1fr; }
       .mx-enquiry-img { min-height: 50vw; }
+      .mx-enquiry-form { padding: 56px 24px; }
       .mx-form-row { grid-template-columns: 1fr; }
     }
   </style>
@@ -255,13 +322,13 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- HERO — Mérida aerial, clean image -->
+  <!-- HERO -->
   <div class="mx-hero">
     <img src="images/mexico-cc2.jpg" alt="Mérida, Yucatán — the best city to live in Mexico">
     <div class="mx-hero-overlay">
       <p class="section-label">Mérida · Yucatán · Mexico</p>
-      <h1>The best city<br>to live in <em>Mexico</em></h1>
-      <p>Land, villas and properties in one of the world's most liveable cities — ranked #1 in quality of life by the United Nations.</p>
+      <h1>Live where the world<br>comes to <em>stay</em></h1>
+      <p>Land and properties in Mexico's most liveable city — ranked #1 in quality of life by the United Nations.</p>
       <a href="#enquiry" class="btn-ghost">Make an Enquiry</a>
     </div>
   </div>
@@ -271,96 +338,186 @@
     <div>
       <p class="section-label">Why Mérida</p>
       <h2>Colonial beauty.<br><em>World-class living.</em></h2>
-      <p>
-        Mérida is the cultural capital of the Yucatán Peninsula — a UNESCO-recognised city of extraordinary colonial architecture, thriving arts, and a growing international community drawn by its unmatched quality of life.
-      </p>
-      <p>
-        It is the safest city in Mexico and one of the safest in Latin America. With a warm climate, outstanding healthcare, and direct flights to the US and Europe, Mérida is where the world's most discerning buyers are investing now — before prices reflect what is already obvious.
-      </p>
-      <div style="margin-top: 28px;">
-        <div class="mx-destinations-text">
-          <strong>Also available across the Yucatán Peninsula</strong>
-          <p>Cancún · Playa del Carmen · Cozumel · Tulum · Bacalar — enquire for curated listings in any destination.</p>
-        </div>
+      <p>Mérida is the cultural capital of the Yucatán Peninsula — a UNESCO-recognised city of colonial architecture, thriving arts, outstanding healthcare, and one of the fastest-growing international communities in Latin America.</p>
+      <p>It is the safest city in Mexico and one of the safest in the world. With direct flights to the US and Europe, and property values that have grown 7× in a decade, Mérida is where the world's most discerning buyers are investing — before the rest catch up.</p>
+      <div class="mx-also">
+        <strong>Also available across the Yucatán Peninsula</strong>
+        <p>Cancún · Playa del Carmen · Cozumel · Tulum · Bacalar — enquire for curated listings in any destination.</p>
       </div>
     </div>
     <div>
       <div class="mx-stats">
-        <div class="mx-stat">
+        <div>
           <div class="mx-stat-num">#1</div>
           <div class="mx-stat-label">Quality of life in Mexico (UN)</div>
         </div>
-        <div class="mx-stat">
+        <div>
           <div class="mx-stat-num">7×</div>
           <div class="mx-stat-label">Property value growth 2011–2021</div>
         </div>
-        <div class="mx-stat">
+        <div>
           <div class="mx-stat-num">340</div>
           <div class="mx-stat-label">Days of sunshine per year</div>
         </div>
       </div>
-      <div style="margin-top: 40px; font-size: 14px; color: #555; line-height: 1.8;">
-        <p>Beach-front land in the region grew from <strong>$10/sqft to $91/sqft</strong> between 2011 and 2021. Ciudad Colorín — the first Smart City in Mérida — represents the next generation of that growth: a masterplanned community built around sustainability, wellbeing, and genuine quality of life.</p>
-      </div>
+      <p style="font-size:14px; color:#555; line-height:1.8; margin-top:32px;">
+        Ciudad Colorín is the <strong>first Smart City in Mérida</strong> — a masterplanned community combining technology, security, nature and wellness in one of the most strategic investment locations in Mexico. It is eco-sustainable by design, biophilic by intention, and built to hold its value for generations.
+      </p>
+      <p style="font-size:14px; color:#555; line-height:1.8; margin-top:12px;">
+        Beach-front land in the region grew from <strong>$10 to $91 per sq ft</strong> between 2011 and 2021. Ciudad Colorín land plots are currently priced at <strong>$23.23 per sq ft</strong> — with interest-free financing available.
+      </p>
     </div>
   </div>
 
-  <!-- 3 IMAGES IN A ROW -->
+  <!-- 3 RENDERS IN A ROW -->
   <div class="mx-gallery">
     <div class="mx-gallery-item fade-in">
-      <img src="images/mexico-cc2.jpg" alt="Mérida — colonial city centre" style="object-position: center 20%;">
-      <div class="mx-gallery-item-overlay"></div>
-      <div class="mx-gallery-caption">Mérida City Centre</div>
+      <img src="images/cc-render-22-0.jpg" alt="Semi-Olympic Pool — Ciudad Colorín" style="object-position: center 15%;">
+      <div class="mx-gallery-overlay"></div>
+      <div class="mx-gallery-caption">
+        <h4>Semi-Olympic <em>Pool</em></h4>
+        <span>Resort Amenities</span>
+      </div>
     </div>
     <div class="mx-gallery-item fade-in">
-      <img src="images/mexico-cc.jpg" alt="Ciudad Colorín — pool and resort amenities" style="object-position: center bottom;">
-      <div class="mx-gallery-item-overlay"></div>
-      <div class="mx-gallery-caption">Resort Amenities</div>
+      <img src="images/cc-render-17-0.jpg" alt="Floating Dining Room — Ciudad Colorín" style="object-position: center 10%;">
+      <div class="mx-gallery-overlay"></div>
+      <div class="mx-gallery-caption">
+        <h4>Floating <em>Dining</em></h4>
+        <span>On the Artificial Lake</span>
+      </div>
     </div>
     <div class="mx-gallery-item fade-in">
-      <img src="images/mexico-cc9.jpg" alt="Ciudad Colorín — Metropoli park pavilion" style="object-position: center 20%;">
-      <div class="mx-gallery-item-overlay"></div>
-      <div class="mx-gallery-caption">Metropoli Park</div>
+      <img src="images/cc-render-42-0.jpg" alt="Outdoor Cinema — Ciudad Colorín" style="object-position: center 10%;">
+      <div class="mx-gallery-overlay"></div>
+      <div class="mx-gallery-caption">
+        <h4>Outdoor <em>Cinema</em></h4>
+        <span>Metropoli Park</span>
+      </div>
     </div>
   </div>
 
-  <!-- PROPERTY TYPES -->
-  <section class="mx-types fade-in">
+  <!-- AMENITIES -->
+  <section class="mx-amenities fade-in">
     <div>
-      <p class="section-label">What We Offer</p>
-      <h2 class="section-title">Find your <em>perfect investment</em></h2>
+      <p class="section-label">Ciudad Colorín</p>
+      <h2 class="section-title">Everything in one <em>place</em></h2>
     </div>
-    <div class="mx-types-grid">
-      <div class="mx-type-card">
-        <div class="mx-type-num">01</div>
-        <h3>Land <em>Plots</em></h3>
-        <p>Prime land in the Mérida metropolitan area. Ideal for those building their own home or for development. Full planning and architectural support available.</p>
-        <div class="mx-type-from">Starting from</div>
-        <div class="mx-type-price">$45,000 USD</div>
+    <div class="mx-amenities-grid">
+      <div class="mx-amenity-card">
+        <h4>Sport &amp; <em>Wellness</em></h4>
+        <ul class="mx-amenity-list">
+          <li>Semi-Olympic Pool</li>
+          <li>Sports Complex</li>
+          <li>Tennis Court</li>
+          <li>Paddle Tennis</li>
+          <li>Volleyball Court</li>
+          <li>Multipurpose Court</li>
+          <li>Soccer Field</li>
+          <li>Parkour Park</li>
+          <li>Calisthenics Yard</li>
+        </ul>
       </div>
-      <div class="mx-type-card">
-        <div class="mx-type-num">02</div>
-        <h3>Luxury <em>Villas</em></h3>
-        <p>Fully designed and delivered private villas with pool, landscaped garden and high-end finishes. Ready to move into or rent out upon completion.</p>
-        <div class="mx-type-from">Starting from</div>
-        <div class="mx-type-price">$280,000 USD</div>
+      <div class="mx-amenity-card">
+        <h4>Culture &amp; <em>Leisure</em></h4>
+        <ul class="mx-amenity-list">
+          <li>Outdoor Cinema</li>
+          <li>Itinerant Museum</li>
+          <li>Illuminated Gallery</li>
+          <li>Eco Library</li>
+          <li>Social Area</li>
+          <li>Children's Playground</li>
+          <li>Artificial Lake</li>
+          <li>Floating Dining Room</li>
+          <li>Urban Bar</li>
+        </ul>
       </div>
-      <div class="mx-type-card">
-        <div class="mx-type-num">03</div>
-        <h3>Managed <em>Residences</em></h3>
-        <p>Holiday properties in resort communities with on-site amenities and rental management. Own, enjoy, and earn simultaneously.</p>
-        <div class="mx-type-from">Starting from</div>
-        <div class="mx-type-price">$120,000 USD</div>
+      <div class="mx-amenity-card">
+        <h4>Smart <em>Living</em></h4>
+        <ul class="mx-amenity-list">
+          <li>Solar panels & renewable energy</li>
+          <li>Rainwater collection</li>
+          <li>Biophilic structures</li>
+          <li>Air quality monitoring app</li>
+          <li>Smart bicycle parking</li>
+          <li>Traffic & transport app</li>
+          <li>Security cameras everywhere</li>
+          <li>Emergency buttons in parks</li>
+          <li>Resident interconnection app</li>
+        </ul>
+      </div>
+      <div class="mx-amenity-card">
+        <h4>Education &amp; <em>Community</em></h4>
+        <ul class="mx-amenity-list">
+          <li>Kokai Academy on-site</li>
+          <li>Small groups, personalised learning</li>
+          <li>West River Academy enrolment</li>
+          <li>Residents' committee</li>
+          <li>Democratic community governance</li>
+          <li>12.3-hectare Metropoli Park</li>
+          <li>11 residential districts</li>
+          <li>Private amenities per district</li>
+          <li>Club House access</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="mx-pricing">
+    <div class="mx-pricing-intro fade-in">
+      <div>
+        <p class="section-label">Investment</p>
+        <h2>Transparent pricing.<br><em>Interest-free financing.</em></h2>
+        <p>Ciudad Colorín land plots are 3,229 sq ft and priced at $23.23 USD per sq ft — with a minimum 30% down payment and interest-free financing across five phases, from immediate delivery to 10-year terms.</p>
+        <p>Each phase offers different delivery timelines and financing lengths, so buyers can match their investment to their goals — whether that is immediate occupancy or long-horizon appreciation.</p>
+        <a href="#enquiry" class="btn" style="margin-top: 16px;">Enquire for Full Pricing</a>
+      </div>
+      <div class="mx-pricing-highlight">
+        <div class="big">$23.23</div>
+        <div class="sub">USD per sq ft · 3,229 sq ft lots</div>
+        <p>392,898 total acres across 11 districts. 30% minimum down payment. Interest-free financing available on all phases.</p>
+      </div>
+    </div>
+
+    <div class="mx-phases fade-in">
+      <div class="mx-phase">
+        <div class="mx-phase-name">Rosso</div>
+        <h5>Phase E</h5>
+        <p><strong>Street delivery</strong><br>Amenities: 72 months<br>Deed: 60 months<br>Financing: 72 months interest-free</p>
+      </div>
+      <div class="mx-phase">
+        <div class="mx-phase-name">Dorato</div>
+        <h5>Phase B</h5>
+        <p><strong>25 months delivery</strong><br>Deed: 25 months<br><br>Financing: 18 months interest-free</p>
+      </div>
+      <div class="mx-phase">
+        <div class="mx-phase-name">Argento</div>
+        <h5>Phase A</h5>
+        <p><strong>3 years delivery</strong><br>Deed: 3 years<br><br>Financing: 36 months interest-free</p>
+      </div>
+      <div class="mx-phase">
+        <div class="mx-phase-name">Blu</div>
+        <h5>Phase C</h5>
+        <p><strong>5 years delivery</strong><br>Deed: 5 years<br><br>Financing: 60 months interest-free</p>
+      </div>
+      <div class="mx-phase">
+        <div class="mx-phase-name">Arancione</div>
+        <h5>Phase D</h5>
+        <p><strong>10 years delivery</strong><br>Deed: 10 years<br><br>Financing: 120 months interest-free</p>
       </div>
     </div>
   </section>
 
   <!-- ENQUIRY -->
   <div class="mx-enquiry" id="enquiry">
-    <div class="mx-enquiry-text fade-in">
+    <div class="mx-enquiry-img">
+      <img src="images/cc-render-16-0.jpg" alt="Club House — Ciudad Colorín" style="object-position: center 15%;">
+    </div>
+    <div class="mx-enquiry-form fade-in">
       <p class="section-label">Get in Touch</p>
       <h2>Start your <em>search</em></h2>
-      <p>Tell me what you are looking for — I will come back with curated options, pricing, and everything you need to make a confident decision.</p>
+      <p>Tell me what you are looking for. I will come back with curated options, full pricing packs, and everything you need to invest with confidence.</p>
       <form class="mx-form" action="https://formsubmit.co/izabela.ot@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Mexico Property Enquiry — izabelaostatek.com">
         <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
@@ -379,11 +536,12 @@
           <label>Interested in</label>
           <select name="type">
             <option value="" disabled selected>What are you looking for?</option>
-            <option>Land plot</option>
-            <option>Luxury villa</option>
-            <option>Managed holiday residence</option>
-            <option>Ciudad Colorín development</option>
-            <option>Not sure yet</option>
+            <option>Ciudad Colorín — land plot</option>
+            <option>Ciudad Colorín — full investment pack</option>
+            <option>Luxury villa — Mérida</option>
+            <option>Holiday property — Riviera Maya</option>
+            <option>Another destination in Yucatán</option>
+            <option>Not sure yet — just exploring</option>
           </select>
         </div>
         <div>
@@ -403,9 +561,6 @@
         </div>
         <button type="submit" class="btn" style="align-self:flex-start; cursor:pointer; font-family:var(--body);">Send Enquiry</button>
       </form>
-    </div>
-    <div class="mx-enquiry-img">
-      <img src="images/mexico-cc1.jpg" alt="Life in Yucatán" style="object-position: center 40%;">
     </div>
   </div>
 
