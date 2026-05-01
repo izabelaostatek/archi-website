@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties & Land in Yucatán, Mexico — Izabela Ostatek</title>
+  <meta name="description" content="Exclusive land, villas and properties in Yucatán, Mexico. Mérida, Cancún, Tulum, Bacalar, Playa del Carmen, Cozumel. Curated by Izabela Ostatek.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* HERO */
+    .mx-hero {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      margin-top: var(--nav-h);
+    }
+    .mx-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    .mx-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px;
+    }
+    .mx-hero-overlay .section-label { color: rgba(255,255,255,0.75); }
+    .mx-hero-overlay h1 {
+      font-family: var(--heading);
+      font-size: clamp(42px, 6vw, 88px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.05;
+      margin: 16px 0 24px;
+    }
+    .mx-hero-overlay h1 em { font-style: italic; }
+    .mx-hero-overlay p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .btn-ghost {
+      display: inline-block;
+      padding: 14px 40px;
+      border: 1px solid rgba(255,255,255,0.6);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+
+    /* WHY YUCATAN */
+    .mx-why {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 70vh;
+    }
+    .mx-why-img {
+      overflow: hidden;
+    }
+    .mx-why-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mx-why-text {
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .mx-why-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+    .mx-why-text h2 em { font-style: italic; }
+    .mx-why-text p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      max-width: 520px;
+    }
+    .mx-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
+    .mx-stat { padding-right: 24px; }
+    .mx-stat-num {
+      font-family: var(--heading);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .mx-stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+    /* DESTINATIONS */
+    .mx-destinations {
+      padding: 100px 48px;
+      background: #f0ede8;
+    }
+    .mx-destinations-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+    .mx-dest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .mx-dest-card {
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+    .mx-dest-card-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+      filter: brightness(0.85);
+    }
+    .mx-dest-card:hover .mx-dest-card-img {
+      transform: scale(1.05);
+      filter: brightness(0.7);
+    }
+    .mx-dest-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px 28px;
+      transition: background 0.4s;
+    }
+    .mx-dest-card:hover .mx-dest-card-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 100%);
+    }
+    .mx-dest-name {
+      font-family: var(--heading);
+      font-size: 26px;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .mx-dest-name em { font-style: italic; }
+    .mx-dest-tag {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 12px;
+    }
+    .mx-dest-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.0);
+      line-height: 1.6;
+      max-width: 260px;
+      transition: color 0.4s;
+    }
+    .mx-dest-card:hover .mx-dest-desc { color: rgba(255,255,255,0.85); }
+
+    /* PROPERTY TYPES */
+    .mx-types {
+      padding: 100px 48px;
+    }
+    .mx-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+    }
+    .mx-type-card {
+      padding: 48px 40px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .mx-type-card:hover { border-color: var(--accent); background: #faf8f5; }
+    .mx-type-num {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mx-type-card h3 {
+      font-family: var(--heading);
+      font-size: 26px;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+    .mx-type-card h3 em { font-style: italic; }
+    .mx-type-card p { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 24px; }
+    .mx-type-from {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .mx-type-price {
+      font-family: var(--heading);
+      font-size: 24px;
+      font-weight: 300;
+    }
+
+    /* FEATURED DEVELOPMENT */
+    .mx-featured {
+      background: #1a1a1a;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .mx-featured-imgs {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+      overflow: hidden;
+    }
+    .mx-featured-imgs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mx-featured-text {
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .mx-featured-text .section-label { color: var(--accent); }
+    .mx-featured-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.15;
+      margin: 12px 0 24px;
+    }
+    .mx-featured-text h2 em { font-style: italic; }
+    .mx-featured-text p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 16px; max-width: 460px; }
+    .mx-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 24px 0 36px;
+    }
+    .mx-feature-item {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      padding-left: 16px;
+      position: relative;
+    }
+    .mx-feature-item::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* INVESTMENT STRIP */
+    .mx-invest {
+      padding: 100px 48px;
+      background: #f0ede8;
+    }
+    .mx-invest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2px;
+      margin-top: 64px;
+    }
+    .mx-invest-card {
+      padding: 40px 32px;
+      background: #fff;
+    }
+    .mx-invest-card .big-num {
+      font-family: var(--heading);
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .mx-invest-card h4 { font-size: 13px; letter-spacing: 0.06em; margin-bottom: 12px; }
+    .mx-invest-card p { font-size: 13px; color: #666; line-height: 1.6; }
+
+    /* ENQUIRY */
+    .mx-enquiry {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+    .mx-enquiry-img {
+      overflow: hidden;
+      position: relative;
+    }
+    .mx-enquiry-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mx-enquiry-form {
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .mx-enquiry-form h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .mx-enquiry-form h2 em { font-style: italic; }
+    .mx-enquiry-form > p { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 40px; max-width: 460px; }
+    .mx-form { display: flex; flex-direction: column; gap: 14px; }
+    .mx-form label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+    .mx-form input,
+    .mx-form select,
+    .mx-form textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-family: var(--body);
+      font-size: 14px;
+      color: var(--text);
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+    .mx-form input:focus,
+    .mx-form select:focus,
+    .mx-form textarea:focus { outline: none; border-color: var(--accent); }
+    .mx-form textarea { height: 100px; resize: vertical; }
+    .mx-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* COLOUR OVERRIDES FOR DESTINATION CARD PLACEHOLDERS */
+    .dest-merida { background: linear-gradient(135deg, #2d5016 0%, #4a7c28 100%); }
+    .dest-cancun { background: linear-gradient(135deg, #006994 0%, #00a8cc 100%); }
+    .dest-playa { background: linear-gradient(135deg, #1a6b5f 0%, #2ea89a 100%); }
+    .dest-cozumel { background: linear-gradient(135deg, #004e7c 0%, #0080bb 100%); }
+    .dest-tulum { background: linear-gradient(135deg, #8b7355 0%, #c4a882 100%); }
+    .dest-bacalar { background: linear-gradient(135deg, #006b5e 0%, #00a896 100%); }
+
+    @media (max-width: 900px) {
+      .mx-why, .mx-featured, .mx-enquiry { grid-template-columns: 1fr; }
+      .mx-why-img, .mx-featured-imgs { min-height: 50vw; }
+      .mx-why-text, .mx-featured-text, .mx-enquiry-form { padding: 56px 24px; }
+      .mx-destinations, .mx-types, .mx-invest { padding: 72px 24px; }
+      .mx-dest-grid, .mx-types-grid { grid-template-columns: 1fr; }
+      .mx-invest-grid { grid-template-columns: 1fr 1fr; }
+      .mx-hero-overlay { padding: 32px 24px; }
+      .mx-form-row { grid-template-columns: 1fr; }
+      .mx-enquiry-img { min-height: 50vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="mx-hero">
+    <img src="images/mexico-cc.jpg" alt="Yucatán Mexico — luxury living">
+    <div class="mx-hero-overlay">
+      <p class="section-label">Land · Villas · Properties</p>
+      <h1>Live where the world<br>comes to <em>dream</em></h1>
+      <p>Exclusive land and properties across the Yucatán Peninsula — from the colonial grandeur of Mérida to the turquoise waters of Bacalar and Tulum.</p>
+      <a href="#enquiry" class="btn-ghost">Make an Enquiry</a>
+    </div>
+  </div>
+
+  <!-- WHY YUCATAN -->
+  <div class="mx-why fade-in">
+    <div class="mx-why-img">
+      <img src="images/mexico-cc1.jpg" alt="Quality of life in Yucatán">
+    </div>
+    <div class="mx-why-text">
+      <p class="section-label">Why Yucatán</p>
+      <h2>Ranked the best place<br>to live in <em>Mexico</em></h2>
+      <p>
+        Mérida has been ranked first in quality of life in Mexico by the UN — and for good reason.
+        Yucatán is the safest state in the Mexican Republic, with a growing international community,
+        world-class healthcare, and some of the most extraordinary natural landscapes on earth.
+      </p>
+      <p>
+        Whether you are looking for a permanent residence, a holiday retreat, or a high-return
+        investment, the Yucatán Peninsula offers a rare combination: affordability today,
+        exceptional growth tomorrow. Property values in the Mérida area increased by over
+        300% between 2011 and 2021. The trajectory continues.
+      </p>
+      <div class="mx-stats">
+        <div class="mx-stat">
+          <div class="mx-stat-num">#1</div>
+          <div class="mx-stat-label">Quality of life in Mexico (UN)</div>
+        </div>
+        <div class="mx-stat">
+          <div class="mx-stat-num">300%</div>
+          <div class="mx-stat-label">Property value growth 2011–2021</div>
+        </div>
+        <div class="mx-stat">
+          <div class="mx-stat-num">340</div>
+          <div class="mx-stat-label">Days of sunshine per year</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <section class="mx-destinations">
+    <div class="mx-destinations-header fade-in">
+      <div>
+        <p class="section-label">Where to Buy</p>
+        <h2 class="section-title">Six <em>exceptional</em> destinations</h2>
+      </div>
+    </div>
+    <div class="mx-dest-grid">
+
+      <div class="mx-dest-card fade-in">
+        <div class="dest-merida" style="width:100%; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:80px;">🌿</span>
+        </div>
+        <div class="mx-dest-card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);">
+          <div class="mx-dest-tag">Colonial City · Safest in Mexico</div>
+          <div class="mx-dest-name"><em>Mérida</em></div>
+          <div class="mx-dest-desc">The cultural heart of the Yucatán. UNESCO-recognised historic centre, thriving arts scene, the best restaurants in the peninsula, and a fast-growing expat community drawn by its extraordinary quality of life.</div>
+        </div>
+      </div>
+
+      <div class="mx-dest-card fade-in">
+        <div class="dest-cancun" style="width:100%; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:80px;">🌊</span>
+        </div>
+        <div class="mx-dest-card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);">
+          <div class="mx-dest-tag">Caribbean Coast · Investment Hub</div>
+          <div class="mx-dest-name"><em>Cancún</em></div>
+          <div class="mx-dest-desc">Mexico's most visited destination and a serious investment powerhouse. World-class infrastructure, international airport, and endless demand from the global holiday rental market.</div>
+        </div>
+      </div>
+
+      <div class="mx-dest-card fade-in">
+        <div class="dest-playa" style="width:100%; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:80px;">🏝️</span>
+        </div>
+        <div class="mx-dest-card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);">
+          <div class="mx-dest-tag">Riviera Maya · Cosmopolitan</div>
+          <div class="mx-dest-name">Playa del <em>Carmen</em></div>
+          <div class="mx-dest-desc">The beating heart of the Riviera Maya. Playa del Carmen blends white sand beaches with boutique shopping, world-class dining, and a vibrant international community. One of the fastest-growing property markets in Latin America.</div>
+        </div>
+      </div>
+
+      <div class="mx-dest-card fade-in">
+        <div class="dest-cozumel" style="width:100%; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:80px;">🤿</span>
+        </div>
+        <div class="mx-dest-card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);">
+          <div class="mx-dest-tag">Island Life · Diving Paradise</div>
+          <div class="mx-dest-name"><em>Cozumel</em></div>
+          <div class="mx-dest-desc">An island of extraordinary natural beauty. Home to the second-largest coral reef in the world, crystalline waters, and a relaxed pace of life that draws divers, retirees, and second-home buyers from around the globe.</div>
+        </div>
+      </div>
+
+      <div class="mx-dest-card fade-in">
+        <div class="dest-tulum" style="width:100%; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:80px;">🏛️</span>
+        </div>
+        <div class="mx-dest-card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);">
+          <div class="mx-dest-tag">Boho Luxury · Mayan Ruins</div>
+          <div class="mx-dest-name"><em>Tulum</em></div>
+          <div class="mx-dest-desc">The world's most talked-about eco-luxury destination. Ancient Mayan ruins, cenotes, white sand beaches, and a design-forward hospitality scene that has made Tulum one of the most sought-after addresses on the planet.</div>
+        </div>
+      </div>
+
+      <div class="mx-dest-card fade-in">
+        <div class="dest-bacalar" style="width:100%; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:80px;">💎</span>
+        </div>
+        <div class="mx-dest-card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);">
+          <div class="mx-dest-tag">The Next Tulum · Hidden Gem</div>
+          <div class="mx-dest-name"><em>Bacalar</em></div>
+          <div class="mx-dest-desc">The Lake of Seven Colours. Bacalar is Mexico's most spectacular secret — a vast, jewel-toned freshwater lagoon surrounded by jungle, with a growing community of boutique hotels, eco-villas, and savvy early investors.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROPERTY TYPES -->
+  <section class="mx-types">
+    <div class="fade-in">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Find your <em>perfect investment</em></h2>
+    </div>
+    <div class="mx-types-grid">
+      <div class="mx-type-card fade-in">
+        <div class="mx-type-num">01</div>
+        <h3>Land <em>Plots</em></h3>
+        <p>Raw land in prime locations across the peninsula. Ideal for developers, investors, or those building their dream home from the ground up. Full planning and architectural support available.</p>
+        <div class="mx-type-from">Starting from</div>
+        <div class="mx-type-price">$45,000 USD</div>
+      </div>
+      <div class="mx-type-card fade-in">
+        <div class="mx-type-num">02</div>
+        <h3>Luxury <em>Villas</em></h3>
+        <p>Fully designed and delivered private villas — pool, landscaped garden, smart home technology, and high-end finishes. Ready to move into or rent out immediately upon completion.</p>
+        <div class="mx-type-from">Starting from</div>
+        <div class="mx-type-price">$280,000 USD</div>
+      </div>
+      <div class="mx-type-card fade-in">
+        <div class="mx-type-num">03</div>
+        <h3>Holiday <em>Residences</em></h3>
+        <p>Managed holiday properties in resort communities with on-site amenities, rental management, and strong yield potential. Own, enjoy, and earn from your property simultaneously.</p>
+        <div class="mx-type-from">Starting from</div>
+        <div class="mx-type-price">$120,000 USD</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED: CIUDAD COLORÍN -->
+  <section class="mx-featured fade-in">
+    <div class="mx-featured-imgs">
+      <img src="images/mexico-cc.jpg" alt="Ciudad Colorín Yucatán — pool">
+      <img src="images/mexico-cc8.jpg" alt="Ciudad Colorín Yucatán — development">
+    </div>
+    <div class="mx-featured-text">
+      <p class="section-label">Featured Development</p>
+      <h2>Ciudad Colorín<br><em>Yucatán</em></h2>
+      <p>
+        Mexico's first Smart City — a masterplanned community in the Mérida metropolitan area
+        designed around sustainability, wellbeing, and connection to nature. Ranked the number
+        one quality-of-life development in the Yucatán Peninsula.
+      </p>
+      <div class="mx-features-list">
+        <div class="mx-feature-item">12.3-hectare central park (Metropoli) with sport, culture and social zones</div>
+        <div class="mx-feature-item">Semi-Olympic pool, Club House, floating dining, urban bar</div>
+        <div class="mx-feature-item">Eco-sustainable design with energy generation on-site</div>
+        <div class="mx-feature-item">Full security, health and transport infrastructure</div>
+        <div class="mx-feature-item">First Smart City in Mérida — interconnected digital infrastructure</div>
+        <div class="mx-feature-item">Strategic location — direct access to beach, cenotes and the city</div>
+      </div>
+      <a href="#enquiry" class="btn btn-light">Enquire About Ciudad Colorín</a>
+    </div>
+  </section>
+
+  <!-- INVESTMENT STATS -->
+  <section class="mx-invest">
+    <div class="fade-in">
+      <p class="section-label">The Numbers</p>
+      <h2 class="section-title">Why invest <em>now</em></h2>
+    </div>
+    <div class="mx-invest-grid fade-in">
+      <div class="mx-invest-card">
+        <div class="big-num">7×</div>
+        <h4>Property value growth</h4>
+        <p>Beach-front land in the Mérida area increased from $10/sqft to $91/sqft between 2011 and 2021.</p>
+      </div>
+      <div class="mx-invest-card">
+        <div class="big-num">15M+</div>
+        <h4>Annual visitors to the region</h4>
+        <p>The Yucatán Peninsula attracts more international tourists than any other destination in Mexico, driving rental demand year-round.</p>
+      </div>
+      <div class="mx-invest-card">
+        <div class="big-num">12%</div>
+        <h4>Average rental yield</h4>
+        <p>Holiday villas and managed residences across the Riviera Maya consistently deliver 10–15% annual rental yields.</p>
+      </div>
+      <div class="mx-invest-card">
+        <div class="big-num">No. 1</div>
+        <h4>Safest state in Mexico</h4>
+        <p>Yucatán ranks as the safest state in the Mexican Republic, with a quality of life endorsed by the United Nations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY -->
+  <div class="mx-enquiry" id="enquiry">
+    <div class="mx-enquiry-img">
+      <img src="images/mexico-cc2.jpg" alt="Yucatán lifestyle">
+    </div>
+    <div class="mx-enquiry-form fade-in">
+      <p class="section-label">Get in Touch</p>
+      <h2>Start your <em>search</em></h2>
+      <p>Tell me what you're looking for. I'll come back with curated options, pricing, and everything you need to make a confident decision.</p>
+      <form class="mx-form" action="https://formsubmit.co/izabela.ot@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Mexico Property Enquiry — izabelaostatek.com">
+        <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="mx-form-row">
+          <div>
+            <label>Name</label>
+            <input type="text" name="name" required placeholder="Your name">
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="your@email.com">
+          </div>
+        </div>
+        <div>
+          <label>Destination of interest</label>
+          <select name="destination">
+            <option value="" disabled selected>Where are you interested in?</option>
+            <option>Mérida</option>
+            <option>Cancún</option>
+            <option>Playa del Carmen</option>
+            <option>Cozumel</option>
+            <option>Tulum</option>
+            <option>Bacalar</option>
+            <option>Open to suggestions</option>
+          </select>
+        </div>
+        <div>
+          <label>Property type</label>
+          <select name="type">
+            <option value="" disabled selected>What are you looking for?</option>
+            <option>Land plot</option>
+            <option>Luxury villa</option>
+            <option>Holiday residence / investment</option>
+            <option>Ciudad Colorín development</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label>Budget (USD)</label>
+          <select name="budget">
+            <option value="" disabled selected>Select a range</option>
+            <option>Under $100,000</option>
+            <option>$100,000 – $250,000</option>
+            <option>$250,000 – $500,000</option>
+            <option>$500,000 – $1,000,000</option>
+            <option>$1,000,000+</option>
+          </select>
+        </div>
+        <div>
+          <label>Tell me more</label>
+          <textarea name="message" placeholder="Timeline, specific requirements, questions — anything that helps me help you."></textarea>
+        </div>
+        <button type="submit" class="btn" style="align-self:flex-start; cursor:pointer; font-family:var(--body);">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2024 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
