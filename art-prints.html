@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fine Art Prints — Izabela Ostatek</title>
+  <meta name="description" content="Order limited edition fine art prints from the Art Basel 2024 series by Izabela Ostatek. Museum-quality printing, signed and numbered.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .shop-header {
+      padding: 120px 48px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .shop-header p { max-width: 560px; font-size: 15px; color: #555; line-height: 1.8; margin-top: 16px; }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      padding: 0;
+    }
+    .print-card {
+      background: #fafaf8;
+      position: relative;
+      overflow: hidden;
+    }
+    .print-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .print-card:hover .print-card-img { transform: scale(1.03); }
+    .print-card-body {
+      padding: 28px 28px 36px;
+    }
+    .print-card-number {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .print-card-body h3 {
+      font-family: var(--heading);
+      font-size: 22px;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .print-card-body h3 em { font-style: italic; }
+
+    .size-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .size-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .size-row:hover { border-color: var(--accent); background: #f5f2ed; }
+    .size-row.selected { border-color: var(--accent); background: #f5f2ed; }
+    .size-label {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .size-detail {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .size-price {
+      font-family: var(--heading);
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .order-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: var(--text);
+      color: #fff;
+      border: none;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+      font-family: var(--body);
+    }
+    .order-btn:hover { background: var(--accent); }
+
+    .shop-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: #f0ede8;
+      padding: 80px 48px;
+    }
+    .info-block { padding: 0 24px; }
+    .info-block:first-child { padding-left: 0; }
+    .info-block h4 {
+      font-family: var(--heading);
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+    .info-block p { font-size: 14px; color: #555; line-height: 1.7; }
+
+    .order-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .order-modal-backdrop.open { display: flex; }
+    .order-modal {
+      background: #fafaf8;
+      width: 100%;
+      max-width: 560px;
+      padding: 48px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .order-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--muted);
+      line-height: 1;
+    }
+    .order-modal h3 {
+      font-family: var(--heading);
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 4px;
+    }
+    .order-modal .modal-sub {
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .modal-form { display: flex; flex-direction: column; gap: 16px; }
+    .modal-form label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+    .modal-form input,
+    .modal-form select,
+    .modal-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-family: var(--body);
+      font-size: 14px;
+      color: var(--text);
+      box-sizing: border-box;
+    }
+    .modal-form textarea { height: 80px; resize: vertical; }
+    .modal-selected-info {
+      background: #f0ede8;
+      padding: 16px;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .modal-selected-info strong { display: block; font-size: 15px; margin-bottom: 4px; font-family: var(--heading); font-weight: 400; }
+
+    @media (max-width: 900px) {
+      .shop-grid { grid-template-columns: 1fr; }
+      .shop-info { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+      .info-block { padding: 0; }
+      .shop-header { padding: 80px 24px 48px; }
+      .order-modal { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="shop-header fade-in">
+    <p class="section-label">Limited Edition Prints</p>
+    <h1>Art Basel 2024 <em>Series</em></h1>
+    <p>
+      Each print is produced on 310gsm Hahnemühle museum-quality fine art paper using
+      archival pigment inks. Signed, numbered, and issued with a certificate of authenticity.
+      Edition of 50 per image per size.
+    </p>
+  </div>
+
+  <!-- PRINT CARDS -->
+  <section class="shop-grid">
+
+    <!-- Print I -->
+    <div class="print-card fade-in">
+      <img src="images/art-1.jpg" alt="Aqua Bloom" class="print-card-img">
+      <div class="print-card-body">
+        <p class="print-card-number">No. I</p>
+        <h3>Aqua <em>Bloom</em></h3>
+        <div class="size-options">
+          <div class="size-row" onclick="selectSize(this, 'I', 'Aqua Bloom', 'A3 (30 × 42 cm)', '£180')">
+            <div>
+              <div class="size-label">A3</div>
+              <div class="size-detail">30 × 42 cm · Unframed</div>
+            </div>
+            <div class="size-price">£180</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'I', 'Aqua Bloom', 'A2 (42 × 59 cm)', '£280')">
+            <div>
+              <div class="size-label">A2</div>
+              <div class="size-detail">42 × 59 cm · Unframed</div>
+            </div>
+            <div class="size-price">£280</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'I', 'Aqua Bloom', 'A1 (59 × 84 cm)', '£420')">
+            <div>
+              <div class="size-label">A1</div>
+              <div class="size-detail">59 × 84 cm · Unframed</div>
+            </div>
+            <div class="size-price">£420</div>
+          </div>
+        </div>
+        <button class="order-btn" onclick="openOrder('I', 'Aqua Bloom')">Order This Print</button>
+      </div>
+    </div>
+
+    <!-- Print II -->
+    <div class="print-card fade-in">
+      <img src="images/art-2.jpg" alt="The Bloom Crown" class="print-card-img">
+      <div class="print-card-body">
+        <p class="print-card-number">No. II</p>
+        <h3>The Bloom <em>Crown</em></h3>
+        <div class="size-options">
+          <div class="size-row" onclick="selectSize(this, 'II', 'The Bloom Crown', 'A3 (30 × 42 cm)', '£180')">
+            <div>
+              <div class="size-label">A3</div>
+              <div class="size-detail">30 × 42 cm · Unframed</div>
+            </div>
+            <div class="size-price">£180</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'II', 'The Bloom Crown', 'A2 (42 × 59 cm)', '£280')">
+            <div>
+              <div class="size-label">A2</div>
+              <div class="size-detail">42 × 59 cm · Unframed</div>
+            </div>
+            <div class="size-price">£280</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'II', 'The Bloom Crown', 'A1 (59 × 84 cm)', '£420')">
+            <div>
+              <div class="size-label">A1</div>
+              <div class="size-detail">59 × 84 cm · Unframed</div>
+            </div>
+            <div class="size-price">£420</div>
+          </div>
+        </div>
+        <button class="order-btn" onclick="openOrder('II', 'The Bloom Crown')">Order This Print</button>
+      </div>
+    </div>
+
+    <!-- Print III -->
+    <div class="print-card fade-in">
+      <img src="images/art-3.jpg" alt="Island Mind" class="print-card-img">
+      <div class="print-card-body">
+        <p class="print-card-number">No. III</p>
+        <h3>Island <em>Mind</em></h3>
+        <div class="size-options">
+          <div class="size-row" onclick="selectSize(this, 'III', 'Island Mind', 'A3 (30 × 42 cm)', '£180')">
+            <div>
+              <div class="size-label">A3</div>
+              <div class="size-detail">30 × 42 cm · Unframed</div>
+            </div>
+            <div class="size-price">£180</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'III', 'Island Mind', 'A2 (42 × 59 cm)', '£280')">
+            <div>
+              <div class="size-label">A2</div>
+              <div class="size-detail">42 × 59 cm · Unframed</div>
+            </div>
+            <div class="size-price">£280</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'III', 'Island Mind', 'A1 (59 × 84 cm)', '£420')">
+            <div>
+              <div class="size-label">A1</div>
+              <div class="size-detail">59 × 84 cm · Unframed</div>
+            </div>
+            <div class="size-price">£420</div>
+          </div>
+        </div>
+        <button class="order-btn" onclick="openOrder('III', 'Island Mind')">Order This Print</button>
+      </div>
+    </div>
+
+    <!-- Print IV -->
+    <div class="print-card fade-in">
+      <img src="images/art-4.jpg" alt="Glass Sphere" class="print-card-img">
+      <div class="print-card-body">
+        <p class="print-card-number">No. IV</p>
+        <h3>Glass <em>Sphere</em></h3>
+        <div class="size-options">
+          <div class="size-row" onclick="selectSize(this, 'IV', 'Glass Sphere', 'A3 (30 × 42 cm)', '£180')">
+            <div>
+              <div class="size-label">A3</div>
+              <div class="size-detail">30 × 42 cm · Unframed</div>
+            </div>
+            <div class="size-price">£180</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'IV', 'Glass Sphere', 'A2 (42 × 59 cm)', '£280')">
+            <div>
+              <div class="size-label">A2</div>
+              <div class="size-detail">42 × 59 cm · Unframed</div>
+            </div>
+            <div class="size-price">£280</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'IV', 'Glass Sphere', 'A1 (59 × 84 cm)', '£420')">
+            <div>
+              <div class="size-label">A1</div>
+              <div class="size-detail">59 × 84 cm · Unframed</div>
+            </div>
+            <div class="size-price">£420</div>
+          </div>
+        </div>
+        <button class="order-btn" onclick="openOrder('IV', 'Glass Sphere')">Order This Print</button>
+      </div>
+    </div>
+
+    <!-- Print V -->
+    <div class="print-card fade-in">
+      <img src="images/art-5.jpg" alt="Still Waters" class="print-card-img">
+      <div class="print-card-body">
+        <p class="print-card-number">No. V</p>
+        <h3>Still <em>Waters</em></h3>
+        <div class="size-options">
+          <div class="size-row" onclick="selectSize(this, 'V', 'Still Waters', 'A3 (30 × 42 cm)', '£180')">
+            <div>
+              <div class="size-label">A3</div>
+              <div class="size-detail">30 × 42 cm · Unframed</div>
+            </div>
+            <div class="size-price">£180</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'V', 'Still Waters', 'A2 (42 × 59 cm)', '£280')">
+            <div>
+              <div class="size-label">A2</div>
+              <div class="size-detail">42 × 59 cm · Unframed</div>
+            </div>
+            <div class="size-price">£280</div>
+          </div>
+          <div class="size-row" onclick="selectSize(this, 'V', 'Still Waters', 'A1 (59 × 84 cm)', '£420')">
+            <div>
+              <div class="size-label">A1</div>
+              <div class="size-detail">59 × 84 cm · Unframed</div>
+            </div>
+            <div class="size-price">£420</div>
+          </div>
+        </div>
+        <button class="order-btn" onclick="openOrder('V', 'Still Waters')">Order This Print</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- INFO STRIP -->
+  <div class="shop-info fade-in">
+    <div class="info-block">
+      <h4>Print <em>quality</em></h4>
+      <p>310gsm Hahnemühle Photo Rag. Archival pigment inks with a 100+ year fade guarantee. Produced by specialist fine art printers in London.</p>
+    </div>
+    <div class="info-block">
+      <h4>Signed &amp; <em>numbered</em></h4>
+      <p>Each print is hand-signed and numbered by the artist. Edition of 50 per image per size. Includes a certificate of authenticity.</p>
+    </div>
+    <div class="info-block">
+      <h4>Shipping &amp; <em>delivery</em></h4>
+      <p>Shipped flat in protective packaging within 7–10 working days. UK and international delivery available. Enquire for framing options.</p>
+    </div>
+  </div>
+
+  <!-- ORDER MODAL -->
+  <div class="order-modal-backdrop" id="orderModal">
+    <div class="order-modal">
+      <button class="order-modal-close" onclick="closeOrder()">×</button>
+      <h3 id="modalTitle">Order a Print</h3>
+      <p class="modal-sub" id="modalSub">Art Basel 2024 Series</p>
+      <div class="modal-selected-info" id="modalInfo">
+        <strong id="modalPrintName">—</strong>
+        <span id="modalSizePrice">Select a size above first</span>
+      </div>
+      <form class="modal-form" action="https://formsubmit.co/izabela.ot@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Fine Art Print Order — izabelaostatek.com">
+        <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/art-prints.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="print" id="formPrint" value="">
+        <input type="hidden" name="size" id="formSize" value="">
+        <input type="hidden" name="price" id="formPrice" value="">
+        <div>
+          <label>Your Name</label>
+          <input type="text" name="name" required placeholder="Full name">
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" required placeholder="your@email.com">
+        </div>
+        <div>
+          <label>Phone (optional)</label>
+          <input type="tel" name="phone" placeholder="+44 ...">
+        </div>
+        <div>
+          <label>Delivery Address</label>
+          <textarea name="address" placeholder="Street, city, postcode, country"></textarea>
+        </div>
+        <div>
+          <label>Additional Notes</label>
+          <input type="text" name="notes" placeholder="Framing enquiries, gift wrapping, etc.">
+        </div>
+        <button type="submit" class="order-btn" style="margin-top:8px;">Submit Order Enquiry</button>
+        <p style="font-size:12px; color:var(--muted); margin-top:8px;">You'll receive a payment link and confirmation within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2024 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    let selectedSizes = {};
+
+    function selectSize(el, printNum, printName, size, price) {
+      const card = el.closest('.print-card-body');
+      card.querySelectorAll('.size-row').forEach(r => r.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedSizes[printNum] = { size, price, name: printName };
+    }
+
+    function openOrder(printNum, printName) {
+      const sel = selectedSizes[printNum];
+      document.getElementById('modalPrintName').textContent = 'No. ' + printNum + ' — ' + printName;
+      if (sel) {
+        document.getElementById('modalSizePrice').textContent = sel.size + ' · ' + sel.price;
+        document.getElementById('formPrint').value = 'No. ' + printNum + ' — ' + printName;
+        document.getElementById('formSize').value = sel.size;
+        document.getElementById('formPrice').value = sel.price;
+      } else {
+        document.getElementById('modalSizePrice').textContent = 'No size selected — please choose above';
+        document.getElementById('formPrint').value = 'No. ' + printNum + ' — ' + printName;
+        document.getElementById('formSize').value = 'Not selected';
+        document.getElementById('formPrice').value = '';
+      }
+      document.getElementById('orderModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeOrder() {
+      document.getElementById('orderModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('orderModal').addEventListener('click', function(e) {
+      if (e.target === this) closeOrder();
+    });
+  </script>
+</body>
+</html>

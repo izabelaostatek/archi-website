@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Basel 2024 — Izabela Ostatek</title>
+  <meta name="description" content="Digital art series by Izabela Ostatek, exhibited at Art Basel 2024. Available as limited edition fine art prints.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .art-hero {
+      height: 90vh;
+      overflow: hidden;
+      position: relative;
+      margin-top: var(--nav-h);
+    }
+    .art-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    .art-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.45) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 64px 48px;
+    }
+    .art-hero-text {
+      color: #fff;
+    }
+    .art-hero-text .section-label {
+      color: rgba(255,255,255,0.7);
+    }
+    .art-hero-text h1 {
+      font-family: var(--heading);
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: #fff;
+      margin: 8px 0 0;
+    }
+    .art-hero-text h1 em { font-style: italic; }
+
+    .art-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      padding: 80px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .art-meta-list { display: flex; flex-direction: column; gap: 24px; }
+    .art-meta-item span:first-child {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .art-meta-item span:last-child { font-size: 14px; }
+    .art-description h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+    .art-description h2 em { font-style: italic; }
+    .art-description p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      max-width: 600px;
+    }
+
+    .art-gallery {
+      padding: 0 48px 80px;
+    }
+    .art-gallery-full {
+      margin-top: 2px;
+    }
+    .art-gallery-full img {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: cover;
+      display: block;
+    }
+    .art-gallery-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .art-gallery-two img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .art-caption {
+      padding: 16px 0 32px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .art-shop-cta {
+      background: #1a1a1a;
+      padding: 100px 48px;
+      text-align: center;
+    }
+    .art-shop-cta .section-label { color: var(--accent); }
+    .art-shop-cta h2 {
+      font-family: var(--heading);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 300;
+      color: #fff;
+      margin: 12px 0 16px;
+    }
+    .art-shop-cta h2 em { font-style: italic; }
+    .art-shop-cta p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-white {
+      display: inline-block;
+      padding: 14px 36px;
+      border: 1px solid #fff;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-white:hover { background: #fff; color: #1a1a1a; }
+
+    @media (max-width: 768px) {
+      .art-intro { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .art-gallery { padding: 0 24px 60px; }
+      .art-gallery-two { grid-template-columns: 1fr; }
+      .art-hero-overlay { padding: 40px 24px; }
+      .art-shop-cta { padding: 80px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="art-hero">
+    <img src="images/art-1.jpg" alt="Aqua Bloom — digital art by Izabela Ostatek">
+    <div class="art-hero-overlay">
+      <div class="art-hero-text">
+        <p class="section-label">Art Basel Miami Beach 2024</p>
+        <h1>Nature. <em>Woman.</em><br>The Unseen World.</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="art-intro">
+    <div class="art-meta-list fade-in">
+      <div class="art-meta-item">
+        <span>Exhibition</span>
+        <span>Art Basel Miami Beach 2024</span>
+      </div>
+      <div class="art-meta-item">
+        <span>Medium</span>
+        <span>Digital Art / AI-Assisted</span>
+      </div>
+      <div class="art-meta-item">
+        <span>Series</span>
+        <span>Nature. Woman. The Unseen World.</span>
+      </div>
+      <div class="art-meta-item">
+        <span>Edition</span>
+        <span>Limited Fine Art Prints Available</span>
+      </div>
+      <div class="art-meta-item">
+        <span>Year</span>
+        <span>2024</span>
+      </div>
+    </div>
+    <div class="art-description fade-in">
+      <h2>Where the natural world<br><em>dissolves into the human</em></h2>
+      <p>
+        Exhibited at Art Basel Miami Beach 2024, this series explores the threshold
+        between the organic and the imagined — where a woman becomes the landscape,
+        and the landscape becomes her.
+      </p>
+      <p>
+        Each piece draws on the subconscious language of nature: coral, flowers, water,
+        glass, and light rendered in a dreamlike space that exists nowhere and everywhere
+        at once. The figures are not separate from their environments — they are part of
+        the same continuous living system.
+      </p>
+      <p>
+        The work sits at the intersection of architecture, ecology, and the feminine —
+        rooted in the same thinking that drives Izabela's design practice: that the most
+        powerful spaces are those that feel genuinely alive.
+      </p>
+      <a href="art-prints.html" class="btn" style="margin-top: 16px;">Order a Print</a>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="art-gallery">
+    <div class="art-gallery-full fade-in">
+      <img src="images/art-2.jpg" alt="The Bloom Crown — digital art">
+      <p class="art-caption">II — The Bloom Crown</p>
+    </div>
+    <div class="art-gallery-two fade-in">
+      <div>
+        <img src="images/art-3.jpg" alt="Island Mind — digital art">
+        <p class="art-caption">III — Island Mind</p>
+      </div>
+      <div>
+        <img src="images/art-4.jpg" alt="Glass Sphere — digital art">
+        <p class="art-caption">IV — Glass Sphere</p>
+      </div>
+    </div>
+    <div class="art-gallery-full fade-in">
+      <img src="images/art-5.jpg" alt="Still Waters — digital art">
+      <p class="art-caption">V — Still Waters</p>
+    </div>
+  </div>
+
+  <!-- SHOP CTA -->
+  <div class="art-shop-cta fade-in">
+    <p class="section-label">Limited Edition Prints</p>
+    <h2>Own a piece of<br><em>the series</em></h2>
+    <p>Each print is produced on museum-quality fine art paper and available in three sizes. Signed and numbered.</p>
+    <a href="art-prints.html" class="btn-white">Shop Prints</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2024 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
