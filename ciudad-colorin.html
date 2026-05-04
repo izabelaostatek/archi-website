@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciudad Colorín — Mérida Smart City — Izabela Ostatek</title>
+  <meta name="description" content="Ciudad Colorín — Mérida's first Smart & Conscious City. Residential land and properties in Mexico's #1 city for quality of life.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── HERO ── */
+    .cc-hero {
+      height: 92vh;
+      position: relative;
+      overflow: hidden;
+      margin-top: var(--nav-h);
+    }
+    .cc-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    .cc-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 72px 56px;
+    }
+    .cc-hero-text { color: #fff; }
+    .cc-hero-text .section-label { color: rgba(255,255,255,0.75); }
+    .cc-hero-text h1 {
+      font-family: var(--heading);
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: #fff;
+      margin: 10px 0 0;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .cc-hero-text h1 em { font-style: italic; }
+
+    /* ── INTRO ── */
+    .cc-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      padding: 88px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cc-meta { display: flex; flex-direction: column; gap: 28px; }
+    .cc-meta-item span:first-child {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .cc-meta-item span:last-child { font-size: 14px; color: #333; }
+    .cc-body h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+    .cc-body h2 em { font-style: italic; }
+    .cc-body p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.9;
+      margin-bottom: 18px;
+      max-width: 620px;
+    }
+    .cc-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 40px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+    .cc-stat-num {
+      font-family: var(--heading);
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .cc-stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+    /* ── SECTION TITLE ── */
+    .cc-section-label {
+      padding: 72px 56px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── FULL WIDTH IMAGE ── */
+    .cc-full img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: cover;
+      display: block;
+    }
+    .cc-caption {
+      padding: 14px 56px 28px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── 3-COLUMN ROW ── */
+    .cc-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+      margin: 2px 0;
+    }
+    .cc-row-3 figure { margin: 0; }
+    .cc-row-3 img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .cc-row-3 figcaption {
+      padding: 10px 0 20px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── 2-COLUMN ROW ── */
+    .cc-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin: 2px 0;
+    }
+    .cc-row-2 figure { margin: 0; }
+    .cc-row-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .cc-row-2 figcaption {
+      padding: 10px 0 16px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── AMENITIES WRAP ── */
+    .cc-amenities-wrap {
+      padding: 72px 56px;
+      background: #f0ede8;
+    }
+    .cc-amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 40px;
+    }
+    .cc-amenity-card {
+      background: #fff;
+      padding: 32px 24px;
+    }
+    .cc-amenity-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+    .cc-amenity-card h4 {
+      font-family: var(--heading);
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .cc-amenity-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── DARK TECH STRIP ── */
+    .cc-tech {
+      background: #1a1a1a;
+      padding: 88px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .cc-tech h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .cc-tech h2 em { font-style: italic; }
+    .cc-tech p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 14px; }
+    .cc-tech-list { list-style: none; padding: 0; margin: 28px 0 0; }
+    .cc-tech-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .cc-tech-list li::before {
+      content: '→';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .cc-tech-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .cc-tech-right img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── INVESTMENT ── */
+    .cc-investment {
+      padding: 88px 56px;
+    }
+    .cc-investment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .cc-investment h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+    .cc-investment h2 em { font-style: italic; }
+    .cc-investment p { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 16px; }
+    .cc-phases { display: flex; flex-direction: column; gap: 12px; }
+    .cc-phase {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .cc-phase:hover { border-color: var(--accent); }
+    .cc-phase-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .cc-phase-name {
+      font-family: var(--heading);
+      font-size: 18px;
+      font-weight: 400;
+      flex: 1;
+    }
+    .cc-phase-detail { font-size: 12px; color: var(--muted); }
+
+    /* ── FORM ── */
+    .cc-form-section {
+      background: #f0ede8;
+      padding: 88px 56px;
+    }
+    .cc-form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .cc-form-wrap h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+    .cc-form-wrap h2 em { font-style: italic; }
+    .cc-form-wrap p { font-size: 14px; color: #666; margin-bottom: 36px; line-height: 1.7; }
+    .cc-form { display: flex; flex-direction: column; gap: 14px; }
+    .cc-form input, .cc-form textarea, .cc-form select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-family: var(--body);
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .cc-form input:focus, .cc-form textarea:focus, .cc-form select:focus { border-color: var(--accent); }
+    .cc-form textarea { resize: vertical; min-height: 120px; }
+    .cc-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* ── GALLERY WRAP (padding context) ── */
+    .cc-gallery { padding: 0 0 4px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .cc-intro { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .cc-row-3 { grid-template-columns: 1fr; }
+      .cc-row-2 { grid-template-columns: 1fr; }
+      .cc-amenities-grid { grid-template-columns: 1fr 1fr; }
+      .cc-tech { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+      .cc-tech-right { display: none; }
+      .cc-investment-grid { grid-template-columns: 1fr; gap: 48px; }
+      .cc-investment, .cc-form-section, .cc-amenities-wrap { padding: 60px 24px; }
+      .cc-section-label { padding: 48px 24px 28px; }
+      .cc-caption { padding: 12px 24px 20px; }
+      .cc-hero-overlay { padding: 40px 24px; }
+      .cc-stats { flex-wrap: wrap; gap: 28px; }
+    }
+    @media (max-width: 600px) {
+      .cc-amenities-grid { grid-template-columns: 1fr; }
+      .cc-form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="cc-hero">
+    <img src="images/extra1-06_VISTA-AEREA.jpg" alt="Ciudad Colorín aerial view — Mérida smart city">
+    <div class="cc-hero-overlay">
+      <div class="cc-hero-text">
+        <p class="section-label">Mérida · Yucatán · Mexico</p>
+        <h1>Ciudad <em>Colorín</em><br>Mérida's first<br>Smart City</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="cc-intro fade-in">
+    <div class="cc-meta">
+      <div class="cc-meta-item">
+        <span>Location</span>
+        <span>Mérida, Yucatán, Mexico</span>
+      </div>
+      <div class="cc-meta-item">
+        <span>Type</span>
+        <span>Smart City — Residential Land & Properties</span>
+      </div>
+      <div class="cc-meta-item">
+        <span>Scale</span>
+        <span>392.898 Acres · 11 Districts</span>
+      </div>
+      <div class="cc-meta-item">
+        <span>Lot Size</span>
+        <span>3,229 Sq.Ft. (300 m²)</span>
+      </div>
+      <div class="cc-meta-item">
+        <span>Price from</span>
+        <span>$23.23 USD/Sq.Ft.</span>
+      </div>
+      <div class="cc-meta-item">
+        <span>Status</span>
+        <span>Active — Multiple Phases Available</span>
+      </div>
+    </div>
+    <div class="cc-body">
+      <h2>A city designed for<br><em>the way life should feel</em></h2>
+      <p>
+        Ciudad Colorín is Mérida's first Smart &amp; Conscious City — a master-planned development that combines technology, nature, security, and wellness into a single extraordinary place. Not a suburb. Not a gated estate. A whole city built with intention.
+      </p>
+      <p>
+        Set in the fastest-growing city in Mexico, ranked #1 for quality of life by the UN, Ciudad Colorín offers more than a property. It offers a way of life — where world-class amenities, green open spaces, and smart infrastructure create a community unlike anything else in the Yucatán.
+      </p>
+      <p>
+        With 11 distinct districts spread across 392 acres, the development is designed at the scale of a true neighbourhood — with its own central park, cultural venues, sports facilities, schools, and a private club that rivals the best resorts in Mexico.
+      </p>
+      <div class="cc-stats">
+        <div>
+          <div class="cc-stat-num">#1</div>
+          <div class="cc-stat-label">Quality of Life<br>in Mexico (UN)</div>
+        </div>
+        <div>
+          <div class="cc-stat-num">392</div>
+          <div class="cc-stat-label">Acres of<br>planned city</div>
+        </div>
+        <div>
+          <div class="cc-stat-num">12.3</div>
+          <div class="cc-stat-label">Hectare<br>central park</div>
+        </div>
+        <div>
+          <div class="cc-stat-num">11</div>
+          <div class="cc-stat-label">Residential<br>districts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY: AERIAL OVERVIEW -->
+  <div class="cc-section-label fade-in">
+    <p class="section-label">The Development</p>
+    <h2 class="section-title">Designed at <em>city scale</em></h2>
+  </div>
+
+  <div class="cc-gallery">
+    <div class="cc-full fade-in">
+      <img src="images/extra1-07_VISTA-TOP.jpg" alt="Ciudad Colorín top aerial view — master plan">
+    </div>
+    <p class="cc-caption">Aerial master plan — 392 acres, 11 districts</p>
+
+    <div class="cc-row-2 fade-in">
+      <figure>
+        <img src="images/jaalJa-aerial-1.jpg" alt="Linear park amphitheater aerial" style="object-position: center center;">
+        <figcaption>Metropolis — Amphitheater &amp; Central Park</figcaption>
+      </figure>
+      <figure>
+        <img src="images/jaalJa-aerial-5.jpg" alt="Linear park aerial view" style="object-position: center center;">
+        <figcaption>Metropolis — Linear Park, 12.3 Hectares</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- METROPOLIS PARK -->
+  <div class="cc-section-label fade-in">
+    <p class="section-label">Metropolis</p>
+    <h2 class="section-title">The central park<br><em>of the city</em></h2>
+  </div>
+
+  <div class="cc-gallery">
+    <div class="cc-row-3 fade-in" style="padding: 0 0 2px;">
+      <figure>
+        <img src="images/extra1-01-SENDERO-PEATONAL.jpg" alt="Sendero peatonal — pedestrian walkway" style="object-position: center 40%;">
+        <figcaption style="padding-left: 56px;">Pedestrian boulevard</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-05-ESPEJO-DE-AGUA.jpg" alt="Espejo de agua — reflecting pool" style="object-position: center 50%;">
+        <figcaption>Reflecting pool</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-04-ANFITEATRO.jpg" alt="Anfiteatro — amphitheater" style="object-position: center 50%;">
+        <figcaption style="padding-right: 0;">Amphitheater</figcaption>
+      </figure>
+    </div>
+
+    <div class="cc-row-3 fade-in" style="padding: 0 0 2px;">
+      <figure>
+        <img src="images/extra1-03-ESCULTURA-DIA.jpg" alt="Sculpture garden — day" style="object-position: center 40%;">
+        <figcaption style="padding-left: 56px;">Sculpture garden</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-02-ESCULTURA-NOCHE.jpg" alt="Sculpture garden — night" style="object-position: center 40%;">
+        <figcaption>Sculpture garden — night</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-07-MINIGOLF.jpg" alt="Mini golf" style="object-position: center 40%;">
+        <figcaption>Mini golf course</figcaption>
+      </figure>
+    </div>
+
+    <div class="cc-row-2 fade-in">
+      <figure>
+        <img src="images/extra1-06-LABERINTO.jpg" alt="Garden labyrinth" style="object-position: center 40%;">
+        <figcaption style="padding-left: 56px;">Garden labyrinth — Sociale section</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-34-TRANSICION-WELLNESS.jpg" alt="Wellness transition area" style="object-position: center 40%;">
+        <figcaption>Wellness transition zone</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- PRIVATE CLUB -->
+  <div class="cc-section-label fade-in">
+    <p class="section-label">Privato — Private Club</p>
+    <h2 class="section-title">Resort-level amenities<br><em>for residents only</em></h2>
+  </div>
+
+  <div class="cc-gallery">
+    <div class="cc-full fade-in">
+      <img src="images/extra1-001.LOBBY-SPA-FINAL.jpg" alt="Club lobby and spa" style="object-position: center 60%;">
+    </div>
+    <p class="cc-caption">Lobby Spa — Private Club entrance</p>
+
+    <div class="cc-row-3 fade-in">
+      <figure>
+        <img src="images/extra1-003.ALBERCA-FINAL.jpg" alt="Swimming pool" style="object-position: center 40%;">
+        <figcaption style="padding-left: 56px;">Swimming pool</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-006.GYM-FINAL.jpg" alt="Gym" style="object-position: center 40%;">
+        <figcaption>Fitness centre</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-004.CINE-FINAL.jpg" alt="Private cinema" style="object-position: center 50%;">
+        <figcaption>Private cinema</figcaption>
+      </figure>
+    </div>
+
+    <div class="cc-row-3 fade-in">
+      <figure>
+        <img src="images/extra1-002.USOS-MULTIPLES-FINAL.jpg" alt="Multi-use hall" style="object-position: center 40%;">
+        <figcaption style="padding-left: 56px;">Multi-use events hall</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-006.LOBBY-GYM-FINAL.jpg" alt="Gym lobby" style="object-position: center 40%;">
+        <figcaption>Wellness lobby</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-008.GAMEROOM-FINAL.jpg" alt="Game room" style="object-position: center 40%;">
+        <figcaption>Game room</figcaption>
+      </figure>
+    </div>
+
+    <div class="cc-row-2 fade-in">
+      <figure>
+        <img src="images/extra1-01_ACCESO-CASA-CLUB-NOCTURNA.jpg" alt="Casa Club night" style="object-position: center 50%;">
+        <figcaption style="padding-left: 56px;">Casa Club — night entrance</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-005.LUDOTECA-FINAL-.jpg" alt="Kids ludoteca" style="object-position: center 40%;">
+        <figcaption>Ludoteca — children's play centre</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- SPORT & OUTDOOR -->
+  <div class="cc-amenities-wrap fade-in">
+    <p class="section-label">General Amenities</p>
+    <h2 class="section-title">Sport, culture &amp; <em>community</em></h2>
+    <div class="cc-amenities-grid">
+      <div class="cc-amenity-card">
+        <div class="cc-amenity-icon">🏊</div>
+        <h4>Spa &amp; Pool</h4>
+        <p>Full-service spa, semi-Olympic pool, jacuzzi, and Cava Cenote wellness cave.</p>
+      </div>
+      <div class="cc-amenity-card">
+        <div class="cc-amenity-icon">🎾</div>
+        <h4>Sports Courts</h4>
+        <p>Tennis, padel, basketball, football, calisthenics, and yoga pavilion.</p>
+      </div>
+      <div class="cc-amenity-card">
+        <div class="cc-amenity-icon">🌳</div>
+        <h4>Metropolis Park</h4>
+        <p>12.3 hectares of green space — amphitheater, sculpture garden, labyrinth, mini golf.</p>
+      </div>
+      <div class="cc-amenity-card">
+        <div class="cc-amenity-icon">🎬</div>
+        <h4>Entertainment</h4>
+        <p>Private cinema, game room, multi-use hall, pet park, and children's play area.</p>
+      </div>
+      <div class="cc-amenity-card">
+        <div class="cc-amenity-icon">📱</div>
+        <h4>Smart City App</h4>
+        <p>Connected app for air quality, traffic, bicycle parking, security alerts and community events.</p>
+      </div>
+      <div class="cc-amenity-card">
+        <div class="cc-amenity-icon">☀️</div>
+        <h4>Eco Technology</h4>
+        <p>Solar panels, biophilic structures, rainwater collection — low maintenance, sustainable living.</p>
+      </div>
+      <div class="cc-amenity-card">
+        <div class="cc-amenity-icon">🏫</div>
+        <h4>Education</h4>
+        <p>Kokai Academy on site — small-group learning with two educators. Enrolled in West River Academy.</p>
+      </div>
+      <div class="cc-amenity-card">
+        <div class="cc-amenity-icon">🔒</div>
+        <h4>Elite Security</h4>
+        <p>24/7 cameras, trained surveillance, emergency buttons throughout, and a resident safety app.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPORT COURTS GALLERY -->
+  <div class="cc-gallery" style="padding-bottom: 4px;">
+    <div class="cc-row-3 fade-in">
+      <figure>
+        <img src="images/extra1-12_KIDS-AREA.jpg" alt="Kids area" style="object-position: center 40%;">
+        <figcaption style="padding-left: 56px;">Kids area</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-16_YOGA.jpg" alt="Yoga pavilion" style="object-position: center 40%;">
+        <figcaption>Yoga pavilion</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-13_PET-PARK.jpg" alt="Pet park" style="object-position: center 40%;">
+        <figcaption>Pet park</figcaption>
+      </figure>
+    </div>
+    <div class="cc-row-3 fade-in">
+      <figure>
+        <img src="images/extra1-19_CANCHA-DE-BASQUET.jpg" alt="Basketball court" style="object-position: center 50%;">
+        <figcaption style="padding-left: 56px;">Basketball court</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-15_CALISTENIA.jpg" alt="Calisthenics outdoor gym" style="object-position: center 40%;">
+        <figcaption>Outdoor calisthenics</figcaption>
+      </figure>
+      <figure>
+        <img src="images/extra1-20_CANCHA-FUTBOL.jpg" alt="Football pitch" style="object-position: center 40%;">
+        <figcaption>Football pitch</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- SMART CITY TECH STRIP -->
+  <div class="cc-tech fade-in">
+    <div>
+      <p class="section-label" style="color:var(--accent);">Smart &amp; Conscious City</p>
+      <h2>Where technology<br>meets <em>nature</em></h2>
+      <p>Ciudad Colorín is Mérida's first city built on the principle that technology should serve life — not replace it. Every system is designed to be invisible until you need it.</p>
+      <ul class="cc-tech-list">
+        <li>Smart interconnection app — your city in your pocket</li>
+        <li>Solar panel energy generation for common areas</li>
+        <li>Rainwater collection and sustainable infrastructure</li>
+        <li>Air quality sensors and real-time environmental data</li>
+        <li>Elite 24/7 security with emergency alert network</li>
+        <li>On-site school with multilevel personalized education</li>
+        <li>Internal democratic governance committee</li>
+      </ul>
+    </div>
+    <div class="cc-tech-right">
+      <img src="images/extra1-08_CASETAACCESO.jpg" alt="Secure access gate" style="object-position: center 50%;">
+      <img src="images/extra1-17_VIALIDAD.jpg" alt="Smart road infrastructure" style="object-position: center 50%;">
+      <img src="images/jaalJa-aerial-8.jpg" alt="Aerial overview" style="object-position: center 50%;">
+      <img src="images/extra1-14_CANCHA-UM.jpg" alt="Sports multipurpose court" style="object-position: center 50%;">
+    </div>
+  </div>
+
+  <!-- INVESTMENT / PRICING -->
+  <div class="cc-investment fade-in">
+    <div class="cc-investment-grid">
+      <div>
+        <p class="section-label">Residential Land</p>
+        <h2>Own a piece of<br><em>Mérida's future</em></h2>
+        <p>
+          Land prices in Mérida's premium developments have grown 7× in the past decade. With the city's continued international recognition — and infrastructure investment accelerating — Ciudad Colorín represents one of the most compelling land opportunities in the Yucatán today.
+        </p>
+        <p>
+          Lots are available across five phases with interest-free financing up to 72 months. A minimum 30% down payment secures your plot.
+        </p>
+        <p style="margin-top: 28px; font-size: 14px; color: var(--muted);">
+          <strong style="color: var(--accent); font-size: 20px; font-family: var(--heading); font-weight: 300;">$23.23 USD/Sq.Ft.</strong><br>
+          Lot size: 3,229 Sq.Ft. (300 m²) · 392 acres total
+        </p>
+      </div>
+      <div>
+        <p class="section-label">Payment Phases</p>
+        <div class="cc-phases">
+          <div class="cc-phase">
+            <div class="cc-phase-dot" style="background:#c0392b;"></div>
+            <span class="cc-phase-name">Rosso — Phase A</span>
+            <span class="cc-phase-detail">Street delivery · 72 months interest-free</span>
+          </div>
+          <div class="cc-phase">
+            <div class="cc-phase-dot" style="background:#d4a017;"></div>
+            <span class="cc-phase-name">Dorato — Phase B</span>
+            <span class="cc-phase-detail">25-month delivery · 18 months interest-free</span>
+          </div>
+          <div class="cc-phase">
+            <div class="cc-phase-dot" style="background:#95a5a6;"></div>
+            <span class="cc-phase-name">Argento — Phase C</span>
+            <span class="cc-phase-detail">3-year delivery · 36 months interest-free</span>
+          </div>
+          <div class="cc-phase">
+            <div class="cc-phase-dot" style="background:#2980b9;"></div>
+            <span class="cc-phase-name">Blu — Phase D</span>
+            <span class="cc-phase-detail">5-year delivery · 60 months interest-free</span>
+          </div>
+          <div class="cc-phase">
+            <div class="cc-phase-dot" style="background:#e67e22;"></div>
+            <span class="cc-phase-name">Arancione — Phase E</span>
+            <span class="cc-phase-detail">10-year delivery · long-term financing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENQUIRY FORM -->
+  <div class="cc-form-section fade-in">
+    <div class="cc-form-wrap">
+      <p class="section-label">Request Information</p>
+      <h2>Enquire about<br><em>Ciudad Colorín</em></h2>
+      <p>Interested in residential land, investment opportunities, or visiting the development? Get in touch and we'll send you a full brochure and availability overview.</p>
+      <form
+        class="cc-form"
+        action="https://formsubmit.co/izabela.ot@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="Ciudad Colorín Enquiry — Mérida Smart City">
+        <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="cc-form-row">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="cc-form-row">
+          <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+          <select name="interest">
+            <option value="" disabled selected>I'm interested in…</option>
+            <option>Residential Land — Rosso Phase</option>
+            <option>Residential Land — Dorato Phase</option>
+            <option>Residential Land — Argento Phase</option>
+            <option>Residential Land — Blu Phase</option>
+            <option>Residential Land — Arancione Phase</option>
+            <option>General Information &amp; Brochure</option>
+            <option>Site Visit</option>
+          </select>
+        </div>
+        <textarea name="message" placeholder="Questions or message…"></textarea>
+        <button type="submit" class="btn" style="align-self:flex-start; padding:14px 40px; cursor:pointer; border:none; font-family:var(--body);">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- BACK LINK -->
+  <div style="padding: 40px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+    <a href="mexico.html" style="font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); text-decoration:none;">← All Mexico Properties</a>
+    <a href="contact.html" class="btn">Get in Touch</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2024 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
