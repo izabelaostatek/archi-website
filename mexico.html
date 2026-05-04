@@ -9,45 +9,36 @@
   <style>
     /* HERO */
     .mx-hero {
-      height: 88vh;
-      overflow: hidden;
-      position: relative;
       margin-top: var(--nav-h);
+      padding: 100px 56px 80px;
+      text-align: center;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
     }
-    .mx-hero img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
+    .mx-hero .section-label {
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      margin-bottom: 24px;
     }
-    .mx-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 48px;
-    }
-    .mx-hero-overlay .section-label { color: rgba(255,255,255,0.85); letter-spacing: 0.22em; }
-    .mx-hero-overlay h1 {
+    .mx-hero h1 {
       font-family: var(--heading);
-      font-size: clamp(42px, 6vw, 82px);
-      font-weight: 300; color: #fff;
-      line-height: 1.05; margin: 14px 0 22px;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 300; color: var(--text);
+      line-height: 1.0; margin: 0 auto 28px;
     }
-    .mx-hero-overlay h1 em { font-style: italic; }
-    .mx-hero-overlay p {
-      font-size: 17px; color: rgba(255,255,255,0.88);
-      max-width: 520px; line-height: 1.75;
-      margin-bottom: 36px;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+    .mx-hero h1 em { font-style: italic; }
+    .mx-hero p {
+      font-size: 16px; color: #666;
+      max-width: 500px; line-height: 1.8;
+      margin: 0 auto 40px;
     }
     .btn-ghost {
       display: inline-block; padding: 13px 36px;
-      border: 1px solid rgba(255,255,255,0.7); color: #fff;
+      border: 1px solid var(--text); color: var(--text);
       font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-      text-decoration: none; transition: background 0.25s;
+      text-decoration: none; transition: all 0.25s;
     }
-    .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+    .btn-ghost:hover { background: var(--text); color: #fff; }
 
     /* INTRO STRIP */
     .mx-intro-strip {
@@ -93,6 +84,13 @@
       grid-template-columns: 1fr 1fr;
       gap: 2px;
       padding: 0 0 2px;
+    }
+    /* Last card spans full width when grid has odd number of cards */
+    .mx-project-card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+    .mx-project-card:last-child:nth-child(odd) img {
+      aspect-ratio: 16/6;
     }
     .mx-project-card {
       display: block;
@@ -232,13 +230,10 @@
 
   <!-- HERO -->
   <section class="mx-hero">
-    <img src="images/mexico-cc.jpg" alt="Yucatán Peninsula — luxury living and investment" style="object-position: center 40%;">
-    <div class="mx-hero-overlay">
-      <p class="section-label">Land · Villas · Properties</p>
-      <h1>Live where the world<br>comes to <em>dream</em></h1>
-      <p>Exclusive land, villas and properties across the Yucatán Peninsula. Curated residential developments and investment opportunities in Mexico's most sought-after destinations.</p>
-      <a href="#projects" class="btn-ghost">Explore Properties</a>
-    </div>
+    <p class="section-label">Land · Villas · Properties</p>
+    <h1>Live where the world<br>comes to <em>dream</em></h1>
+    <p>Exclusive land, villas and properties across the Yucatán Peninsula. Curated residential developments and investment opportunities in Mexico's most sought-after destinations.</p>
+    <a href="#projects" class="btn-ghost">Explore Properties</a>
   </section>
 
   <!-- STATS STRIP -->
@@ -267,13 +262,13 @@
   <!-- PROJECT CARDS -->
   <div class="mx-projects">
 
-    <!-- CIUDAD COLORÍN -->
-    <a href="ciudad-colorin.html" class="mx-project-card fade-in">
-      <img src="images/extra1-06_VISTA-AEREA.jpg" alt="Ciudad Colorín — Mérida smart city" style="object-position: center 40%;">
+    <!-- TIERRA MADRE -->
+    <a href="tierra-madre.html" class="mx-project-card fade-in">
+      <img src="images/tm-clubhouse.jpg" alt="Tierra Madre — Playa del Carmen" style="object-position: center 40%;">
       <div class="mx-project-overlay">
-        <p class="mx-project-location">Mérida · Yucatán</p>
-        <h3 class="mx-project-name">Ciudad <em>Colorín</em></h3>
-        <p class="mx-project-desc">Mexico's first Smart City — 392 acres, 11 districts, 12.3-hectare central park</p>
+        <p class="mx-project-location">Playa del Carmen · Quintana Roo</p>
+        <h3 class="mx-project-name">Tierra <em>Madre</em></h3>
+        <p class="mx-project-desc">Masterplanned eco-community — spa, cinema, amphitheater, sport courts and 20+ amenities</p>
         <span class="mx-project-cta">Explore →</span>
       </div>
     </a>
@@ -291,7 +286,7 @@
 
     <!-- ALDEA VALLADOLID -->
     <a href="aldea-valladolid.html" class="mx-project-card fade-in">
-      <img src="images/av-aerial-top.jpg" alt="Aldea Valladolid" style="object-position: center center;">
+      <img src="images/av2-acceso-aerial.jpg" alt="Aldea Valladolid" style="object-position: center 50%;">
       <div class="mx-project-overlay">
         <p class="mx-project-location">Valladolid · Yucatán</p>
         <h3 class="mx-project-name">Aldea <em>Valladolid</em></h3>

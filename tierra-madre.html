@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tierra Madre — Playa del Carmen, Quintana Roo — Izabela Ostatek</title>
+  <meta name="description" content="Tierra Madre — a masterplanned residential community in Playa del Carmen. Spa, amphitheater, cenote, cinema, tennis, padel and 25+ world-class amenities.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── HERO ── */
+    .tm-hero {
+      height: 95vh;
+      position: relative;
+      overflow: hidden;
+      margin-top: var(--nav-h);
+    }
+    .tm-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .tm-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.65) 100%);
+      display: flex; align-items: flex-end;
+      padding: 72px 56px;
+    }
+    .tm-hero-content { max-width: 680px; }
+    .tm-hero-content .section-label { color: rgba(255,255,255,0.8); letter-spacing: 0.22em; }
+    .tm-hero-content h1 {
+      font-family: var(--heading);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 300; color: #fff;
+      line-height: 1; margin: 12px 0 18px;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+    .tm-hero-content h1 em { font-style: italic; }
+    .tm-hero-content p {
+      font-size: 16px; color: rgba(255,255,255,0.85);
+      line-height: 1.75; max-width: 520px;
+    }
+
+    /* ── INTRO ── */
+    .tm-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tm-intro-text {
+      padding: 80px 56px;
+      border-right: 1px solid var(--border);
+    }
+    .tm-intro-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 24px;
+    }
+    .tm-intro-text h2 em { font-style: italic; }
+    .tm-intro-text p {
+      font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 16px;
+    }
+    .tm-intro-stats {
+      padding: 80px 56px;
+      display: flex; flex-direction: column; justify-content: center; gap: 40px;
+    }
+    .tm-stat-num {
+      font-family: var(--heading);
+      font-size: 52px; font-weight: 300;
+      color: var(--accent); line-height: 1; margin-bottom: 8px;
+    }
+    .tm-stat-label {
+      font-size: 12px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted); line-height: 1.55;
+    }
+
+    /* ── FULL IMAGE ── */
+    .tm-full-img {
+      height: 70vh; overflow: hidden;
+    }
+    .tm-full-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    /* ── SECTION HEADING ── */
+    .tm-section-head {
+      padding: 72px 56px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tm-section-head h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 52px);
+      font-weight: 300; line-height: 1.15;
+    }
+    .tm-section-head h2 em { font-style: italic; }
+    .tm-section-head p {
+      font-size: 15px; color: #555; line-height: 1.85;
+      max-width: 640px; margin-top: 18px;
+    }
+
+    /* ── 2-COL IMAGE GALLERY ── */
+    .tm-gallery-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      align-items: start;
+    }
+    .tm-gallery-2 img {
+      width: 100%; height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tm-gallery-2 img:hover { transform: scale(1.02); }
+
+    /* ── 3-COL IMAGE GALLERY ── */
+    .tm-gallery-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+    }
+    .tm-gallery-3 img {
+      width: 100%; aspect-ratio: 1/1;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .tm-gallery-3 img:hover { transform: scale(1.03); }
+
+    /* ── SPLIT: text + image ── */
+    .tm-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .tm-split-text {
+      padding: 72px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+    .tm-split-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 22px;
+    }
+    .tm-split-text h2 em { font-style: italic; }
+    .tm-split-text p {
+      font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px;
+    }
+    .tm-split img {
+      width: 100%; height: auto;
+      display: block;
+    }
+
+    /* ── AMENITIES GRID ── */
+    .tm-amenities {
+      padding: 72px 56px;
+      border-top: 1px solid var(--border);
+    }
+    .tm-amenities-head {
+      margin-bottom: 48px;
+    }
+    .tm-amenities-head h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.15;
+    }
+    .tm-amenities-head h2 em { font-style: italic; }
+    .tm-amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .tm-amenity-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .tm-amenity-card img {
+      width: 100%; height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tm-amenity-card:hover img { transform: scale(1.06); }
+    .tm-amenity-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+      padding: 24px 16px 14px;
+      font-size: 11px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: #fff;
+    }
+
+    /* ── MASTERPLAN ── */
+    .tm-masterplan {
+      border-top: 1px solid var(--border);
+      padding: 72px 56px;
+    }
+    .tm-masterplan h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 16px;
+    }
+    .tm-masterplan h2 em { font-style: italic; }
+    .tm-masterplan p {
+      font-size: 15px; color: #555; line-height: 1.85;
+      max-width: 640px; margin-bottom: 40px;
+    }
+    .tm-masterplan img {
+      width: 100%; display: block;
+      border: 1px solid var(--border);
+    }
+
+    /* ── ENQUIRY ── */
+    .tm-enquiry {
+      padding: 80px 56px;
+      background: var(--color-bg);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+    .tm-enquiry-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 20px;
+    }
+    .tm-enquiry-text h2 em { font-style: italic; }
+    .tm-enquiry-text p {
+      font-size: 15px; color: #555; line-height: 1.85;
+    }
+    .tm-enquiry form { display: flex; flex-direction: column; gap: 16px; }
+    .tm-enquiry input,
+    .tm-enquiry textarea {
+      background: #fff; border: 1px solid var(--border);
+      padding: 14px 18px; font-family: var(--body);
+      font-size: 14px; color: var(--text);
+      outline: none; transition: border-color 0.2s;
+      width: 100%;
+    }
+    .tm-enquiry input:focus,
+    .tm-enquiry textarea:focus { border-color: var(--accent); }
+    .tm-enquiry textarea { height: 120px; resize: vertical; }
+
+    @media (max-width: 768px) {
+      .tm-intro, .tm-split, .tm-enquiry { grid-template-columns: 1fr; }
+      .tm-intro-text { border-right: none; border-bottom: 1px solid var(--border); padding: 48px 24px; }
+      .tm-intro-stats { padding: 48px 24px; }
+      .tm-gallery-3 { grid-template-columns: 1fr 1fr; }
+      .tm-amenities-grid { grid-template-columns: repeat(2, 1fr); }
+      .tm-section-head, .tm-amenities, .tm-masterplan, .tm-enquiry { padding: 56px 24px; }
+      .tm-split-text { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .tm-hero-overlay { padding: 48px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="tm-hero">
+    <img src="images/tm-aerial.png" alt="Tierra Madre — masterplanned community, Playa del Carmen">
+    <div class="tm-hero-overlay">
+      <div class="tm-hero-content">
+        <p class="section-label">Playa del Carmen · Quintana Roo</p>
+        <h1>Tierra <em>Madre</em></h1>
+        <p>A masterplanned residential community where nature, wellness and community design converge — 25+ world-class amenities within your doorstep.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <div class="tm-intro">
+    <div class="tm-intro-text">
+      <p class="section-label">About the Project</p>
+      <h2>Where life unfolds<br>at a <em>different pace</em></h2>
+      <p>Tierra Madre is a fully masterplanned residential development in Playa del Carmen, one of the Caribbean's most connected and desirable cities. Designed around the idea that everyday living should feel like a resort, every element — from the spa to the cenote cave, amphitheater to padel courts — has been woven into a single, cohesive community.</p>
+      <p>With Playa del Carmen's international airport minutes away and the Riviera Maya's beaches on your doorstep, this is living without compromise: full amenities, investment potential, and a lifestyle that most people only access on holiday.</p>
+    </div>
+    <div class="tm-intro-stats">
+      <div>
+        <div class="tm-stat-num">25+</div>
+        <div class="tm-stat-label">World-class amenities<br>within the development</div>
+      </div>
+      <div>
+        <div class="tm-stat-num">PDC</div>
+        <div class="tm-stat-label">Playa del Carmen — Riviera Maya's<br>most vibrant city hub</div>
+      </div>
+      <div>
+        <div class="tm-stat-num">7×</div>
+        <div class="tm-stat-label">Property value growth<br>in the region 2011–2021</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL IMAGE: Lobby -->
+  <div class="tm-full-img fade-in">
+    <img src="images/tm-lobby-spa.jpg" alt="Tierra Madre — Lobby Spa" style="object-position: center 40%;">
+  </div>
+
+  <!-- CLUB HOUSE -->
+  <div class="tm-split fade-in">
+    <div class="tm-split-text">
+      <p class="section-label">The Club House</p>
+      <h2>A resort-level<br><em>club</em> at your door</h2>
+      <p>The Club House is the beating heart of Tierra Madre — a resort-grade facility that residents access daily. The lobby spa, wellness zones, and social spaces are finished to a standard that rivals Mexico's finest boutique hotels.</p>
+      <p>From the tranquil lobby to the outdoor terraces, every space is designed for the moments that make life feel exceptional — morning coffee, evening cocktails, weekend gatherings.</p>
+    </div>
+    <img src="images/tm-pool.png" alt="Tierra Madre — Pool" style="object-position: center center;">
+  </div>
+
+  <!-- NATURE & SCULPTURE -->
+  <div class="tm-section-head fade-in">
+    <p class="section-label">Landscape & Art</p>
+    <h2>Nature is the<br><em>architecture</em></h2>
+    <p>Tierra Madre's open spaces are designed as a living landscape — sculpture gardens, reflective water features, shaded walkways, and green corridors connect every corner of the development. It is a community you want to walk through, not just live in.</p>
+  </div>
+
+  <!-- GALLERY: Outdoor -->
+  <div class="tm-gallery-2 fade-in">
+    <img src="images/tm-amphitheater.jpg" alt="Tierra Madre — Amphitheater" style="object-position: center 40%;">
+    <img src="images/tm-labyrinth.jpg" alt="Tierra Madre — Labyrinth" style="object-position: center center;">
+  </div>
+
+  <!-- CENOTE -->
+  <div class="tm-split fade-in" style="border-bottom: 1px solid var(--border);">
+    <img src="images/tm-cenote.jpg" alt="Tierra Madre — Cave Cenote" style="object-position: center center;">
+    <div class="tm-split-text" style="border-right: none; border-left: 1px solid var(--border);">
+      <p class="section-label">Signature Feature</p>
+      <h2>A private<br><em>cenote cave</em></h2>
+      <p>One of Tierra Madre's most extraordinary features — a cave cenote experience within the development itself. The Yucatán Peninsula sits atop one of the world's largest underground river systems, and here, that natural wonder becomes part of daily life.</p>
+      <p>Cool, clear water. Natural stone. A moment of total stillness — right at home.</p>
+    </div>
+  </div>
+
+  <!-- WELLNESS TRANSITION -->
+  <div class="tm-full-img fade-in">
+    <img src="images/tm-wellness-transition.jpg" alt="Tierra Madre — Wellness Transition" style="object-position: center 30%;">
+  </div>
+
+  <!-- AMENITIES -->
+  <div class="tm-amenities fade-in">
+    <div class="tm-amenities-head">
+      <p class="section-label">Amenities</p>
+      <h2>25+ amenities.<br>One <em>community</em>.</h2>
+    </div>
+    <div class="tm-amenities-grid">
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-pool.png" alt="Swimming Pool">
+        <div class="tm-amenity-label">Swimming Pool</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-cinema.jpg" alt="Private Cinema">
+        <div class="tm-amenity-label">Private Cinema</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-gameroom.jpg" alt="Game Room">
+        <div class="tm-amenity-label">Game Room</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-kids.jpg" alt="Kids Ludoteca">
+        <div class="tm-amenity-label">Kids Ludoteca</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-tennis.png" alt="Tennis & Padel">
+        <div class="tm-amenity-label">Tennis & Padel</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-yoga.jpg" alt="Yoga Area">
+        <div class="tm-amenity-label">Yoga Area</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-jacuzzi.png" alt="Jacuzzi">
+        <div class="tm-amenity-label">Jacuzzi</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-bbq.png" alt="BBQ & Asadores">
+        <div class="tm-amenity-label">BBQ & Asadores</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-rest-area.png" alt="Rest & Lounge Areas">
+        <div class="tm-amenity-label">Rest & Lounge</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-minigolf.jpg" alt="Mini Golf">
+        <div class="tm-amenity-label">Mini Golf</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-calisthenics.jpg" alt="Calisthenics Park">
+        <div class="tm-amenity-label">Calisthenics</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-pet-park.jpg" alt="Pet Park">
+        <div class="tm-amenity-label">Pet Park</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-kids-area.jpg" alt="Kids Play Area">
+        <div class="tm-amenity-label">Kids Play Area</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-court.jpg" alt="Multi-use Sport Court">
+        <div class="tm-amenity-label">Sport Court</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-playground.jpg" alt="Playground">
+        <div class="tm-amenity-label">Playground</div>
+      </div>
+
+      <div class="tm-amenity-card">
+        <img src="images/tm-marcos.png" alt="Outdoor Frames & Gardens">
+        <div class="tm-amenity-label">Outdoor Gardens</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MASTERPLAN -->
+  <div class="tm-masterplan fade-in">
+    <p class="section-label">Site Plan</p>
+    <h2>The full <em>masterplan</em></h2>
+    <p>Every amenity, green corridor, and residential cluster thoughtfully positioned across the site. Tierra Madre is designed so that no matter where you live within the community, the best of it is always within walking distance.</p>
+    <img src="images/tm-masterplan.jpg" alt="Tierra Madre — Masterplan">
+  </div>
+
+  <!-- ENQUIRY -->
+  <div class="tm-enquiry">
+    <div class="tm-enquiry-text">
+      <p class="section-label">Enquire</p>
+      <h2>Interested in<br><em>Tierra Madre</em>?</h2>
+      <p>I work with a small number of clients at a time to make sure every enquiry gets the attention it deserves. Send me a message and I'll come back with full pricing, availability, floor plans and everything you need to make a confident decision.</p>
+    </div>
+    <form action="https://formsubmit.co/izabela.ot@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Tierra Madre Enquiry">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/contact.html">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp (optional)">
+      <textarea name="message" placeholder="Tell me what you're looking for — budget, timeline, whether you're buying to live or invest..."></textarea>
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">© 2025 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
