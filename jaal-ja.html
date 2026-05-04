@@ -12,10 +12,10 @@
       height: 95vh; position: relative;
       overflow: hidden; margin-top: var(--nav-h);
     }
-    .jj-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+    .jj-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
     .jj-hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.62) 100%);
       display: flex; align-items: flex-end; padding: 72px 56px;
     }
     .jj-hero-content .section-label { color: rgba(255,255,255,0.8); letter-spacing: 0.22em; }
@@ -29,13 +29,13 @@
     .jj-hero-content h1 em { font-style: italic; }
     .jj-hero-content p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.75; max-width: 480px; }
 
-    /* INTRO: text left, image right */
+    /* INTRO */
     .jj-intro {
       display: grid; grid-template-columns: 1fr 1fr;
       border-bottom: 1px solid var(--border);
     }
     .jj-intro-text {
-      padding: 72px 56px;
+      padding: 80px 56px;
       border-right: 1px solid var(--border);
       display: flex; flex-direction: column; justify-content: center;
     }
@@ -46,23 +46,16 @@
     }
     .jj-intro-text h2 em { font-style: italic; }
     .jj-intro-text p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px; }
-    .jj-intro-img { overflow: hidden; min-height: 520px; }
-    .jj-intro-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* STATS STRIP */
+    /* STATS */
     .jj-stats {
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      border-bottom: 1px solid var(--border);
+      padding: 80px 56px;
+      display: flex; flex-direction: column; justify-content: center; gap: 44px;
     }
-    .jj-stat {
-      padding: 48px 40px;
-      border-right: 1px solid var(--border);
-    }
-    .jj-stat:last-child { border-right: none; }
     .jj-stat-num {
       font-family: var(--heading);
       font-size: 54px; font-weight: 300;
-      color: var(--accent); line-height: 1; margin-bottom: 10px;
+      color: var(--accent); line-height: 1; margin-bottom: 8px;
     }
     .jj-stat-label {
       font-size: 12px; letter-spacing: 0.14em;
@@ -70,7 +63,7 @@
     }
 
     /* FULL IMAGE */
-    .jj-full { overflow: hidden; height: 60vh; }
+    .jj-full { overflow: hidden; height: 65vh; }
     .jj-full img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* SPLIT */
@@ -79,9 +72,8 @@
       border-top: 1px solid var(--border);
     }
     .jj-split-text {
-      padding: 64px 56px;
+      padding: 72px 56px;
       display: flex; flex-direction: column; justify-content: center;
-      border-right: 1px solid var(--border);
     }
     .jj-split-text h2 {
       font-family: var(--heading);
@@ -90,39 +82,22 @@
     }
     .jj-split-text h2 em { font-style: italic; }
     .jj-split-text p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px; }
-    .jj-split-img { overflow: hidden; }
-    .jj-split-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 460px; }
+    .jj-split-img { overflow: hidden; border-left: 1px solid var(--border); }
+    .jj-split-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 520px; }
 
-    /* 2-COL GALLERY — fixed height so both images match */
-    .jj-gallery-2 {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
-    }
-    .jj-gallery-2 .jj-gimg {
-      height: 420px; overflow: hidden;
-    }
-    .jj-gallery-2 .jj-gimg img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.5s ease;
-    }
-    .jj-gallery-2 .jj-gimg img:hover { transform: scale(1.03); }
-
-    /* INVESTMENT: table left, image right */
+    /* INVESTMENT */
     .jj-investment {
+      padding: 80px 56px;
       display: grid; grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--border);
+      gap: 80px; border-top: 1px solid var(--border);
     }
-    .jj-investment-left {
-      padding: 72px 56px;
-      border-right: 1px solid var(--border);
-      display: flex; flex-direction: column; justify-content: center;
-    }
-    .jj-investment-left h2 {
+    .jj-investment h2 {
       font-family: var(--heading);
       font-size: clamp(28px, 3.5vw, 50px);
       font-weight: 300; line-height: 1.1; margin-bottom: 16px;
     }
-    .jj-investment-left h2 em { font-style: italic; }
-    .jj-investment-left p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 32px; }
+    .jj-investment h2 em { font-style: italic; }
+    .jj-investment p { font-size: 15px; color: #555; line-height: 1.85; }
     .jj-detail-row {
       display: flex; justify-content: space-between; align-items: baseline;
       padding: 18px 0; border-bottom: 1px solid var(--border);
@@ -130,8 +105,6 @@
     .jj-detail-row:first-of-type { border-top: 1px solid var(--border); }
     .jj-detail-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
     .jj-detail-value { font-family: var(--heading); font-size: 20px; font-weight: 300; color: var(--text); }
-    .jj-investment-img { overflow: hidden; }
-    .jj-investment-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 500px; }
 
     /* ENQUIRY */
     .jj-enquiry {
@@ -156,13 +129,13 @@
     .jj-enquiry textarea { height: 120px; resize: vertical; }
 
     @media (max-width: 768px) {
-      .jj-intro, .jj-split, .jj-investment, .jj-enquiry, .jj-stats { grid-template-columns: 1fr; }
-      .jj-intro-text, .jj-split-text, .jj-investment-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .jj-intro, .jj-split, .jj-investment, .jj-enquiry { grid-template-columns: 1fr; }
+      .jj-intro-text { border-right: none; border-bottom: 1px solid var(--border); padding: 48px 24px; }
+      .jj-stats { padding: 48px 24px; }
+      .jj-split-text { padding: 48px 24px; }
+      .jj-split-img { border-left: none; border-top: 1px solid var(--border); }
       .jj-hero-overlay { padding: 48px 24px; }
-      .jj-gallery-2 { grid-template-columns: 1fr; }
-      .jj-gallery-2 .jj-gimg { height: 280px; }
-      .jj-enquiry { padding: 48px 24px; gap: 40px; }
-      .jj-stat { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 24px; }
+      .jj-investment, .jj-enquiry { padding: 48px 24px; gap: 40px; }
     }
   </style>
 </head>
@@ -187,9 +160,9 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO — aerial villas -->
   <section class="jj-hero">
-    <img src="images/jj-villas.jpg" alt="Jaal Ja — Mahahual, Costa Maya" style="object-position: center 40%;">
+    <img src="images/jj-villas.jpg" alt="Jaal Ja — beachfront villas, Mahahual">
     <div class="jj-hero-overlay">
       <div class="jj-hero-content">
         <p class="section-label">Mahahual · Costa Maya · Quintana Roo</p>
@@ -199,7 +172,7 @@
     </div>
   </section>
 
-  <!-- INTRO: text + villas image -->
+  <!-- INTRO: text left, stats right -->
   <div class="jj-intro">
     <div class="jj-intro-text">
       <p class="section-label">The Opportunity</p>
@@ -208,61 +181,48 @@
       <p>Mahahual is the magic town at the heart of it all — growing fast thanks to its cruise port, world-class diving, and the Mesoamerican Barrier Reef, the second largest in the world.</p>
       <p>Jaal Ja is private beachfront land here — one of the last chances to own directly on this coast before prices reflect what it is becoming.</p>
     </div>
-    <div class="jj-intro-img fade-in">
-      <img src="images/jj-villas-2.jpg" alt="Jaal Ja — beachfront villas" style="object-position: center center;">
+    <div class="jj-stats fade-in">
+      <div>
+        <div class="jj-stat-num">48%</div>
+        <div class="jj-stat-label">of Mexico's total tourism<br>flows through Quintana Roo</div>
+      </div>
+      <div>
+        <div class="jj-stat-num">$1B</div>
+        <div class="jj-stat-label">Royal Caribbean's Perfect Day México<br>investment in Mahahual</div>
+      </div>
+      <div>
+        <div class="jj-stat-num">2nd</div>
+        <div class="jj-stat-label">Largest coral reef in the world<br>right on the doorstep</div>
+      </div>
     </div>
   </div>
 
-  <!-- STATS -->
-  <div class="jj-stats fade-in">
-    <div class="jj-stat">
-      <div class="jj-stat-num">48%</div>
-      <div class="jj-stat-label">of Mexico's total tourism<br>flows through Quintana Roo</div>
-    </div>
-    <div class="jj-stat">
-      <div class="jj-stat-num">$1B</div>
-      <div class="jj-stat-label">Royal Caribbean's Perfect Day México<br>investment in Mahahual</div>
-    </div>
-    <div class="jj-stat">
-      <div class="jj-stat-num">2nd</div>
-      <div class="jj-stat-label">Largest coral reef in the world<br>right on the doorstep</div>
-    </div>
-  </div>
-
-  <!-- CRUISE PORT FULL -->
+  <!-- FULL IMAGE — pier & Caribbean water -->
   <div class="jj-full fade-in">
-    <img src="images/jj-cruise.jpg" alt="Mahahual cruise port" style="object-position: center 40%;">
+    <img src="images/jj-riviera.jpg" alt="Mahahual — Caribbean coast" style="object-position: center 55%;">
   </div>
 
-  <!-- LOCATION TEXT + REST IMAGE -->
+  <!-- SPLIT: vision text left, bedroom right -->
   <div class="jj-split fade-in">
     <div class="jj-split-text">
-      <p class="section-label">The Location</p>
-      <h2>Mahahual —<br>a <em>destination rising</em></h2>
-      <p>Royal Caribbean's $1 billion Perfect Day México project is transforming Mahahual into one of the Caribbean's premier destinations — bringing infrastructure, footfall, and serious capital appreciation.</p>
-      <p>The cruise port receives thousands of visitors daily. The coral reefs attract divers from around the world. The jungle-meets-sea landscape makes this one of Mexico's most extraordinary places to build.</p>
+      <p class="section-label">The Vision</p>
+      <h2>Build what<br>you <em>imagine</em></h2>
+      <p>These are private, freehold beachfront lots — ready for development. Whether you are building a personal villa, an eco-resort, a boutique hotel, or premium residences, the land, the light, and the location do the work for you.</p>
+      <p>Royal Caribbean's $1 billion Perfect Day México project is bringing infrastructure, footfall, and serious capital appreciation to Mahahual. The entry point is real. The upside is significant.</p>
     </div>
     <div class="jj-split-img fade-in">
-      <img src="images/jj-rest.jpg" alt="Jaal Ja — villa lifestyle" style="object-position: center center;">
+      <img src="images/jj-bedroom.jpg" alt="Jaal Ja — villa bedroom with ocean view" style="object-position: center 30%;">
     </div>
   </div>
 
-  <!-- VILLAS + BEDROOM GALLERY -->
-  <div class="jj-gallery-2 fade-in">
-    <div class="jj-gimg">
-      <img src="images/jj-riviera.jpg" alt="Jaal Ja — Caribbean pier" style="object-position: center 60%;">
-    </div>
-    <div class="jj-gimg">
-      <img src="images/jj-bedroom.jpg" alt="Jaal Ja — villa bedroom" style="object-position: center 30%;">
-    </div>
-  </div>
-
-  <!-- INVESTMENT TABLE + LOCATION MAP -->
+  <!-- INVESTMENT DETAILS -->
   <div class="jj-investment fade-in">
-    <div class="jj-investment-left">
+    <div>
       <p class="section-label">Investment Details</p>
       <h2>The<br><em>numbers</em></h2>
-      <p>Private freehold beachfront land — flexible financing, ready for villas, eco-resorts, boutique hotels or premium residences.</p>
+      <p>Private freehold beachfront land on the Costa Maya — flexible financing, ideal for villas, eco-resorts, boutique hotels or premium residences.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center;">
       <div class="jj-detail-row">
         <span class="jj-detail-label">Lot size from</span>
         <span class="jj-detail-value">987 m² · 10,628 sq ft</span>
@@ -287,9 +247,6 @@
         <span class="jj-detail-label">Ideal for</span>
         <span class="jj-detail-value">Villas · Eco-resorts · Hotels</span>
       </div>
-    </div>
-    <div class="jj-investment-img fade-in">
-      <img src="images/jj-location.jpg" alt="Jaal Ja — strategic location map" style="object-position: center center;">
     </div>
   </div>
 
