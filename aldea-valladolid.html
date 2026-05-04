@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aldea Valladolid — Yucatán — Izabela Ostatek</title>
+  <meta name="description" content="Aldea Valladolid — residential development in the heart of Yucatán. Amphitheater, linear park, lookout points. Colonial city meets modern living.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .av-hero {
+      height: 94vh;
+      position: relative;
+      overflow: hidden;
+      margin-top: var(--nav-h);
+    }
+    .av-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    .av-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+      display: flex; align-items: flex-end;
+      padding: 72px 56px;
+    }
+    .av-hero-text { color: #fff; }
+    .av-hero-text .section-label { color: rgba(255,255,255,0.75); }
+    .av-hero-text h1 {
+      font-family: var(--heading);
+      font-size: clamp(44px, 7vw, 96px);
+      font-weight: 300; line-height: 1.0;
+      color: #fff; margin: 10px 0 0;
+      text-shadow: 0 4px 28px rgba(0,0,0,0.35);
+    }
+    .av-hero-text h1 em { font-style: italic; }
+
+    /* INTRO */
+    .av-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      padding: 88px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .av-meta { display: flex; flex-direction: column; gap: 28px; }
+    .av-meta-item span:first-child {
+      display: block; font-size: 10px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 4px;
+    }
+    .av-meta-item span:last-child { font-size: 14px; color: #333; }
+    .av-body h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 28px;
+    }
+    .av-body h2 em { font-style: italic; }
+    .av-body p { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 18px; max-width: 620px; }
+
+    .av-stats {
+      display: flex; gap: 48px;
+      margin-top: 36px; padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .av-stat-num {
+      font-family: var(--heading); font-size: 40px;
+      font-weight: 300; color: var(--accent); line-height: 1;
+    }
+    .av-stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+    /* FULL */
+    .av-full img {
+      width: 100%; max-height: 80vh;
+      object-fit: cover; display: block;
+    }
+    .av-caption {
+      padding: 14px 56px 28px;
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    /* 2-COL */
+    .av-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 2px 0; }
+    .av-row-2 figure { margin: 0; }
+    .av-row-2 img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .av-row-2 figcaption { padding: 10px 0 20px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+    /* 3-COL */
+    .av-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin: 2px 0; }
+    .av-row-3 figure { margin: 0; }
+    .av-row-3 img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .av-row-3 figcaption { padding: 10px 0 20px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+    /* SECTION HEAD */
+    .av-section-head { padding: 72px 56px 48px; border-bottom: 1px solid var(--border); }
+
+    /* DARK LOCATION STRIP */
+    .av-location {
+      background: #1a1a1a;
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .av-location-img img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; }
+    .av-location-text {
+      padding: 72px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .av-location-text .section-label { color: var(--accent); }
+    .av-location-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 300; color: #fff;
+      margin: 12px 0 24px; line-height: 1.2;
+    }
+    .av-location-text h2 em { font-style: italic; }
+    .av-location-text p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 14px; }
+    .av-distances { display: flex; flex-direction: column; gap: 0; margin-top: 20px; }
+    .av-dist-row {
+      display: flex; align-items: baseline; gap: 16px;
+      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .av-dist-time { font-family: var(--heading); font-size: 26px; font-weight: 300; color: var(--accent); min-width: 56px; }
+    .av-dist-place { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+    /* AMENITIES */
+    .av-amenities { padding: 72px 56px; background: #f7f5f2; }
+    .av-amenities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 44px; }
+    .av-amenity-card { background: #fff; padding: 32px 24px; }
+    .av-amenity-icon { font-size: 26px; margin-bottom: 14px; }
+    .av-amenity-card h4 { font-family: var(--heading); font-size: 18px; font-weight: 400; margin-bottom: 8px; }
+    .av-amenity-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* FORM */
+    .av-form-section { padding: 88px 56px; }
+    .av-form-wrap { max-width: 680px; margin: 0 auto; }
+    .av-form-wrap h2 { font-family: var(--heading); font-size: clamp(28px, 3vw, 44px); font-weight: 300; margin-bottom: 10px; }
+    .av-form-wrap h2 em { font-style: italic; }
+    .av-form-wrap p { font-size: 14px; color: #666; margin-bottom: 36px; line-height: 1.7; }
+    .av-form { display: flex; flex-direction: column; gap: 14px; }
+    .av-form input, .av-form textarea, .av-form select {
+      width: 100%; padding: 14px 16px; border: 1px solid #ccc;
+      background: #fff; font-family: var(--body); font-size: 14px;
+      color: var(--text); outline: none; transition: border-color 0.2s; box-sizing: border-box;
+    }
+    .av-form input:focus, .av-form textarea:focus, .av-form select:focus { border-color: var(--accent); }
+    .av-form textarea { resize: vertical; min-height: 120px; }
+    .av-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* BACK */
+    .av-back { padding: 36px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .av-back a:first-child { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .av-intro { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .av-row-2, .av-row-3 { grid-template-columns: 1fr; }
+      .av-amenities-grid { grid-template-columns: 1fr 1fr; }
+      .av-location { grid-template-columns: 1fr; }
+      .av-location-text, .av-amenities, .av-form-section { padding: 60px 24px; }
+      .av-section-head { padding: 48px 24px 32px; }
+      .av-caption { padding: 12px 24px 20px; }
+      .av-hero-overlay { padding: 40px 24px; }
+      .av-back { padding: 28px 24px; }
+      .av-stats { flex-wrap: wrap; gap: 28px; }
+    }
+    @media (max-width: 600px) {
+      .av-amenities-grid { grid-template-columns: 1fr; }
+      .av-form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="av-hero">
+    <img src="images/av-aerial-top.jpg" alt="Aldea Valladolid — aerial view, Yucatán">
+    <div class="av-hero-overlay">
+      <div class="av-hero-text">
+        <p class="section-label">Valladolid · Yucatán · México</p>
+        <h1>Aldea <em>Valladolid</em></h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="av-intro fade-in">
+    <div class="av-meta">
+      <div class="av-meta-item">
+        <span>Location</span>
+        <span>Valladolid, Yucatán, México</span>
+      </div>
+      <div class="av-meta-item">
+        <span>Type</span>
+        <span>Residential Development</span>
+      </div>
+      <div class="av-meta-item">
+        <span>Centrepiece</span>
+        <span>Parque Lineal — Linear Park</span>
+      </div>
+      <div class="av-meta-item">
+        <span>Highlights</span>
+        <span>Amphitheater · Miradors · Park Promenade</span>
+      </div>
+      <div class="av-meta-item">
+        <span>Setting</span>
+        <span>Colonial City · Cenote Country · Maya Heartland</span>
+      </div>
+    </div>
+    <div class="av-body">
+      <h2>Where colonial history<br>meets <em>modern living</em></h2>
+      <p>
+        Aldea Valladolid sits in one of Mexico's most captivating cities — Valladolid, the "Sultana del Oriente," a jewel of colonial architecture and Maya heritage at the heart of the Yucatán Peninsula. Known for its cobblestone streets, pastel facades, and proximity to some of the world's most extraordinary cenotes and ruins, Valladolid is quietly becoming one of Mexico's most desirable places to live and invest.
+      </p>
+      <p>
+        The development is anchored by a stunning Parque Lineal — a linear park conceived as the social and cultural heart of the community. Amphitheater, lookout terraces, a pedestrian promenade, and a transit hub create a public space that feels as much a destination as the city itself.
+      </p>
+      <p>
+        Accessible, authentic, and growing fast — Valladolid is the Yucatán's best-kept secret, and Aldea Valladolid offers the chance to be part of it from the beginning.
+      </p>
+      <div class="av-stats">
+        <div>
+          <div class="av-stat-num">2h</div>
+          <div class="av-stat-label">from both<br>Mérida &amp; Cancún</div>
+        </div>
+        <div>
+          <div class="av-stat-num">5'</div>
+          <div class="av-stat-label">to Cenote<br>Zací &amp; centre</div>
+        </div>
+        <div>
+          <div class="av-stat-num">45'</div>
+          <div class="av-stat-label">to Chichén<br>Itzá ruins</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AERIAL OVERVIEW -->
+  <div class="av-full fade-in">
+    <img src="images/av-aerial-persp.jpg" alt="Aldea Valladolid aerial perspective" style="object-position: center center;">
+  </div>
+  <p class="av-caption">Aerial perspective — Aldea Valladolid masterplan</p>
+
+  <!-- PARQUE LINEAL -->
+  <div class="av-section-head fade-in">
+    <p class="section-label">Parque Lineal</p>
+    <h2 class="section-title">The heart of<br><em>the community</em></h2>
+  </div>
+
+  <div class="av-full fade-in">
+    <img src="images/av-parque-lineal.jpg" alt="Parque Lineal aerial — Aldea Valladolid" style="object-position: center 45%;">
+  </div>
+  <p class="av-caption">Parque Lineal — 5 aerial view</p>
+
+  <div class="av-row-2 fade-in">
+    <figure>
+      <img src="images/av-parque-interior.jpg" alt="Interior linear park promenade" style="object-position: center 40%;">
+      <figcaption style="padding-left: 56px;">Linear park promenade</figcaption>
+    </figure>
+    <figure>
+      <img src="images/av-paradero.jpg" alt="Paradero — transit hub" style="object-position: center 40%;">
+      <figcaption>Community transit hub</figcaption>
+    </figure>
+  </div>
+
+  <!-- AMPHITHEATER -->
+  <div class="av-section-head fade-in">
+    <p class="section-label">Anfiteatro</p>
+    <h2 class="section-title">Culture &amp; gathering,<br><em>built in</em></h2>
+  </div>
+
+  <div class="av-full fade-in">
+    <img src="images/av-anfiteatro-aerial.jpg" alt="Amphitheater aerial — Aldea Valladolid" style="object-position: center 45%;">
+  </div>
+  <p class="av-caption">Amphitheater — aerial view</p>
+
+  <div class="av-row-2 fade-in">
+    <figure>
+      <img src="images/av-anfiteatro.jpg" alt="Amphitheater — ground level" style="object-position: center 40%;">
+      <figcaption style="padding-left: 56px;">Amphitheater — ground level</figcaption>
+    </figure>
+    <figure>
+      <img src="images/av-acceso-aerial.jpg" alt="Development access aerial" style="object-position: center 40%;">
+      <figcaption>Main access — aerial</figcaption>
+    </figure>
+  </div>
+
+  <!-- MIRADORS -->
+  <div class="av-section-head fade-in">
+    <p class="section-label">Miradores</p>
+    <h2 class="section-title">Views designed to<br><em>stop you</em></h2>
+  </div>
+
+  <div class="av-row-3 fade-in">
+    <figure>
+      <img src="images/av-mirador-aerial.jpg" alt="Mirador aerial view" style="object-position: center 40%;">
+      <figcaption style="padding-left: 56px;">Lookout point — aerial</figcaption>
+    </figure>
+    <figure>
+      <img src="images/av-mirador-1.jpg" alt="Mirador spectator view" style="object-position: center 40%;">
+      <figcaption>Lookout — spectator level</figcaption>
+    </figure>
+    <figure>
+      <img src="images/av-mirador-2.jpg" alt="Lower mirador" style="object-position: center 40%;">
+      <figcaption>Lower lookout terrace</figcaption>
+    </figure>
+  </div>
+
+  <div class="av-row-2 fade-in">
+    <figure>
+      <img src="images/av-mirador-semi.jpg" alt="Semi-aerial mirador" style="object-position: center 40%;">
+      <figcaption style="padding-left: 56px;">Semi-aerial lookout</figcaption>
+    </figure>
+    <figure>
+      <img src="images/av-acceso.jpg" alt="Public access view" style="object-position: center 40%;">
+      <figcaption>Public access promenade</figcaption>
+    </figure>
+  </div>
+
+  <!-- AMENITIES -->
+  <div class="av-amenities fade-in">
+    <p class="section-label">Community Life</p>
+    <h2 class="section-title">Designed for<br><em>real living</em></h2>
+    <div class="av-amenities-grid">
+      <div class="av-amenity-card">
+        <div class="av-amenity-icon">🌿</div>
+        <h4>Parque Lineal</h4>
+        <p>A linear park running through the heart of the development — pedestrian promenade, green corridors and open gathering spaces.</p>
+      </div>
+      <div class="av-amenity-card">
+        <div class="av-amenity-icon">🎭</div>
+        <h4>Amphitheater</h4>
+        <p>Outdoor cultural venue for concerts, events, and community gatherings — part of daily life, not just for special occasions.</p>
+      </div>
+      <div class="av-amenity-card">
+        <div class="av-amenity-icon">🔭</div>
+        <h4>Miradores</h4>
+        <p>Elevated lookout terraces with panoramic views across the park and surrounding landscape — multiple levels and perspectives.</p>
+      </div>
+      <div class="av-amenity-card">
+        <div class="av-amenity-icon">🚲</div>
+        <h4>Transit Hub</h4>
+        <p>Integrated transit shelter and cycling access — the development is connected to Valladolid's growing sustainable mobility network.</p>
+      </div>
+      <div class="av-amenity-card">
+        <div class="av-amenity-icon">🏛️</div>
+        <h4>Colonial City Access</h4>
+        <p>Walk to Valladolid's historic centre — colonial churches, cenotes, local markets, and Yucatecan cuisine at your door.</p>
+      </div>
+      <div class="av-amenity-card">
+        <div class="av-amenity-icon">🌊</div>
+        <h4>Cenotes Nearby</h4>
+        <p>Cenote Zací in the city centre. Cenote Samulá, X'Kekén, and dozens more within 20 minutes. Swimming in the underground world, every day.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="av-location fade-in">
+    <div class="av-location-img">
+      <img src="images/av-acceso-square.png" alt="Aldea Valladolid — entrance" style="object-position: center center;">
+    </div>
+    <div class="av-location-text">
+      <p class="section-label">Location</p>
+      <h2>Valladolid —<br>the <em>Sultana del Oriente</em></h2>
+      <p>At the geographical heart of the Yucatán Peninsula, Valladolid is the perfect base: close enough to everything, far enough from the crowds. Colonial architecture, Maya heritage, and a thriving cultural scene make it one of Mexico's most liveable cities.</p>
+      <div class="av-distances">
+        <div class="av-dist-row">
+          <span class="av-dist-time">2h</span>
+          <span class="av-dist-place">Mérida · Cancún · International airports</span>
+        </div>
+        <div class="av-dist-row">
+          <span class="av-dist-time">45'</span>
+          <span class="av-dist-place">Chichén Itzá · Ek' Balam ruins</span>
+        </div>
+        <div class="av-dist-row">
+          <span class="av-dist-time">20'</span>
+          <span class="av-dist-place">Cenotes Samulá &amp; X'Kekén</span>
+        </div>
+        <div class="av-dist-row">
+          <span class="av-dist-time">5'</span>
+          <span class="av-dist-place">Cenote Zací · Colonial centre · Maya Train</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENQUIRY FORM -->
+  <div class="av-form-section fade-in">
+    <div class="av-form-wrap">
+      <p class="section-label">Request Information</p>
+      <h2>Enquire about<br><em>Aldea Valladolid</em></h2>
+      <p>Interested in the development, investment potential, or a visit to Valladolid? Send us a message and we'll be in touch with full details and availability.</p>
+      <form
+        class="av-form"
+        action="https://formsubmit.co/izabela.ot@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="Aldea Valladolid Enquiry">
+        <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="av-form-row">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="av-form-row">
+          <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+          <select name="interest">
+            <option value="" disabled selected>I'm interested in…</option>
+            <option>Residential property</option>
+            <option>Investment opportunity</option>
+            <option>Full brochure &amp; pricing</option>
+            <option>Site visit to Valladolid</option>
+            <option>General information</option>
+          </select>
+        </div>
+        <textarea name="message" placeholder="Questions or message…"></textarea>
+        <button type="submit" class="btn" style="align-self:flex-start; padding:14px 40px; cursor:pointer; border:none; font-family:var(--body);">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- BACK -->
+  <div class="av-back">
+    <a href="mexico.html">← All Mexico Properties</a>
+    <a href="contact.html" class="btn">Get in Touch</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2024 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
