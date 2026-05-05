@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ardeh Tulum — Tulum, Quintana Roo — Izabela Ostatek</title>
+  <meta name="description" content="Ardeh Tulum — boutique residences in the heart of Tulum. Rooftop pool, biophilic design, private gardens. Your own paradise.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    /* ── HERO ── */
+    .ardeh-hero {
+      height: 95vh; position: relative;
+      overflow: hidden; margin-top: var(--nav-h);
+    }
+    .ardeh-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+    }
+    .ardeh-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.72) 100%);
+      display: flex; align-items: flex-end;
+      padding: 72px 56px; overflow: hidden;
+    }
+    .ardeh-hero-text .section-label {
+      color: #fff; letter-spacing: 0.22em;
+      -webkit-font-smoothing: antialiased;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+    .ardeh-hero-text h1 {
+      font-family: var(--heading);
+      font-size: clamp(56px, 9vw, 116px);
+      font-weight: 300; color: #fff;
+      line-height: 0.92; margin: 10px 0 18px;
+      text-shadow: 0 2px 32px rgba(0,0,0,0.35);
+    }
+    .ardeh-hero-text h1 em { font-style: italic; }
+    .ardeh-hero-text p {
+      font-size: 15px; color: rgba(255,255,255,0.85);
+      line-height: 1.7; max-width: 460px;
+    }
+
+    /* ── INTRO ── */
+    .ardeh-intro {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 80px; padding: 88px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ardeh-meta { display: flex; flex-direction: column; gap: 32px; }
+    .ardeh-meta-item span:first-child {
+      display: block; font-size: 10px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 5px;
+    }
+    .ardeh-meta-item span:last-child { font-size: 14px; color: #333; line-height: 1.5; }
+    .ardeh-body h2 {
+      font-family: var(--heading);
+      font-size: clamp(30px, 3.5vw, 52px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 28px;
+    }
+    .ardeh-body h2 em { font-style: italic; }
+    .ardeh-body blockquote {
+      font-family: var(--heading);
+      font-size: 22px; font-style: italic;
+      color: var(--accent);
+      border-left: 2px solid var(--accent);
+      padding-left: 24px;
+      margin: 32px 0; line-height: 1.5;
+    }
+    .ardeh-body p {
+      font-size: 15px; color: #444;
+      line-height: 1.9; margin-bottom: 16px;
+      max-width: 640px;
+    }
+
+    /* ── FULL IMAGE ── */
+    .ardeh-full { margin: 0; }
+    .ardeh-full img { width: 100%; height: auto; display: block; }
+    .ardeh-full-cover img {
+      width: 100%; height: 75vh;
+      object-fit: cover; display: block;
+    }
+
+    /* ── CAPTION ── */
+    .ardeh-caption {
+      padding: 14px 56px 32px;
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── SECTION HEAD ── */
+    .ardeh-section-head {
+      padding: 72px 56px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ardeh-section-head h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 50px);
+      font-weight: 300; line-height: 1.1;
+    }
+    .ardeh-section-head h2 em { font-style: italic; }
+    .ardeh-section-head p {
+      font-size: 15px; color: #555; line-height: 1.85;
+      max-width: 580px; margin-top: 16px;
+    }
+
+    /* ── 2-COL GALLERY ── */
+    .ardeh-gallery-2 {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    }
+    .ardeh-gallery-2 img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .ardeh-gallery-2 img:hover { transform: scale(1.02); }
+
+    /* ── SPLIT ── */
+    .ardeh-split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .ardeh-split-text {
+      padding: 72px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+    .ardeh-split-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 22px;
+    }
+    .ardeh-split-text h2 em { font-style: italic; }
+    .ardeh-split-text p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px; }
+    .ardeh-split-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block; min-height: 480px;
+    }
+
+    /* ── DETAIL ROWS ── */
+    .ardeh-details {
+      padding: 80px 56px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; border-top: 1px solid var(--border);
+    }
+    .ardeh-details h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 16px;
+    }
+    .ardeh-details h2 em { font-style: italic; }
+    .ardeh-details p { font-size: 15px; color: #555; line-height: 1.85; }
+    .ardeh-detail-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 18px 0; border-bottom: 1px solid var(--border);
+    }
+    .ardeh-detail-row:first-of-type { border-top: 1px solid var(--border); }
+    .ardeh-detail-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .ardeh-detail-value { font-family: var(--heading); font-size: 20px; font-weight: 300; color: var(--text); }
+
+    /* ── LOCATION ── */
+    .ardeh-location {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .ardeh-location-text {
+      padding: 72px 56px; background: #1a1a1a;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .ardeh-location-text .section-label { color: var(--accent); }
+    .ardeh-location-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 300; color: #fff;
+      margin: 12px 0 28px; line-height: 1.15;
+    }
+    .ardeh-location-text h2 em { font-style: italic; }
+    .ardeh-dist-row {
+      display: flex; align-items: baseline; gap: 20px;
+      padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .ardeh-dist-num {
+      font-family: var(--heading); font-size: 28px;
+      font-weight: 300; color: var(--accent); min-width: 72px;
+    }
+    .ardeh-dist-label { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+    .ardeh-location-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block; min-height: 480px;
+    }
+
+    /* ── ENQUIRY ── */
+    .ardeh-enquiry {
+      padding: 88px 56px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; border-top: 1px solid var(--border);
+    }
+    .ardeh-enquiry h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 16px;
+    }
+    .ardeh-enquiry h2 em { font-style: italic; }
+    .ardeh-enquiry > div:first-child p { font-size: 15px; color: #555; line-height: 1.85; }
+    .ardeh-form { display: flex; flex-direction: column; gap: 14px; }
+    .ardeh-form input, .ardeh-form textarea {
+      width: 100%; padding: 14px 16px;
+      border: 1px solid var(--border);
+      background: #fafaf8; font-family: var(--body);
+      font-size: 14px; color: var(--text);
+      outline: none; transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .ardeh-form input:focus, .ardeh-form textarea:focus { border-color: var(--accent); }
+    .ardeh-form textarea { resize: vertical; min-height: 120px; }
+
+    @media (max-width: 900px) {
+      .ardeh-intro, .ardeh-split, .ardeh-details,
+      .ardeh-location, .ardeh-enquiry { grid-template-columns: 1fr; gap: 40px; }
+      .ardeh-intro, .ardeh-details, .ardeh-enquiry { padding: 56px 24px; }
+      .ardeh-section-head { padding: 48px 24px 36px; }
+      .ardeh-caption { padding: 12px 24px 24px; }
+      .ardeh-hero-overlay { padding: 40px 24px; }
+      .ardeh-split-text { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .ardeh-location-text { padding: 56px 24px; }
+      .ardeh-gallery-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="ardeh-hero">
+    <img src="images/ardeh-hero.jpg" alt="Ardeh Tulum — boutique residences facade">
+    <div class="ardeh-hero-overlay">
+      <div class="ardeh-hero-text">
+        <p class="section-label">Tulum · Quintana Roo · México</p>
+        <h1>Ardeh <em>Tulum</em></h1>
+        <p>Your own paradise — boutique residences designed around nature, light and the timeless spirit of Tulum.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="ardeh-intro fade-in">
+    <div class="ardeh-meta">
+      <div class="ardeh-meta-item">
+        <span>Location</span>
+        <span>Tulum, Quintana Roo, México</span>
+      </div>
+      <div class="ardeh-meta-item">
+        <span>Type</span>
+        <span>Boutique Residential Condos</span>
+      </div>
+      <div class="ardeh-meta-item">
+        <span>Style</span>
+        <span>Biophilic · Natural · Luxury</span>
+      </div>
+      <div class="ardeh-meta-item">
+        <span>Units</span>
+        <span>Studios · 1 &amp; 2 Bedrooms · Penthouse</span>
+      </div>
+      <div class="ardeh-meta-item">
+        <span>Beach</span>
+        <span>Playa Paraíso — 3 km</span>
+      </div>
+    </div>
+    <div class="ardeh-body">
+      <h2>Where Tulum's soul<br>meets <em>refined living</em></h2>
+      <blockquote>"Tu propio paraíso"</blockquote>
+      <p>Ardeh Tulum is a boutique residential development conceived around one idea: that a home should feel like paradise. Warm stone, tropical planting, arched doorways and cascading greenery create a building that breathes with the landscape around it.</p>
+      <p>From the hand-finished lobby to the rooftop pool and bar, every space at Ardeh has been designed with the detail and intention of a luxury boutique hotel — and the warmth and privacy of a home. A short drive from the beach clubs, the Gran Cenote, and the Tulum ruins, this is Tulum at its most considered.</p>
+    </div>
+  </div>
+
+  <!-- LOBBY -->
+  <div class="ardeh-full-cover fade-in">
+    <img src="images/ardeh-lobby.jpg" alt="Ardeh Tulum — lobby reception" style="object-position: center 40%;">
+  </div>
+  <p class="ardeh-caption">Lobby — Ardeh Tulum</p>
+
+  <!-- RESIDENCES -->
+  <div class="ardeh-section-head fade-in">
+    <p class="section-label">Residences</p>
+    <h2>Interiors rooted in <em>warmth</em></h2>
+    <p>Every residence at Ardeh is finished in natural materials — warm stone, light wood, handcrafted details — creating spaces that feel genuinely beautiful to live in, not just to photograph.</p>
+  </div>
+
+  <!-- KITCHEN + LIVING -->
+  <div class="ardeh-gallery-2 fade-in">
+    <img src="images/ardeh-kitchen.jpg" alt="Ardeh Tulum — kitchen with marble island">
+    <img src="images/ardeh-living.jpg" alt="Ardeh Tulum — living and dining room">
+  </div>
+
+  <!-- BEDROOM + ROOM -->
+  <div class="ardeh-gallery-2 fade-in">
+    <img src="images/ardeh-bedroom.jpg" alt="Ardeh Tulum — master bedroom">
+    <img src="images/ardeh-room.jpg" alt="Ardeh Tulum — second bedroom">
+  </div>
+
+  <!-- MAIN AREA — biophilic -->
+  <div class="ardeh-split fade-in">
+    <div class="ardeh-split-text">
+      <p class="section-label">Common Spaces</p>
+      <h2>Living surrounded<br>by <em>nature</em></h2>
+      <p>Ardeh's shared spaces feel like extensions of the jungle. Stone walls, overhanging vines, natural light filtering through open-air volumes — designed to dissolve the boundary between inside and outside.</p>
+      <p>A hammock suspended over a still pool. Tropical plants framing every view. These are the moments that make Ardeh feel entirely unlike anything else in Tulum.</p>
+    </div>
+    <div class="ardeh-split-img">
+      <img src="images/ardeh-main.jpg" alt="Ardeh Tulum — biophilic main area with hammock">
+    </div>
+  </div>
+
+  <!-- ROOFTOP -->
+  <div class="ardeh-section-head fade-in">
+    <p class="section-label">Rooftop</p>
+    <h2>Pool, bar and sky<br>above <em>Tulum</em></h2>
+    <p>The rooftop is where Ardeh comes alive — a curved pool, a fully equipped bar, sun loungers and open sky. Resort living, every evening.</p>
+  </div>
+
+  <div class="ardeh-full fade-in">
+    <img src="images/ardeh-rooftop.jpg" alt="Ardeh Tulum — rooftop pool and bar">
+  </div>
+  <p class="ardeh-caption">Rooftop · Sky pool · Bar · Tulum</p>
+
+  <!-- PENTHOUSE -->
+  <div class="ardeh-split fade-in" style="border-bottom: 1px solid var(--border);">
+    <div class="ardeh-split-img">
+      <img src="images/ardeh-penthouse.jpg" alt="Ardeh Tulum — penthouse">
+    </div>
+    <div class="ardeh-split-text" style="border-right: none; border-left: 1px solid var(--border);">
+      <p class="section-label">Penthouse</p>
+      <h2>The crown of<br><em>Ardeh</em></h2>
+      <p>The penthouse at Ardeh occupies the top floor — generous proportions, private terraces, and panoramic jungle views that remind you exactly where you are. The finest residence in the building, designed without compromise.</p>
+    </div>
+  </div>
+
+  <!-- INVESTMENT DETAILS -->
+  <div class="ardeh-details fade-in">
+    <div>
+      <p class="section-label">Residences &amp; Investment</p>
+      <h2>The <em>details</em></h2>
+      <p>From ground-floor apartments with private gardens and pools to the rooftop penthouse — Ardeh offers a range of residences suited to both personal use and investment in one of Mexico's strongest property markets.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="ardeh-detail-row">
+        <span class="ardeh-detail-label">Ground floor from</span>
+        <span class="ardeh-detail-value">133 m² total</span>
+      </div>
+      <div class="ardeh-detail-row">
+        <span class="ardeh-detail-label">Bedrooms</span>
+        <span class="ardeh-detail-value">Studios · 1BR · 2BR · Penthouse</span>
+      </div>
+      <div class="ardeh-detail-row">
+        <span class="ardeh-detail-label">Private features</span>
+        <span class="ardeh-detail-value">Garden · Pool · Patio</span>
+      </div>
+      <div class="ardeh-detail-row">
+        <span class="ardeh-detail-label">Rooftop</span>
+        <span class="ardeh-detail-value">Pool · Bar · Lounge</span>
+      </div>
+      <div class="ardeh-detail-row">
+        <span class="ardeh-detail-label">Location</span>
+        <span class="ardeh-detail-value">Tulum, Quintana Roo</span>
+      </div>
+      <div class="ardeh-detail-row">
+        <span class="ardeh-detail-label">Airport</span>
+        <span class="ardeh-detail-value">~35 min · New Tulum Airport</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="ardeh-location fade-in">
+    <div class="ardeh-location-text">
+      <p class="section-label">Location</p>
+      <h2>Everything Tulum<br>has to <em>offer</em></h2>
+      <div>
+        <div class="ardeh-dist-row">
+          <span class="ardeh-dist-num">2 km</span>
+          <span class="ardeh-dist-label">Tulum Hotel Zone &amp; Beach Clubs</span>
+        </div>
+        <div class="ardeh-dist-row">
+          <span class="ardeh-dist-num">3 km</span>
+          <span class="ardeh-dist-label">Playa Paraíso — one of Mexico's finest beaches</span>
+        </div>
+        <div class="ardeh-dist-row">
+          <span class="ardeh-dist-num">4 km</span>
+          <span class="ardeh-dist-label">Tulum Archaeological Zone</span>
+        </div>
+        <div class="ardeh-dist-row">
+          <span class="ardeh-dist-num">5 km</span>
+          <span class="ardeh-dist-label">Gran Cenote</span>
+        </div>
+        <div class="ardeh-dist-row">
+          <span class="ardeh-dist-num">~35'</span>
+          <span class="ardeh-dist-label">New Tulum International Airport · Maya Train</span>
+        </div>
+      </div>
+    </div>
+    <div class="ardeh-location-img">
+      <img src="images/ardeh-location.jpg" alt="Ardeh Tulum — location and nearby sites">
+    </div>
+  </div>
+
+  <!-- ENQUIRY -->
+  <div class="ardeh-enquiry fade-in">
+    <div>
+      <p class="section-label">Enquire</p>
+      <h2>Interested in<br><em>Ardeh Tulum</em>?</h2>
+      <p>Send me a message and I'll come back with full pricing, available units, floor plans and everything you need to move forward with confidence.</p>
+    </div>
+    <form class="ardeh-form" action="https://formsubmit.co/izabela.ot@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Ardeh Tulum Enquiry">
+      <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp (optional)">
+      <textarea name="message" placeholder="Tell me what you're looking for — unit type, budget, investment or personal use..."></textarea>
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
+  </div>
+
+  <div style="padding: 36px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+    <a href="mexico.html" style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none;">← All Mexico Properties</a>
+    <a href="contact.html" class="btn">Get in Touch</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">© 2025 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
