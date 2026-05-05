@@ -108,12 +108,25 @@
     .lula-gallery-2 {
       display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
     }
-    .lula-gallery-2 img {
-      width: 100%; aspect-ratio: 16/10;
+    .lula-gallery-2 figure {
+      margin: 0; display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+    .lula-gallery-2 figure img {
+      width: 100%; aspect-ratio: 4/3;
       object-fit: cover; display: block;
       transition: transform 0.5s ease;
     }
-    .lula-gallery-2 img:hover { transform: scale(1.02); }
+    .lula-gallery-2 figure img:hover { transform: scale(1.02); }
+    .lula-gallery-2 figcaption {
+      padding: 12px 20px 14px;
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .lula-gallery-2 figure:last-child figcaption { border-right: none; }
 
     /* ── SPLIT ── */
     .lula-split {
@@ -311,8 +324,14 @@
   <p class="lula-caption">Villa — organic curved architecture emerging from the jungle</p>
 
   <div class="lula-gallery-2 fade-in">
-    <img src="images/lula-contemplation.jpg" alt="Lula Sanctuary — glass pavilion">
-    <img src="images/lula-nahual.jpg" alt="Lula Sanctuary — Nahual Sanctuary">
+    <figure>
+      <img src="images/lula-contemplation.jpg" alt="Lula Sanctuary — private villa above jungle canopy">
+      <figcaption>Private villa — rooftop pool above the jungle canopy at golden hour</figcaption>
+    </figure>
+    <figure>
+      <img src="images/lula-nahual.jpg" alt="Lula Sanctuary — Nahual Sanctuary">
+      <figcaption>Santuario Nahual — living architecture rising from the jungle</figcaption>
+    </figure>
   </div>
 
   <!-- THE SPIRIT -->
@@ -379,7 +398,7 @@
       </div>
     </div>
     <div class="lula-location-img">
-      <img src="images/lula-francisco.jpg" alt="Lula — Francisco Uh May area">
+      <img src="images/lula-contemplation.jpg" alt="Lula Sanctuary — villa above the jungle canopy" style="object-position: center center;">
     </div>
   </div>
 
