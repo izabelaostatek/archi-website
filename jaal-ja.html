@@ -15,19 +15,20 @@
     .jj-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
     .jj-hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.62) 100%);
-      display: flex; align-items: flex-end; padding: 72px 56px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
+      display: flex; align-items: flex-end; padding: 56px 56px;
+      overflow: hidden;
     }
-    .jj-hero-content .section-label { color: rgba(255,255,255,0.8); letter-spacing: 0.22em; }
+    .jj-hero-content .section-label { color: rgba(255,255,255,0.9); letter-spacing: 0.22em; -webkit-font-smoothing: antialiased; }
     .jj-hero-content h1 {
       font-family: var(--heading);
-      font-size: clamp(56px, 9vw, 112px);
+      font-size: clamp(48px, 8vw, 104px);
       font-weight: 300; color: #fff;
-      line-height: 0.92; margin: 12px 0 20px;
+      line-height: 0.92; margin: 10px 0 16px;
       text-shadow: 0 2px 30px rgba(0,0,0,0.3);
     }
     .jj-hero-content h1 em { font-style: italic; }
-    .jj-hero-content p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.75; max-width: 480px; }
+    .jj-hero-content p { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 460px; }
 
     /* INTRO */
     .jj-intro {
