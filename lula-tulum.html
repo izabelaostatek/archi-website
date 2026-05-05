@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lula Sanctuary — Francisco Uh May, Tulum — Izabela Ostatek</title>
+  <meta name="description" content="Lula Sanctuary — an extraordinary private sanctuary in Francisco Uh May, Tulum. Biomorphic villas, rooftop infinity pool, jungle immersion. The Path of Light.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    /* ── HERO ── */
+    .lula-hero {
+      height: 95vh; position: relative;
+      overflow: hidden; margin-top: var(--nav-h);
+    }
+    .lula-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 40%;
+    }
+    .lula-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+      display: flex; align-items: flex-end;
+      padding: 72px 56px; overflow: hidden;
+    }
+    .lula-hero-text .section-label {
+      color: #fff; letter-spacing: 0.22em;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+      -webkit-font-smoothing: antialiased;
+    }
+    .lula-hero-text h1 {
+      font-family: var(--heading);
+      font-size: clamp(56px, 9vw, 116px);
+      font-weight: 300; color: #fff;
+      line-height: 0.92; margin: 10px 0 18px;
+      text-shadow: 0 2px 32px rgba(0,0,0,0.35);
+    }
+    .lula-hero-text h1 em { font-style: italic; }
+    .lula-hero-text p {
+      font-size: 15px; color: rgba(255,255,255,0.85);
+      line-height: 1.7; max-width: 480px;
+    }
+
+    /* ── FULL IMAGE ── */
+    .lula-full img { width: 100%; height: auto; display: block; }
+    .lula-full-cover img {
+      width: 100%; height: 80vh;
+      object-fit: cover; display: block;
+    }
+
+    /* ── CAPTION ── */
+    .lula-caption {
+      padding: 14px 56px 32px;
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── INTRO ── */
+    .lula-intro {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 80px; padding: 88px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lula-meta { display: flex; flex-direction: column; gap: 32px; }
+    .lula-meta-item span:first-child {
+      display: block; font-size: 10px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 5px;
+    }
+    .lula-meta-item span:last-child { font-size: 14px; color: #333; line-height: 1.5; }
+    .lula-body h2 {
+      font-family: var(--heading);
+      font-size: clamp(30px, 3.5vw, 52px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 28px;
+    }
+    .lula-body h2 em { font-style: italic; }
+    .lula-body blockquote {
+      font-family: var(--heading);
+      font-size: 22px; font-style: italic;
+      color: var(--accent);
+      border-left: 2px solid var(--accent);
+      padding-left: 24px;
+      margin: 32px 0; line-height: 1.5;
+    }
+    .lula-body p {
+      font-size: 15px; color: #444;
+      line-height: 1.9; margin-bottom: 16px; max-width: 640px;
+    }
+
+    /* ── SECTION HEAD ── */
+    .lula-section-head {
+      padding: 72px 56px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lula-section-head h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 50px);
+      font-weight: 300; line-height: 1.1;
+    }
+    .lula-section-head h2 em { font-style: italic; }
+    .lula-section-head p {
+      font-size: 15px; color: #555; line-height: 1.85;
+      max-width: 580px; margin-top: 16px;
+    }
+
+    /* ── 2-COL GALLERY ── */
+    .lula-gallery-2 {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    }
+    .lula-gallery-2 img {
+      width: 100%; aspect-ratio: 16/10;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .lula-gallery-2 img:hover { transform: scale(1.02); }
+
+    /* ── SPLIT ── */
+    .lula-split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .lula-split-text {
+      padding: 72px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+    .lula-split-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 22px;
+    }
+    .lula-split-text h2 em { font-style: italic; }
+    .lula-split-text p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px; }
+    .lula-split-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block; min-height: 500px;
+    }
+
+    /* ── TEXT 2-COL ── */
+    .lula-text-2 {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; padding: 88px 56px;
+      border-top: 1px solid var(--border);
+    }
+    .lula-text-2 h3 {
+      font-family: var(--heading);
+      font-size: clamp(22px, 2.5vw, 36px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 20px;
+    }
+    .lula-text-2 h3 em { font-style: italic; }
+    .lula-text-2 p { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 14px; }
+
+    /* ── LOCATION ── */
+    .lula-location {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .lula-location-text {
+      padding: 72px 56px; background: #1a1a1a;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .lula-location-text .section-label { color: var(--accent); }
+    .lula-location-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 300; color: #fff;
+      margin: 12px 0 28px; line-height: 1.15;
+    }
+    .lula-location-text h2 em { font-style: italic; }
+    .lula-dist-row {
+      display: flex; align-items: baseline; gap: 20px;
+      padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .lula-dist-num {
+      font-family: var(--heading); font-size: 28px;
+      font-weight: 300; color: var(--accent); min-width: 72px;
+    }
+    .lula-dist-label { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+    .lula-location-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block; min-height: 480px;
+    }
+
+    /* ── ENQUIRY ── */
+    .lula-enquiry {
+      padding: 88px 56px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; border-top: 1px solid var(--border);
+    }
+    .lula-enquiry h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 16px;
+    }
+    .lula-enquiry h2 em { font-style: italic; }
+    .lula-enquiry > div:first-child p { font-size: 15px; color: #555; line-height: 1.85; }
+    .lula-form { display: flex; flex-direction: column; gap: 14px; }
+    .lula-form input, .lula-form textarea {
+      width: 100%; padding: 14px 16px;
+      border: 1px solid var(--border);
+      background: #fafaf8; font-family: var(--body);
+      font-size: 14px; color: var(--text);
+      outline: none; transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .lula-form input:focus, .lula-form textarea:focus { border-color: var(--accent); }
+    .lula-form textarea { resize: vertical; min-height: 120px; }
+
+    @media (max-width: 900px) {
+      .lula-intro, .lula-split, .lula-text-2,
+      .lula-location, .lula-enquiry { grid-template-columns: 1fr; gap: 40px; }
+      .lula-intro, .lula-text-2, .lula-enquiry { padding: 56px 24px; }
+      .lula-section-head { padding: 48px 24px 36px; }
+      .lula-caption { padding: 12px 24px 24px; }
+      .lula-hero-overlay { padding: 40px 24px; }
+      .lula-split-text { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .lula-location-text { padding: 56px 24px; }
+      .lula-gallery-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="lula-hero">
+    <img src="images/lula-sanctuary.jpg" alt="Lula Sanctuary — entrance, Tulum">
+    <div class="lula-hero-overlay">
+      <div class="lula-hero-text">
+        <p class="section-label">Francisco Uh May · Tulum · Quintana Roo</p>
+        <h1>Lula <em>Sanctuary</em></h1>
+        <p>Welcome to the quiet — a private sanctuary in the ancient Maya jungle, where architecture disappears into nature and every residence becomes a path of light.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POOL — wow image -->
+  <div class="lula-full fade-in">
+    <img src="images/lula-pool.jpg" alt="Lula Sanctuary — rooftop infinity pool at sunset">
+  </div>
+  <p class="lula-caption">Rooftop infinity pool — jungle canopy at golden hour</p>
+
+  <!-- INTRO -->
+  <div class="lula-intro fade-in">
+    <div class="lula-meta">
+      <div class="lula-meta-item">
+        <span>Location</span>
+        <span>Francisco Uh May · Tulum, Quintana Roo</span>
+      </div>
+      <div class="lula-meta-item">
+        <span>Type</span>
+        <span>Private Sanctuary · Biomorphic Villas</span>
+      </div>
+      <div class="lula-meta-item">
+        <span>Style</span>
+        <span>Organic · Biophilic · Jungle</span>
+      </div>
+      <div class="lula-meta-item">
+        <span>Architect</span>
+        <span>F. Uh May</span>
+      </div>
+      <div class="lula-meta-item">
+        <span>From Tulum</span>
+        <span>20 minutes</span>
+      </div>
+    </div>
+    <div class="lula-body">
+      <h2>The <em>Path of Light</em><br>through the jungle</h2>
+      <blockquote>"Welcome to the Quiet"</blockquote>
+      <p>LULA is the name of the Alux — the ancient Maya spirit — that inhabits this extraordinary corner of the world. In this sanctuary, those who share the space with LULA become its guardians, protecting the environment and everything that breathes within it. Because in the act of caring for others, we discover our finest selves.</p>
+      <p>The name LULA means "The Path of Light" — where every star tells a story, every particle of light reveals a secret, and every step through the jungle is a step towards self-discovery. Residents here are not just building homes, but an entirely new way of living — in communion with nature and the cosmos.</p>
+      <p>Set in Francisco Uh May, 20 minutes from Tulum city, Lula Sanctuary sits between the archaeological zones of Cobá and Tulum, surrounded by 107+ cenotes, ancient Maya routes, and one of the most ecologically extraordinary landscapes on earth.</p>
+    </div>
+  </div>
+
+  <!-- ENTRANCE -->
+  <div class="lula-full-cover fade-in">
+    <img src="images/lula-entrance.jpg" alt="Lula Sanctuary — sculptural entrance gate" style="object-position: center center;">
+  </div>
+  <p class="lula-caption">Entrance — sculptural bamboo and concrete gateway</p>
+
+  <!-- ARCHITECTURE -->
+  <div class="lula-section-head fade-in">
+    <p class="section-label">Architecture</p>
+    <h2>Forms born from<br>the <em>jungle itself</em></h2>
+    <p>Every structure at Lula is conceived as an organic form — curved concrete, living walls, and glass that dissolves the line between inside and outside. The architecture doesn't impose on the landscape. It grows from it.</p>
+  </div>
+
+  <div class="lula-full fade-in">
+    <img src="images/lula-creation.jpg" alt="Lula Sanctuary — biomorphic villa with curved roof">
+  </div>
+  <p class="lula-caption">Villa — organic curved architecture emerging from the jungle</p>
+
+  <div class="lula-gallery-2 fade-in">
+    <img src="images/lula-contemplation.jpg" alt="Lula Sanctuary — glass pavilion">
+    <img src="images/lula-nahual.jpg" alt="Lula Sanctuary — Nahual Sanctuary">
+  </div>
+
+  <!-- THE SPIRIT -->
+  <div class="lula-split fade-in">
+    <div class="lula-split-text">
+      <p class="section-label">The Spirit of Lula</p>
+      <h2>A sanctuary of<br><em>guardianship</em></h2>
+      <p>To live at Lula is to become a guardian of this place. The ancient Maya understood that the land is not something to be owned — it is something to be cared for. Every residence here is designed around that philosophy: living lightly, beautifully, and in deep respect for what surrounds you.</p>
+      <p>Ceremonies, community gatherings, and connection with the natural world are woven into life here. This is not just a property — it is a way of being.</p>
+    </div>
+    <div class="lula-split-img">
+      <img src="images/lula-ceremonies.jpg" alt="Lula Sanctuary — ceremonies and community">
+    </div>
+  </div>
+
+  <!-- HOTEL BOUTIQUE + WALK -->
+  <div class="lula-gallery-2 fade-in">
+    <img src="images/lula-hotel.jpg" alt="Lula Sanctuary — boutique hotel" style="object-position: center 40%;">
+    <img src="images/lula-walk.jpg" alt="Lula Sanctuary — jungle walkways">
+  </div>
+
+  <!-- THE AREA -->
+  <div class="lula-text-2 fade-in">
+    <div>
+      <p class="section-label">Francisco Uh May</p>
+      <h3>A place unlike<br><em>anywhere else</em></h3>
+      <p>Francisco Uh May is a small village on the Cobá road — one of the most extraordinary locations in the entire Yucatán Peninsula. Situated between the ancient ruins of Cobá and Tulum, it sits at the heart of more than 107 cenotes, dense jungle, and some of the oldest Maya routes in existence.</p>
+      <p>Here you will find Museo Azulik — a biomorphic gallery immersed in the jungle — experimental cuisine fusing ancestral ingredients with sustainable techniques, and local crafts made from palm, clay and wood that carry centuries of Maya tradition.</p>
+    </div>
+    <div>
+      <p class="section-label">What surrounds you</p>
+      <h3>Jungle, cenotes<br>and <em>ancient history</em></h3>
+      <p>107+ cenotes between Tulum and Cobá — sacred underground rivers that have defined this landscape for millennia. Ancient Maya archaeological sites within minutes. Beach access to Playa Paraíso and the Tulum hotel zone just 20 minutes away.</p>
+      <p>The new Tulum International Airport and the Maya Train connect this corner of the world to the rest of it — without taking away any of what makes it extraordinary. The infrastructure is arriving. The opportunity is now.</p>
+    </div>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="lula-location fade-in">
+    <div class="lula-location-text">
+      <p class="section-label">Location</p>
+      <h2>20 minutes from<br><em>Tulum city</em></h2>
+      <div>
+        <div class="lula-dist-row">
+          <span class="lula-dist-num">20'</span>
+          <span class="lula-dist-label">Tulum city centre · Hotel Zone · Beach clubs</span>
+        </div>
+        <div class="lula-dist-row">
+          <span class="lula-dist-num">15'</span>
+          <span class="lula-dist-label">Maya Train station</span>
+        </div>
+        <div class="lula-dist-row">
+          <span class="lula-dist-num">~35'</span>
+          <span class="lula-dist-label">New Tulum International Airport</span>
+        </div>
+        <div class="lula-dist-row">
+          <span class="lula-dist-num">107+</span>
+          <span class="lula-dist-label">Cenotes between Tulum and Cobá</span>
+        </div>
+        <div class="lula-dist-row">
+          <span class="lula-dist-num">60+</span>
+          <span class="lula-dist-label">Archaeological findings in the area</span>
+        </div>
+      </div>
+    </div>
+    <div class="lula-location-img">
+      <img src="images/lula-francisco.jpg" alt="Lula — Francisco Uh May area">
+    </div>
+  </div>
+
+  <!-- ENQUIRY -->
+  <div class="lula-enquiry fade-in">
+    <div>
+      <p class="section-label">Enquire</p>
+      <h2>Interested in<br><em>Lula Sanctuary</em>?</h2>
+      <p>Send me a message and I'll come back with full pricing, available plots and residences, and everything you need to understand this extraordinary opportunity.</p>
+    </div>
+    <form class="lula-form" action="https://formsubmit.co/izabela.ot@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Lula Sanctuary Enquiry — Tulum">
+      <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp (optional)">
+      <textarea name="message" placeholder="Tell me what you're looking for — investment, personal residence, or simply more information..."></textarea>
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
+  </div>
+
+  <div style="padding: 36px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+    <a href="mexico.html" style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none;">← All Mexico Properties</a>
+    <a href="contact.html" class="btn">Get in Touch</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">© 2025 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
