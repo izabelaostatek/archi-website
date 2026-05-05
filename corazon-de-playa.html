@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corazón de Playa — Playa del Carmen — Izabela Ostatek</title>
+  <meta name="description" content="Corazón de Playa — boutique residences in the heart of Playa del Carmen. Studios and apartments with rooftop pool, private terraces, gym and co-working. Quintana Roo.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    /* ── HERO ── */
+    .cdp-hero {
+      height: 95vh; position: relative;
+      overflow: hidden; margin-top: var(--nav-h);
+    }
+    .cdp-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 40%;
+    }
+    .cdp-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
+      display: flex; align-items: flex-end;
+      padding: 56px 56px; overflow: hidden;
+    }
+    .cdp-hero-text .section-label {
+      color: #fff; letter-spacing: 0.22em;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+      -webkit-font-smoothing: antialiased;
+    }
+    .cdp-hero-text h1 {
+      font-family: var(--heading);
+      font-size: clamp(48px, 8vw, 108px);
+      font-weight: 300; color: #fff;
+      line-height: 0.92; margin: 10px 0 18px;
+      text-shadow: 0 2px 32px rgba(0,0,0,0.35);
+    }
+    .cdp-hero-text h1 em { font-style: italic; }
+    .cdp-hero-text p {
+      font-size: 15px; color: rgba(255,255,255,0.85);
+      line-height: 1.7; max-width: 480px;
+    }
+
+    /* ── INTRO ── */
+    .cdp-intro {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .cdp-intro-text {
+      padding: 80px 56px;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .cdp-intro-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 50px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 24px;
+    }
+    .cdp-intro-text h2 em { font-style: italic; }
+    .cdp-intro-text p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px; }
+    .cdp-stats {
+      padding: 80px 56px;
+      display: flex; flex-direction: column; justify-content: center; gap: 44px;
+    }
+    .cdp-stat-num {
+      font-family: var(--heading);
+      font-size: 54px; font-weight: 300;
+      color: var(--accent); line-height: 1; margin-bottom: 8px;
+    }
+    .cdp-stat-label {
+      font-size: 12px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted); line-height: 1.6;
+    }
+
+    /* ── FULL IMAGE ── */
+    .cdp-full { overflow: hidden; }
+    .cdp-full img { width: 100%; height: auto; display: block; }
+    .cdp-full-cover { overflow: hidden; }
+    .cdp-full-cover img {
+      width: 100%; height: 75vh;
+      object-fit: cover; display: block;
+    }
+
+    /* ── CAPTION ── */
+    .cdp-caption {
+      padding: 14px 56px 32px;
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── SECTION HEAD ── */
+    .cdp-section-head {
+      padding: 72px 56px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cdp-section-head h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 50px);
+      font-weight: 300; line-height: 1.1;
+    }
+    .cdp-section-head h2 em { font-style: italic; }
+    .cdp-section-head p {
+      font-size: 15px; color: #555; line-height: 1.85;
+      max-width: 580px; margin-top: 16px;
+    }
+
+    /* ── 2-COL GALLERY ── */
+    .cdp-gallery-2 {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cdp-gallery-2 figure { margin: 0; overflow: hidden; }
+    .cdp-gallery-2 figure img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .cdp-gallery-2 figure img:hover { transform: scale(1.02); }
+    .cdp-gallery-2 figcaption {
+      padding: 12px 20px 14px;
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .cdp-gallery-2 figure:last-child figcaption { border-right: none; }
+
+    /* ── SPLIT ── */
+    .cdp-split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .cdp-split-text {
+      padding: 72px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+    .cdp-split-text h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 20px;
+    }
+    .cdp-split-text h2 em { font-style: italic; }
+    .cdp-split-text p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px; }
+    .cdp-split-img { overflow: hidden; }
+    .cdp-split-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block; min-height: 520px;
+    }
+
+    /* ── INVESTMENT ── */
+    .cdp-investment {
+      padding: 80px 56px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; border-top: 1px solid var(--border);
+    }
+    .cdp-investment h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 50px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 16px;
+    }
+    .cdp-investment h2 em { font-style: italic; }
+    .cdp-investment p { font-size: 15px; color: #555; line-height: 1.85; }
+    .cdp-detail-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 18px 0; border-bottom: 1px solid var(--border);
+    }
+    .cdp-detail-row:first-of-type { border-top: 1px solid var(--border); }
+    .cdp-detail-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .cdp-detail-value { font-family: var(--heading); font-size: 20px; font-weight: 300; color: var(--text); }
+
+    /* ── ENQUIRY ── */
+    .cdp-enquiry {
+      padding: 80px 56px; border-top: 1px solid var(--border);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    }
+    .cdp-enquiry h2 {
+      font-family: var(--heading);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 20px;
+    }
+    .cdp-enquiry h2 em { font-style: italic; }
+    .cdp-enquiry p { font-size: 15px; color: #555; line-height: 1.85; }
+    .cdp-enquiry form { display: flex; flex-direction: column; gap: 16px; }
+    .cdp-enquiry input, .cdp-enquiry textarea {
+      background: #fafaf8; border: 1px solid var(--border);
+      padding: 14px 18px; font-family: var(--body);
+      font-size: 14px; color: var(--text);
+      outline: none; transition: border-color 0.2s; width: 100%;
+      box-sizing: border-box;
+    }
+    .cdp-enquiry input:focus, .cdp-enquiry textarea:focus { border-color: var(--accent); }
+    .cdp-enquiry textarea { height: 120px; resize: vertical; }
+
+    @media (max-width: 768px) {
+      .cdp-intro, .cdp-split, .cdp-investment, .cdp-enquiry { grid-template-columns: 1fr; }
+      .cdp-intro-text { border-right: none; border-bottom: 1px solid var(--border); padding: 48px 24px; }
+      .cdp-stats { padding: 48px 24px; }
+      .cdp-split-text { border-right: none; border-bottom: 1px solid var(--border); padding: 48px 24px; }
+      .cdp-hero-overlay { padding: 40px 24px; }
+      .cdp-investment, .cdp-enquiry { padding: 48px 24px; gap: 40px; }
+      .cdp-section-head { padding: 48px 24px 36px; }
+      .cdp-caption { padding: 12px 24px 24px; }
+      .cdp-gallery-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Izabela Ostatek</a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO — rooftop at night -->
+  <div class="cdp-hero">
+    <img src="images/cdp-rooftop-night.jpg" alt="Corazón de Playa — rooftop pool at night, Playa del Carmen">
+    <div class="cdp-hero-overlay">
+      <div class="cdp-hero-text">
+        <p class="section-label">Playa del Carmen · Quintana Roo · México</p>
+        <h1>Corazón <em>de Playa</em></h1>
+        <p>Boutique residences in the heart of Playa del Carmen — where biophilic design, rooftop living and the Caribbean spirit converge in one extraordinary building.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="cdp-intro">
+    <div class="cdp-intro-text">
+      <p class="section-label">The Project</p>
+      <h2>Live anywhere.<br>Work from <em>paradise</em>.</h2>
+      <p>Corazón de Playa is designed for a new kind of resident — the remote worker, the digital nomad, the creative professional who refuses to choose between career and lifestyle. In the heart of Playa del Carmen, steps from Quinta Avenida and minutes from the Caribbean, this is where your best work happens.</p>
+      <p>A co-working studio, high-speed connectivity, a neon-lit rooftop pool, a serious gym, and private terraces with plunge pools. Everything you need to be productive by day and completely alive by night — without leaving the building.</p>
+      <p>Studios and one-bedroom apartments designed for those who have realised that the office was always optional — and the Caribbean was always the answer.</p>
+    </div>
+    <div class="cdp-stats fade-in">
+      <div>
+        <div class="cdp-stat-num">5th</div>
+        <div class="cdp-stat-label">Most visited city in Mexico<br>Playa del Carmen, Quintana Roo</div>
+      </div>
+      <div>
+        <div class="cdp-stat-num">2'</div>
+        <div class="cdp-stat-label">Walk to Quinta Avenida<br>the iconic pedestrian boulevard</div>
+      </div>
+      <div>
+        <div class="cdp-stat-num">8'</div>
+        <div class="cdp-stat-label">To the beach<br>Caribbean Sea · Playa del Carmen</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACADE FULL -->
+  <div class="cdp-full fade-in">
+    <img src="images/cdp-facade.jpg" alt="Corazón de Playa — building facade at night" style="object-position: center center;">
+  </div>
+  <p class="cdp-caption">Façade — living walls and glowing interiors under the Caribbean night sky</p>
+
+  <!-- RESIDENCES -->
+  <div class="cdp-section-head fade-in">
+    <p class="section-label">Residences</p>
+    <h2>Interiors designed<br>for <em>how you live</em></h2>
+    <p>Every unit at Corazón de Playa is a complete world — thoughtfully laid out, beautifully finished, and flooded with natural light. From compact studios to open-plan apartments, the design never compromises on quality or atmosphere.</p>
+  </div>
+
+  <!-- LIVING FULL -->
+  <div class="cdp-full fade-in">
+    <img src="images/cdp-living.jpg" alt="Corazón de Playa — open-plan living room with jungle view">
+  </div>
+  <p class="cdp-caption">Living room — floor-to-ceiling glazing framing the jungle canopy</p>
+
+  <!-- BEDROOM + TERRAZA GALLERY -->
+  <div class="cdp-gallery-2 fade-in">
+    <figure>
+      <img src="images/cdp-bedroom.jpg" alt="Corazón de Playa — master bedroom">
+      <figcaption>Master bedroom — ocean-inspired artwork and warm materials</figcaption>
+    </figure>
+    <figure>
+      <img src="images/cdp-terraza.jpg" alt="Corazón de Playa — private terrace with plunge pool" style="object-position: center 40%;">
+      <figcaption>Private terrace — plunge pool and art wall</figcaption>
+    </figure>
+  </div>
+
+  <!-- KITCHEN + STUDIO GALLERY -->
+  <div class="cdp-gallery-2 fade-in">
+    <figure>
+      <img src="images/cdp-kitchen.jpg" alt="Corazón de Playa — kitchen and living">
+      <figcaption>Kitchen — teal cabinetry, travertine island, bouclé living</figcaption>
+    </figure>
+    <figure>
+      <img src="images/cdp-studio.jpg" alt="Corazón de Playa — studio apartment">
+      <figcaption>Studio — open-plan living with integrated kitchen and terrace</figcaption>
+    </figure>
+  </div>
+
+  <!-- WORKSPACE SPLIT -->
+  <div class="cdp-split fade-in">
+    <div class="cdp-split-text">
+      <p class="section-label">Community Spaces</p>
+      <h2>Your office,<br>your <em>rules</em></h2>
+      <p>Playa del Carmen has become one of Latin America's most vibrant hubs for remote workers and digital nomads — and Corazón de Playa is built around that reality. A dedicated co-working studio with natural light, a relaxed creative atmosphere, and everything you need to do your best work without commuting anywhere.</p>
+      <p>After hours, the neon-lit gym — "Body Under Construction" — keeps you moving. The rooftop pool keeps you sane. The Caribbean keeps you inspired. This is the lifestyle that used to require a compromise. Here, it doesn't.</p>
+    </div>
+    <div class="cdp-split-img">
+      <img src="images/cdp-workspace.jpg" alt="Corazón de Playa — co-working studio">
+    </div>
+  </div>
+
+  <!-- GYM FULL -->
+  <div class="cdp-full-cover fade-in">
+    <img src="images/cdp-gym.jpg" alt="Corazón de Playa — gym" style="object-position: center 50%;">
+  </div>
+  <p class="cdp-caption">Gym — "Body Under Construction" · Neon lights · Ocean views</p>
+
+  <!-- ROOFTOP -->
+  <div class="cdp-section-head fade-in">
+    <p class="section-label">Rooftop</p>
+    <h2>Above the city,<br>under the <em>stars</em></h2>
+    <p>The rooftop is the soul of Corazón de Playa — a glowing oasis above Playa del Carmen where the signature pool, bar and lounge create a social heart for the building. At night, neon light plays off turquoise water and the city stretches to the horizon.</p>
+  </div>
+
+  <div class="cdp-full fade-in">
+    <img src="images/cdp-rooftop-night.jpg" alt="Corazón de Playa — rooftop pool at night with city view">
+  </div>
+
+  <div class="cdp-gallery-2 fade-in">
+    <figure>
+      <img src="images/cdp-rooftop-bar.jpg" alt="Corazón de Playa — rooftop bar and pool" style="object-position: center 40%;">
+      <figcaption>Rooftop bar — neon sign, wooden ceiling, social dining</figcaption>
+    </figure>
+    <figure>
+      <img src="images/cdp-rooftop-pool.jpg" alt="Corazón de Playa — rooftop pool close-up">
+      <figcaption>Rooftop pool — CORAZÓN DE PLAYA engraved in the stone</figcaption>
+    </figure>
+  </div>
+
+  <!-- INVESTMENT -->
+  <div class="cdp-investment fade-in">
+    <div>
+      <p class="section-label">Investment Details</p>
+      <h2>The<br><em>numbers</em></h2>
+      <p>Studios and apartments in one of the Caribbean's most dynamic cities — ideal for remote workers, digital nomads, holiday rentals, or long-term capital appreciation in a market that keeps growing.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="cdp-detail-row">
+        <span class="cdp-detail-label">Location</span>
+        <span class="cdp-detail-value">Centro · Playa del Carmen</span>
+      </div>
+      <div class="cdp-detail-row">
+        <span class="cdp-detail-label">Unit types</span>
+        <span class="cdp-detail-value">Studios · 1-bedroom apartments</span>
+      </div>
+      <div class="cdp-detail-row">
+        <span class="cdp-detail-label">Amenities</span>
+        <span class="cdp-detail-value">Rooftop pool · Gym · Co-working</span>
+      </div>
+      <div class="cdp-detail-row">
+        <span class="cdp-detail-label">To beach</span>
+        <span class="cdp-detail-value">8 minutes on foot</span>
+      </div>
+      <div class="cdp-detail-row">
+        <span class="cdp-detail-label">To Quinta Avenida</span>
+        <span class="cdp-detail-value">2 minutes on foot</span>
+      </div>
+      <div class="cdp-detail-row">
+        <span class="cdp-detail-label">Ideal for</span>
+        <span class="cdp-detail-value">Investment · Holiday rental · Living</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENQUIRY -->
+  <div class="cdp-enquiry">
+    <div>
+      <p class="section-label">Enquire</p>
+      <h2>Interested in<br><em>Corazón de Playa</em>?</h2>
+      <p>Send me a message and I will come back with full pricing, available units, floor plans and everything you need to move forward with confidence.</p>
+    </div>
+    <form action="https://formsubmit.co/izabela.ot@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Corazón de Playa Enquiry — Playa del Carmen">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp (optional)">
+      <textarea name="message" placeholder="Tell me what you are looking for — unit type, budget, intended use..."></textarea>
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
+  </div>
+
+  <div style="padding: 36px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+    <a href="mexico.html" style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none;">← All Mexico Properties</a>
+    <a href="contact.html" class="btn">Get in Touch</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">Izabela Ostatek</span>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">© 2025 Izabela Ostatek</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
