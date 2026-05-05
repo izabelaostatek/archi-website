@@ -7,6 +7,7 @@
   <meta name="description" content="OKOM — boutique residential condos in the heart of Tulum. Biophilic architecture, sky pool, private cinema, and resort-level amenities. Quintana Roo, México.">
   <link rel="stylesheet" href="css/style.css">
   <style>
+
     /* ── HERO ── */
     .okom-hero {
       height: 95vh;
@@ -15,265 +16,197 @@
       margin-top: var(--nav-h);
     }
     .okom-hero img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       object-position: center center;
     }
     .okom-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
-      display: flex;
-      align-items: flex-end;
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.62) 100%);
+      display: flex; align-items: flex-end;
       padding: 72px 56px;
     }
-    .okom-hero-text { color: #fff; }
-    .okom-hero-text .section-label { color: rgba(255,255,255,0.75); }
+    .okom-hero-text .section-label { color: rgba(255,255,255,0.75); letter-spacing: 0.22em; }
     .okom-hero-text h1 {
       font-family: var(--heading);
-      font-size: clamp(56px, 9vw, 120px);
-      font-weight: 300;
-      line-height: 0.95;
-      color: #fff;
-      margin: 10px 0 0;
+      font-size: clamp(64px, 10vw, 130px);
+      font-weight: 300; line-height: 0.92;
+      color: #fff; margin: 10px 0 0;
       letter-spacing: -0.01em;
-      text-shadow: 0 4px 32px rgba(0,0,0,0.35);
+      text-shadow: 0 4px 40px rgba(0,0,0,0.3);
     }
     .okom-hero-text h1 em { font-style: italic; }
 
     /* ── INTRO ── */
     .okom-intro {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 220px 1fr;
       gap: 80px;
       padding: 88px 56px;
       border-bottom: 1px solid var(--border);
     }
-    .okom-meta { display: flex; flex-direction: column; gap: 28px; }
+    .okom-meta { display: flex; flex-direction: column; gap: 32px; }
     .okom-meta-item span:first-child {
       display: block;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 4px;
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 5px;
     }
-    .okom-meta-item span:last-child { font-size: 14px; color: #333; }
+    .okom-meta-item span:last-child { font-size: 14px; color: #333; line-height: 1.5; }
     .okom-body h2 {
       font-family: var(--heading);
-      font-size: clamp(28px, 3.5vw, 48px);
-      font-weight: 300;
-      line-height: 1.15;
-      margin-bottom: 28px;
+      font-size: clamp(30px, 3.5vw, 52px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 28px;
     }
     .okom-body h2 em { font-style: italic; }
-    .okom-body p {
-      font-size: 15px;
-      color: #444;
-      line-height: 1.9;
-      margin-bottom: 18px;
-      max-width: 620px;
-    }
     .okom-body blockquote {
       font-family: var(--heading);
-      font-size: 22px;
-      font-style: italic;
+      font-size: 22px; font-style: italic;
       color: var(--accent);
       border-left: 2px solid var(--accent);
       padding-left: 24px;
-      margin: 36px 0;
-      line-height: 1.5;
+      margin: 32px 0; line-height: 1.5;
+    }
+    .okom-body p {
+      font-size: 15px; color: #444;
+      line-height: 1.9; margin-bottom: 16px;
+      max-width: 640px;
     }
 
-    /* ── FULL IMAGE ── */
+    /* ── FULL IMAGE — no crop ── */
     .okom-full { margin: 0; }
     .okom-full img {
-      width: 100%;
+      width: 100%; height: auto;
       display: block;
     }
+
+    /* ── CAPTION ── */
     .okom-caption {
-      padding: 14px 56px 30px;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* ── 2-COL ── */
-    .okom-row-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-    }
-    .okom-row-2 figure { margin: 0; }
-    .okom-row-2 img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      display: block;
-    }
-    .okom-row-2 figcaption {
-      padding: 10px 0 20px;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* ── 3-COL ── */
-    .okom-row-3 {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2px;
-    }
-    .okom-row-3 figure { margin: 0; }
-    .okom-row-3 img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      display: block;
-    }
-    .okom-row-3 figcaption {
-      padding: 10px 0 20px;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
+      padding: 14px 56px 32px;
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted);
+      border-bottom: 1px solid var(--border);
     }
 
     /* ── SECTION HEADER ── */
     .okom-section-head {
-      padding: 72px 56px 48px;
+      padding: 72px 56px 56px;
       border-bottom: 1px solid var(--border);
     }
+    .okom-section-head h2 {
+      font-family: var(--heading);
+      font-size: clamp(28px, 3.5vw, 52px);
+      font-weight: 300; line-height: 1.1;
+    }
+    .okom-section-head h2 em { font-style: italic; }
+    .okom-section-head p {
+      font-size: 15px; color: #555; line-height: 1.85;
+      max-width: 600px; margin-top: 18px;
+    }
 
-    /* ── SPLIT ── */
-    .okom-split {
+    /* ── SPLIT: 2-col text ── */
+    .okom-text-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 540px;
+      gap: 80px;
+      padding: 88px 56px;
+      border-bottom: 1px solid var(--border);
     }
-    .okom-split-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .okom-split-text {
-      padding: 72px 56px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .okom-split-text h2 {
+    .okom-text-split h3 {
       font-family: var(--heading);
-      font-size: clamp(26px, 3vw, 42px);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 24px;
+      font-size: clamp(22px, 2.5vw, 36px);
+      font-weight: 300; line-height: 1.2; margin-bottom: 20px;
     }
-    .okom-split-text h2 em { font-style: italic; }
-    .okom-split-text p { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 14px; }
+    .okom-text-split h3 em { font-style: italic; }
+    .okom-text-split p { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 14px; }
 
-    /* ── AMENITIES ── */
+    /* ── AMENITIES LIST ── */
     .okom-amenities-wrap {
-      background: #f7f5f2;
-      padding: 72px 56px;
-    }
-    .okom-amenities-grid {
+      padding: 80px 56px;
+      border-top: 1px solid var(--border);
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      margin-top: 44px;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
     }
-    .okom-amenity-card {
-      background: #fff;
-      padding: 32px 24px;
-    }
-    .okom-amenity-icon { font-size: 26px; margin-bottom: 14px; }
-    .okom-amenity-card h4 {
+    .okom-amenities-wrap h2 {
       font-family: var(--heading);
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 8px;
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 8px;
     }
-    .okom-amenity-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .okom-amenities-wrap h2 em { font-style: italic; }
+    .okom-amenities-wrap > div:first-child p {
+      font-size: 15px; color: #555; line-height: 1.85; margin-top: 16px;
+    }
+    .okom-amenity-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-content: start;
+    }
+    .okom-amenity-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #333;
+    }
+    .okom-amenity-item:nth-child(odd) { padding-right: 24px; border-right: 1px solid var(--border); }
+    .okom-amenity-item:nth-child(even) { padding-left: 24px; }
 
     /* ── LOCATION ── */
     .okom-location {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
     }
     .okom-location-img img {
-      width: 100%;
-      height: 100%;
-      min-height: 400px;
-      object-fit: cover;
-      display: block;
+      width: 100%; height: 100%;
+      min-height: 500px;
+      object-fit: cover; display: block;
     }
     .okom-location-text {
       padding: 72px 56px;
       background: #1a1a1a;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: flex; flex-direction: column; justify-content: center;
     }
     .okom-location-text .section-label { color: var(--accent); }
     .okom-location-text h2 {
       font-family: var(--heading);
-      font-size: clamp(26px, 3vw, 40px);
-      font-weight: 300;
-      color: #fff;
-      margin: 12px 0 24px;
-      line-height: 1.2;
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 300; color: #fff;
+      margin: 12px 0 28px; line-height: 1.15;
     }
     .okom-location-text h2 em { font-style: italic; }
-    .okom-distances { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
     .okom-distance-row {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: baseline; gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .okom-dist-time {
       font-family: var(--heading);
-      font-size: 28px;
-      font-weight: 300;
-      color: var(--accent);
-      min-width: 64px;
+      font-size: 30px; font-weight: 300;
+      color: var(--accent); min-width: 60px;
     }
-    .okom-dist-places { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+    .okom-dist-places { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
 
-    /* ── FORM ── */
+    /* ── ENQUIRY ── */
     .okom-form-section {
-      background: #f7f5f2;
       padding: 88px 56px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      border-top: 1px solid var(--border);
     }
-    .okom-form-wrap {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .okom-form-wrap h2 {
+    .okom-form-section h2 {
       font-family: var(--heading);
-      font-size: clamp(28px, 3vw, 44px);
-      font-weight: 300;
-      margin-bottom: 10px;
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300; line-height: 1.1; margin-bottom: 16px;
     }
-    .okom-form-wrap h2 em { font-style: italic; }
-    .okom-form-wrap p { font-size: 14px; color: #666; margin-bottom: 36px; line-height: 1.7; }
+    .okom-form-section h2 em { font-style: italic; }
+    .okom-form-section > div:first-child p { font-size: 15px; color: #555; line-height: 1.85; }
     .okom-form { display: flex; flex-direction: column; gap: 14px; }
     .okom-form input, .okom-form textarea, .okom-form select {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid #ccc;
-      background: #fff;
-      font-family: var(--body);
-      font-size: 14px;
-      color: var(--text);
-      outline: none;
+      width: 100%; padding: 14px 16px;
+      border: 1px solid var(--border);
+      background: #fafaf8;
+      font-family: var(--body); font-size: 14px;
+      color: var(--text); outline: none;
       transition: border-color 0.2s;
       box-sizing: border-box;
     }
@@ -285,40 +218,35 @@
     .okom-back {
       padding: 36px 56px;
       border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
     .okom-back a:first-child {
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
+      font-size: 12px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted); text-decoration: none;
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .okom-intro, .okom-split { grid-template-columns: 1fr; gap: 40px; }
-      .okom-intro { padding: 48px 24px; }
-      .okom-row-2, .okom-row-3 { grid-template-columns: 1fr; }
-      .okom-amenities-grid { grid-template-columns: 1fr 1fr; }
-      .okom-location { grid-template-columns: 1fr; }
-      .okom-split-text, .okom-location-text, .okom-form-section, .okom-amenities-wrap { padding: 60px 24px; }
-      .okom-section-head { padding: 48px 24px 32px; }
-      .okom-caption { padding: 12px 24px 22px; }
+      .okom-intro, .okom-text-split, .okom-amenities-wrap,
+      .okom-location, .okom-form-section { grid-template-columns: 1fr; gap: 40px; }
+      .okom-intro, .okom-text-split, .okom-amenities-wrap,
+      .okom-form-section { padding: 56px 24px; }
+      .okom-section-head { padding: 48px 24px 36px; }
+      .okom-caption { padding: 12px 24px 24px; }
       .okom-hero-overlay { padding: 40px 24px; }
+      .okom-location-text { padding: 56px 24px; }
       .okom-back { padding: 28px 24px; }
     }
     @media (max-width: 600px) {
-      .okom-amenities-grid { grid-template-columns: 1fr; }
+      .okom-amenity-list { grid-template-columns: 1fr; }
+      .okom-amenity-item:nth-child(odd) { border-right: none; padding-right: 0; }
+      .okom-amenity-item:nth-child(even) { padding-left: 0; }
       .okom-form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
+  <nav class="nav">
     <a href="index.html" class="nav-logo">Izabela Ostatek</a>
     <ul class="nav-links">
       <li><a href="portfolio.html">Portfolio</a></li>
@@ -330,7 +258,6 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
   <div class="nav-overlay">
     <a href="portfolio.html">Portfolio</a>
     <a href="about.html">About</a>
@@ -340,7 +267,7 @@
 
   <!-- HERO -->
   <div class="okom-hero">
-    <img src="images/okom-entrance.jpg" alt="OKOM — boutique condos Tulum, building facade at sunset">
+    <img src="images/okom-entrance.jpg" alt="OKOM — boutique condos Tulum">
     <div class="okom-hero-overlay">
       <div class="okom-hero-text">
         <p class="section-label">Tulum · Quintana Roo · México</p>
@@ -378,142 +305,103 @@
       <blockquote>
         "The harmony of being in your place of peace, in a space that embraces you and won't let you go."
       </blockquote>
-      <p>
-        OKOM takes its name from an atypical wood found only in the Riviera Maya — the ancient timber used to hold up the thatched rooftops of Maya construction. Here, it becomes a philosophy: something that holds you up, roots you, and shelters you in the most beautiful way.
-      </p>
-      <p>
-        Located in the heart of Tulum — five minutes from the beach clubs and hotel zone, steps from the best restaurants and cenotes — OKOM is a boutique residential development where biophilic architecture meets genuinely effortless living. Cascading tropical plants, natural stone, and light-washed interiors create a building that feels as alive as the jungle surrounding it.
-      </p>
-      <p>
-        Sky pool and rooftop grill. Private cinema. A coffee shop at your door. Yoga and wellness. Resort-level service, all day. This is Tulum at its finest.
-      </p>
+      <p>OKOM takes its name from a rare wood found only in the Riviera Maya — the ancient timber used to hold up the thatched rooftops of Maya construction. Here, it becomes a philosophy: something that holds you up, roots you, and shelters you in the most beautiful way.</p>
+      <p>Located in the heart of Tulum — five minutes from the beach clubs, steps from the best restaurants and cenotes — OKOM is a boutique residential development where biophilic architecture meets genuinely effortless living. Cascading tropical plants, natural stone, and light-washed interiors create a building that feels as alive as the jungle surrounding it.</p>
+      <p>Sky pool and rooftop grill. Private cinema. A coffee shop at your door. Yoga and wellness. Resort-level service, all day.</p>
     </div>
   </div>
 
-  <!-- BUILDING FACADE FULL -->
+  <!-- BUILDING FACADE -->
   <div class="okom-full fade-in">
-    <img src="images/okom-villa-entrance.jpg" alt="OKOM building — biophilic facade with cascading plants">
+    <img src="images/okom-villa-entrance.jpg" alt="OKOM — biophilic building facade">
   </div>
+  <p class="okom-caption">Building facade — cascading tropical plants, natural stone</p>
 
-  <!-- STORY SECTION -->
-  <div style="padding: 88px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;" class="fade-in">
+  <!-- THE NAME + VISION -->
+  <div class="okom-text-split fade-in">
     <div>
       <p class="section-label">The Name</p>
-      <h2 class="section-title" style="font-size: clamp(24px, 2.8vw, 38px);">A word rooted in<br><em>Maya tradition</em></h2>
-      <p style="font-size: 15px; color: #444; line-height: 1.9; margin-top: 20px;">
-        OKOM is the name of a rare, atypical wood found only in the Riviera Maya — used by the ancient Maya to build the timber beams that held up the thatched rooftops of their homes. Strong, rare, irreplaceable.
-      </p>
-      <p style="font-size: 15px; color: #444; line-height: 1.9;">
-        For this project, OKOM becomes a philosophy. It is the pillar that holds everything up — the structure beneath a life well lived. A home that doesn't just shelter you, but sustains you.
-      </p>
+      <h3>A word rooted in<br><em>Maya tradition</em></h3>
+      <p>OKOM is a rare wood found only in the Riviera Maya — used by the ancient Maya to build the timber beams that held up their homes. Strong, rare, irreplaceable. For this project, OKOM becomes a philosophy: the pillar that holds everything up, the structure beneath a life well lived.</p>
     </div>
     <div>
       <p class="section-label">The Vision</p>
-      <h2 class="section-title" style="font-size: clamp(24px, 2.8vw, 38px);"><em>Natural</em> and modern,<br>in equal measure</h2>
-      <p style="font-size: 15px; color: #444; line-height: 1.9; margin-top: 20px;">
-        OKOM sits in the heart of Tulum — one of the world's most sought-after destinations — but it doesn't feel like a resort development. It feels like a place that belongs here. The architecture is biophilic: cascading tropical plants, natural stone textures, light and air flowing through every space.
-      </p>
-      <p style="font-size: 15px; color: #444; line-height: 1.9;">
-        Inside, the residences are calm and considered — light wood, natural tones, open layouts that invite you to stop, rest, and feel genuinely at home. The whole building is designed to make you feel like you've arrived somewhere that was waiting for you.
-      </p>
+      <h3><em>Natural</em> and modern,<br>in equal measure</h3>
+      <p>OKOM sits in the heart of Tulum but doesn't feel like a resort development. It feels like a place that belongs here. Biophilic architecture: cascading tropical plants, natural stone textures, light and air flowing through every space. Inside, calm and considered — light wood, natural tones, open layouts that invite you to stop and feel genuinely at home.</p>
     </div>
   </div>
 
-  <!-- INTERIORS SECTION -->
+  <!-- RESIDENCES -->
   <div class="okom-section-head fade-in">
     <p class="section-label">Residences</p>
-    <h2 class="section-title">Interiors rooted in <em>calm</em></h2>
+    <h2>Interiors rooted in <em>calm</em></h2>
+    <p>Studio and one-bedroom residences designed around light, texture and stillness. Every finish chosen with the same care as the architecture around it.</p>
   </div>
 
   <div class="okom-full fade-in">
-    <img src="images/okom-interiors.jpg" alt="OKOM interiors — bedroom, kitchen, dining">
+    <img src="images/okom-interiors.jpg" alt="OKOM interiors — bedroom, kitchen, living">
   </div>
   <p class="okom-caption">Studio residences — bedroom, living, kitchen &amp; dining</p>
 
-  <div class="okom-full fade-in" style="margin-top: 2px;">
-    <img src="images/okom-livingroom.jpg" alt="OKOM open-plan living room — Tulum">
+  <div class="okom-full fade-in">
+    <img src="images/okom-livingroom.jpg" alt="OKOM open-plan living room">
   </div>
-  <p class="okom-caption">Open-plan living — Tulum · Quintana Roo · México</p>
+  <p class="okom-caption">Open-plan living — natural materials, jungle light</p>
 
-  <!-- AMENITIES GALLERY -->
+  <!-- LIFE AT OKOM -->
   <div class="okom-section-head fade-in">
     <p class="section-label">Life at OKOM</p>
-    <h2 class="section-title">Every detail <em>considered</em></h2>
+    <h2>Every detail <em>considered</em></h2>
+    <p>Resort-level amenities that residents access every day — not just on holiday. From the sky pool to the private cinema, everything here is designed for a life that feels exceptional.</p>
   </div>
 
-  <!-- Pool + Gym + Sauna -->
   <div class="okom-full fade-in">
-    <img src="images/okom-facilities.jpg" alt="OKOM pool courtyard, gym and sauna" style="height: auto; max-height: none; object-fit: unset;">
+    <img src="images/okom-facilities.jpg" alt="OKOM — gym, sauna and pool courtyard">
   </div>
   <p class="okom-caption">Sky pool · Fitness centre · Steam room</p>
 
-  <div class="okom-full fade-in" style="margin-top: 2px;">
-    <img src="images/okom-more-facilities.jpg" alt="OKOM yoga, kids room, coffee shop, lounge, restaurant">
+  <div class="okom-full fade-in">
+    <img src="images/okom-more-facilities.jpg" alt="OKOM — yoga, cinema, coffee shop, lounge">
   </div>
-  <p class="okom-caption">Yoga · Kids room · OKOM Coffee Shop · Lounge · Garden restaurant</p>
+  <p class="okom-caption">Yoga · Private cinema · OKOM Coffee Shop · Garden lounge</p>
 
-  <div class="okom-full fade-in" style="margin-top: 2px;">
-    <img src="images/okom-spa.jpg" alt="OKOM spa, gym and pool courtyard">
+  <div class="okom-full fade-in">
+    <img src="images/okom-spa.jpg" alt="OKOM — spa and pool">
   </div>
-  <p class="okom-caption">Fitness centre · Steam room · Pool courtyard with loungers</p>
+  <p class="okom-caption">Spa · Pool courtyard · Sun loungers</p>
 
-  <!-- AMENITIES GRID -->
+  <!-- AMENITIES LIST -->
   <div class="okom-amenities-wrap fade-in">
-    <p class="section-label">Amenidades</p>
-    <h2 class="section-title">Resort life, <em>every day</em></h2>
-    <div class="okom-amenities-grid">
-      <div class="okom-amenity-card">
-        <div class="okom-amenity-icon">🏊</div>
-        <h4>Sky Pool</h4>
-        <p>Rooftop pool and sun decks with jungle views. Wet loungers, umbrellas, and sky grill.</p>
-      </div>
-      <div class="okom-amenity-card">
-        <div class="okom-amenity-icon">☕</div>
-        <h4>OKOM Coffee Shop</h4>
-        <p>In-house café and garden restaurant — breakfast, coffee, and working lunches.</p>
-      </div>
-      <div class="okom-amenity-card">
-        <div class="okom-amenity-icon">🧘</div>
-        <h4>Yoga &amp; Wellness</h4>
-        <p>Dedicated yoga studio, steam room, and wellness spaces designed for deep rest.</p>
-      </div>
-      <div class="okom-amenity-card">
-        <div class="okom-amenity-icon">💪</div>
-        <h4>Fitness Centre</h4>
-        <p>Full gym with garden views — cardio, weights, and a peaceful atmosphere.</p>
-      </div>
-      <div class="okom-amenity-card">
-        <div class="okom-amenity-icon">🎬</div>
-        <h4>Private Cinema</h4>
-        <p>Residents-only screening room — films, sports, and private events.</p>
-      </div>
-      <div class="okom-amenity-card">
-        <div class="okom-amenity-icon">👶</div>
-        <h4>Kids Playroom</h4>
-        <p>Thoughtfully designed children's space — safe, stimulating, and beautiful.</p>
-      </div>
-      <div class="okom-amenity-card">
-        <div class="okom-amenity-icon">🔒</div>
-        <h4>24hr Concierge</h4>
-        <p>Reception, security, laundry, nanny services, and document printing — always available.</p>
-      </div>
-      <div class="okom-amenity-card">
-        <div class="okom-amenity-icon">⚡</div>
-        <h4>Smart Building</h4>
-        <p>EV charging, high-speed fibre optic Wi-Fi throughout, bike stations, and CCTV.</p>
-      </div>
+    <div>
+      <p class="section-label">Amenities</p>
+      <h2>Resort life,<br><em>every day</em></h2>
+      <p>Everything you need — and everything you didn't know you needed — within the building. No commute to the good life.</p>
+    </div>
+    <div class="okom-amenity-list">
+      <div class="okom-amenity-item">Sky Pool &amp; Rooftop Grill</div>
+      <div class="okom-amenity-item">OKOM Coffee Shop</div>
+      <div class="okom-amenity-item">Fitness Centre</div>
+      <div class="okom-amenity-item">Yoga &amp; Wellness</div>
+      <div class="okom-amenity-item">Steam Room</div>
+      <div class="okom-amenity-item">Private Cinema</div>
+      <div class="okom-amenity-item">Kids Playroom</div>
+      <div class="okom-amenity-item">Garden Restaurant</div>
+      <div class="okom-amenity-item">24hr Concierge</div>
+      <div class="okom-amenity-item">Laundry &amp; Services</div>
+      <div class="okom-amenity-item">EV Charging</div>
+      <div class="okom-amenity-item">Fibre Optic Wi-Fi</div>
     </div>
   </div>
 
   <!-- LOCATION -->
   <div class="okom-location fade-in">
     <div class="okom-location-img">
-      <img src="images/okom-location.jpg" alt="OKOM location — Tulum aerial">
+      <img src="images/okom-location.jpg" alt="OKOM — Tulum aerial view">
     </div>
     <div class="okom-location-text">
       <p class="section-label">Where to find us</p>
       <h2>In the heart of<br><em>Tulum</em></h2>
-      <div class="okom-distances">
+      <div>
         <div class="okom-distance-row">
           <span class="okom-dist-time">5'</span>
           <span class="okom-dist-places">Hotel Zone · Beach Clubs · Restaurants</span>
@@ -532,42 +420,38 @@
 
   <!-- MAP -->
   <div class="okom-full fade-in">
-    <img src="images/okom-map.jpg" alt="OKOM location map — Tulum" style="max-height: 55vh; object-fit: contain; background: #f7f5f2;">
+    <img src="images/okom-map.jpg" alt="OKOM location map — Tulum" style="background: #f7f5f2;">
   </div>
 
   <!-- ENQUIRY FORM -->
   <div class="okom-form-section fade-in">
-    <div class="okom-form-wrap">
-      <p class="section-label">Request Information</p>
-      <h2>Enquire about<br><em>OKOM</em></h2>
-      <p>Interested in residences, investment opportunities, or visiting the development in Tulum? Send us a message and we'll send over the full brochure and availability.</p>
-      <form
-        class="okom-form"
-        action="https://formsubmit.co/izabela.ot@gmail.com"
-        method="POST"
-      >
-        <input type="hidden" name="_subject" value="OKOM Tulum Enquiry">
-        <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
-        <input type="hidden" name="_captcha" value="false">
-        <div class="okom-form-row">
-          <input type="text" name="name" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-        </div>
-        <div class="okom-form-row">
-          <input type="tel" name="phone" placeholder="Phone / WhatsApp">
-          <select name="interest">
-            <option value="" disabled selected>I'm interested in…</option>
-            <option>Studio / 1-bedroom residence</option>
-            <option>Investment opportunity</option>
-            <option>Full brochure &amp; pricing</option>
-            <option>Site visit to Tulum</option>
-            <option>General information</option>
-          </select>
-        </div>
-        <textarea name="message" placeholder="Questions or message…"></textarea>
-        <button type="submit" class="btn" style="align-self:flex-start; padding:14px 40px; cursor:pointer; border:none; font-family:var(--body);">Send Enquiry</button>
-      </form>
+    <div>
+      <p class="section-label">Enquire</p>
+      <h2>Interested in<br><em>OKOM</em>?</h2>
+      <p>Send me a message and I'll come back with full pricing, available units, floor plans and everything you need to move forward with confidence.</p>
     </div>
+    <form class="okom-form" action="https://formsubmit.co/izabela.ot@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="OKOM Tulum Enquiry">
+      <input type="hidden" name="_next" value="https://izabelaostatek.github.io/archi-website/mexico.html">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="okom-form-row">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      <div class="okom-form-row">
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+        <select name="interest">
+          <option value="" disabled selected>I'm interested in…</option>
+          <option>Studio / 1-bedroom residence</option>
+          <option>Investment opportunity</option>
+          <option>Full brochure &amp; pricing</option>
+          <option>Site visit to Tulum</option>
+          <option>General information</option>
+        </select>
+      </div>
+      <textarea name="message" placeholder="Questions or message…"></textarea>
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
   </div>
 
   <!-- BACK -->
@@ -584,7 +468,7 @@
       <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
     </div>
-    <span>© 2024 Izabela Ostatek</span>
+    <span class="footer-copy">© 2025 Izabela Ostatek</span>
   </footer>
 
   <script src="js/main.js"></script>
