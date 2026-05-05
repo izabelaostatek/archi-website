@@ -398,32 +398,34 @@
     </div>
   </div>
 
-  <!-- LOCATION + MAP -->
+  <!-- LOCATION: map left, distances right -->
   <div class="fade-in" style="display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border);">
-    <div style="overflow: hidden;">
-      <img src="images/okom-location.jpg" alt="OKOM — Tulum aerial view" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 480px;">
+    <div style="background: #f7f5f2; display: flex; align-items: center; justify-content: center; padding: 56px 48px;">
+      <img src="images/okom-map.jpg" alt="OKOM location map — Tulum" style="max-width: 420px; width: 100%; height: auto; display: block;">
     </div>
-    <div style="background: #f7f5f2; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 56px 48px; gap: 40px;">
-      <div style="text-align: center;">
-        <p class="section-label">Where to find us</p>
-        <h2 style="font-family: var(--heading); font-size: clamp(24px, 2.5vw, 36px); font-weight: 300; line-height: 1.1; margin-top: 8px;">In the heart of <em>Tulum</em></h2>
-      </div>
-      <img src="images/okom-map.jpg" alt="OKOM location map — Tulum" style="max-width: 380px; width: 100%; height: auto; display: block;">
-      <div style="width: 100%; max-width: 380px;">
-        <div class="okom-distance-row" style="border-bottom: 1px solid var(--border);">
-          <span class="okom-dist-time" style="color: var(--accent);">5'</span>
-          <span style="font-size: 13px; color: #555;">Hotel Zone · Beach Clubs · Restaurants</span>
-        </div>
-        <div class="okom-distance-row" style="border-bottom: 1px solid var(--border);">
-          <span class="okom-dist-time" style="color: var(--accent);">10'</span>
-          <span style="font-size: 13px; color: #555;">Town Centre · Hospital · Supermarket</span>
+    <div class="okom-location-text">
+      <p class="section-label">Where to find us</p>
+      <h2>In the heart of<br><em>Tulum</em></h2>
+      <div>
+        <div class="okom-distance-row">
+          <span class="okom-dist-time">5'</span>
+          <span class="okom-dist-places">Hotel Zone · Beach Clubs · Restaurants</span>
         </div>
         <div class="okom-distance-row">
-          <span class="okom-dist-time" style="color: var(--accent);">15'</span>
-          <span style="font-size: 13px; color: #555;">Maya Train · Maya Ruins · Cenotes</span>
+          <span class="okom-dist-time">10'</span>
+          <span class="okom-dist-places">Town Centre · Hospital · Supermarket</span>
+        </div>
+        <div class="okom-distance-row">
+          <span class="okom-dist-time">15'</span>
+          <span class="okom-dist-places">Maya Train · Maya Ruins · Cenotes</span>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- LOCATION PHOTO — full, uncropped -->
+  <div class="okom-full fade-in">
+    <img src="images/okom-location.jpg" alt="OKOM — Tulum aerial, ruins, cenote, beach">
   </div>
 
   <!-- ENQUIRY FORM -->
