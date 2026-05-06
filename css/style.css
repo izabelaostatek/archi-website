@@ -717,117 +717,129 @@ html, body { overflow-x: hidden; }
   justify-content: center;
 }
 
-/* Nav overlay close button */
-.nav-overlay-close {
-  position: absolute;
-  top: 24px; right: 24px;
-  background: none; border: none;
-  font-size: 28px; color: var(--muted);
-  cursor: pointer; line-height: 1;
-}
+/* ── Form inputs: prevent iOS zoom on focus ── */
+input, textarea, select { font-size: 16px; }
 
 @media (max-width: 768px) {
 
-  /* ── Project page hero overlays ── */
-  [class$="-hero-overlay"],
-  [class*="-hero-overlay"] {
-    padding: 32px 20px !important;
-  }
+  /* ════════════════════════════════
+     JAAL JA
+  ════════════════════════════════ */
+  .jj-hero { height: 70vh; }
+  .jj-hero-overlay { padding: 32px 20px !important; }
+  .jj-intro { grid-template-columns: 1fr !important; }
+  .jj-intro-text { border-right: none !important; border-bottom: 1px solid var(--border); padding: 40px 20px !important; }
+  .jj-stats { padding: 40px 20px !important; }
+  .jj-full { height: auto !important; }
+  .jj-full img { height: auto !important; object-fit: unset !important; }
+  .jj-split { grid-template-columns: 1fr !important; }
+  .jj-split-text { padding: 40px 20px !important; }
+  .jj-split-img { border-left: none !important; border-top: 1px solid var(--border); }
+  .jj-split-img img { min-height: 260px !important; }
+  .jj-investment { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
+  .jj-enquiry { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
 
-  /* ── Shared section padding resets ── */
-  [class$="-intro-text"],
-  [class$="-stats"],
-  [class$="-split-text"],
-  [class$="-section-head"],
-  [class$="-investment"],
-  [class$="-enquiry"],
-  [class$="-text-2"],
-  [class$="-location-text"],
-  [class$="-caption"] {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
+  /* ════════════════════════════════
+     LULA SANCTUARY
+  ════════════════════════════════ */
+  .lula-hero { height: 70vh; }
+  .lula-hero-overlay { padding: 32px 20px !important; }
+  .lula-full img { height: auto !important; }
+  .lula-full-cover img { height: 50vh !important; }
+  .lula-caption { padding: 12px 20px 20px !important; }
+  .lula-intro { grid-template-columns: 1fr !important; padding: 48px 20px !important; gap: 32px !important; }
+  .lula-section-head { padding: 48px 20px 36px !important; }
+  .lula-gallery-2 { grid-template-columns: 1fr !important; }
+  .lula-split { grid-template-columns: 1fr !important; }
+  .lula-split-text { padding: 40px 20px !important; border-right: none !important; border-bottom: 1px solid var(--border); }
+  .lula-split-img img { min-height: 260px !important; }
+  .lula-text-2 { grid-template-columns: 1fr !important; padding: 48px 20px !important; gap: 32px !important; }
+  .lula-location { grid-template-columns: 1fr !important; }
+  .lula-location-text { padding: 48px 20px !important; }
+  .lula-location-img img { min-height: 280px !important; }
+  .lula-enquiry { grid-template-columns: 1fr !important; padding: 48px 20px !important; gap: 32px !important; }
 
-  /* ── Enquiry / investment padding top+bottom ── */
-  [class$="-investment"],
-  [class$="-enquiry"] {
-    padding-top: 48px !important;
-    padding-bottom: 48px !important;
-  }
+  /* ════════════════════════════════
+     ARDEH TULUM
+  ════════════════════════════════ */
+  .ardeh-hero { height: 70vh; }
+  .ardeh-hero-overlay { padding: 32px 20px !important; }
+  .ardeh-intro { grid-template-columns: 1fr !important; padding: 48px 20px !important; gap: 32px !important; }
+  .ardeh-gallery-2 { grid-template-columns: 1fr !important; }
+  .ardeh-split { grid-template-columns: 1fr !important; }
+  .ardeh-split-text { padding: 40px 20px !important; border-right: none !important; border-bottom: 1px solid var(--border); }
+  .ardeh-full img { height: auto !important; object-fit: unset !important; }
+  .ardeh-section-head { padding: 48px 20px 36px !important; }
+  .ardeh-investment { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
+  .ardeh-enquiry { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
+  .ardeh-location { grid-template-columns: 1fr !important; }
+  .ardeh-location-text { padding: 48px 20px !important; }
 
-  /* ── Section heads ── */
-  [class$="-section-head"] {
-    padding-top: 48px !important;
-    padding-bottom: 36px !important;
-  }
+  /* ════════════════════════════════
+     OKOM
+  ════════════════════════════════ */
+  .okom-hero { height: 70vh; }
+  .okom-hero-overlay { padding: 32px 20px !important; }
+  .okom-intro { grid-template-columns: 1fr !important; padding: 48px 20px !important; gap: 32px !important; }
+  .okom-gallery-2 { grid-template-columns: 1fr !important; }
+  .okom-split { grid-template-columns: 1fr !important; }
+  .okom-split-text { padding: 40px 20px !important; border-right: none !important; border-bottom: 1px solid var(--border); }
+  .okom-full img { height: auto !important; object-fit: unset !important; }
+  .okom-section-head { padding: 48px 20px 36px !important; }
+  .okom-investment { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
+  .okom-enquiry { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
+  .okom-location { grid-template-columns: 1fr !important; }
 
-  /* ── Stats ── */
-  [class$="-stats"] {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-    gap: 32px !important;
-  }
+  /* ════════════════════════════════
+     CORAZÓN DE PLAYA
+  ════════════════════════════════ */
+  .cdp-hero { height: 70vh; }
+  .cdp-hero-overlay { padding: 32px 20px !important; }
+  .cdp-intro { grid-template-columns: 1fr !important; }
+  .cdp-intro-text { border-right: none !important; border-bottom: 1px solid var(--border); padding: 40px 20px !important; }
+  .cdp-stats { padding: 40px 20px !important; }
+  .cdp-full img { height: auto !important; object-fit: unset !important; }
+  .cdp-full-cover img { height: 50vh !important; }
+  .cdp-caption { padding: 12px 20px 20px !important; }
+  .cdp-section-head { padding: 48px 20px 36px !important; }
+  .cdp-gallery-2 { grid-template-columns: 1fr !important; }
+  .cdp-gallery-2 figure:last-child figcaption { border-right: none !important; }
+  .cdp-split { grid-template-columns: 1fr !important; }
+  .cdp-split-text { border-right: none !important; border-bottom: 1px solid var(--border); padding: 40px 20px !important; }
+  .cdp-split-img img { min-height: 260px !important; }
+  .cdp-investment { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
+  .cdp-enquiry { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
 
-  /* ── Stat numbers ── */
-  [class$="-stat-num"] {
-    font-size: 42px !important;
-  }
+  /* ════════════════════════════════
+     TIERRA MADRE
+  ════════════════════════════════ */
+  .tm-hero { height: 70vh; }
+  .tm-hero-overlay { padding: 32px 20px !important; }
+  .tm-intro { grid-template-columns: 1fr !important; padding: 48px 20px !important; gap: 32px !important; }
+  .tm-amenity-grid { grid-template-columns: 1fr 1fr !important; }
+  .tm-split { grid-template-columns: 1fr !important; }
+  .tm-split-text { padding: 40px 20px !important; border-right: none !important; border-bottom: 1px solid var(--border); }
+  .tm-investment { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
+  .tm-enquiry { grid-template-columns: 1fr !important; padding: 40px 20px !important; gap: 32px !important; }
 
-  /* ── 2-col grids → stack ── */
-  [class$="-intro"],
-  [class$="-split"],
-  [class$="-investment"],
-  [class$="-enquiry"],
-  [class$="-text-2"],
-  [class$="-location"] {
-    grid-template-columns: 1fr !important;
-  }
+  /* ════════════════════════════════
+     SHARED — stat numbers
+  ════════════════════════════════ */
+  .jj-stat-num, .cdp-stat-num { font-size: 40px !important; }
 
-  /* ── Borders: right → bottom when stacking ── */
-  [class$="-intro-text"] {
-    border-right: none !important;
-    border-bottom: 1px solid var(--border) !important;
-  }
+  /* ════════════════════════════════
+     SHARED — detail rows
+  ════════════════════════════════ */
+  .jj-detail-value, .cdp-detail-value, .ardeh-detail-value,
+  .okom-detail-value, .tm-detail-value { font-size: 16px !important; }
 
-  /* ── Gallery → single col ── */
-  [class$="-gallery-2"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* ── Split image min-height ── */
-  [class$="-split-img"] img {
-    min-height: 280px !important;
-  }
-
-  /* ── Location dark panel ── */
-  [class$="-location-text"] {
-    padding-top: 56px !important;
-    padding-bottom: 56px !important;
-  }
-
-  /* ── Full-cover heights ── */
-  [class$="-full-cover"] img,
-  .cdp-full-cover img,
-  .lula-full-cover img {
-    height: 50vh !important;
-  }
-
-  /* ── Footer back link ── */
-  [style*="justify-content: space-between"][style*="padding: 36px"] {
+  /* ════════════════════════════════
+     FOOTER BACK LINK BAR
+  ════════════════════════════════ */
+  .back-bar {
     flex-direction: column !important;
-    gap: 20px !important;
+    gap: 16px !important;
     padding: 32px 20px !important;
     text-align: center !important;
-  }
-
-  /* ── Form inputs ── */
-  input, textarea, select {
-    font-size: 16px !important; /* prevents iOS zoom on focus */
-  }
-
-  /* ── Detail rows ── */
-  [class$="-detail-value"] {
-    font-size: 16px !important;
-    text-align: right;
   }
 }
