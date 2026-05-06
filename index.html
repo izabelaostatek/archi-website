@@ -6,6 +6,30 @@
   <title>Izabela Ostatek — Architecture & Interior Design</title>
   <meta name="description" content="Architecture and interior design studio. Sustainable residential architecture and high-end interiors. Based in London.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    @media (max-width: 768px) {
+      /* ── Featured projects grid: 2 col → 1 col ── */
+      .home-featured-grid { grid-template-columns: 1fr !important; }
+
+      /* ── About strip ── */
+      .home-about-strip { padding: 56px 20px !important; }
+      .home-about-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .home-about-img { width: 100% !important; height: 220px !important; }
+
+      /* ── Services strip ── */
+      .home-services-strip { padding: 56px 20px !important; }
+      .home-services-grid { grid-template-columns: 1fr !important; }
+
+      /* ── Art Basel strip ── */
+      .home-artbasel-strip { grid-template-columns: 1fr !important; }
+      .home-artbasel-text { padding: 40px 20px !important; }
+
+      /* ── Mexico strip ── */
+      .home-mexico-strip { grid-template-columns: 1fr !important; min-height: auto !important; }
+      .home-mexico-text { padding: 40px 20px !important; }
+      .home-mexico-img { min-height: 280px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -54,7 +78,7 @@
       <a href="portfolio.html" class="btn">All Projects</a>
     </div>
 
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2px;">
+    <div class="home-featured-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:2px;">
 
       <!-- MAIN SHOWCASE — Krystal Koncepts -->
       <a href="krystal-koncepts.html" class="project-card fade-in" style="display:block;">
@@ -87,9 +111,9 @@
   </section>
 
   <!-- ABOUT STRIP -->
-  <section style="padding: 100px 48px; background: #f0ede8;">
-    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 200px 1fr; gap: 64px; align-items: center;" class="fade-in">
-      <img src="images/izabela-portrait2.jpg" alt="Izabela Ostatek" style="width:200px; height:240px; object-fit:cover; object-position:center top;">
+  <section class="home-about-strip" style="padding: 100px 48px; background: #f0ede8;">
+    <div class="home-about-inner fade-in" style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 200px 1fr; gap: 64px; align-items: center;">
+      <img class="home-about-img" src="images/izabela-portrait2.jpg" alt="Izabela Ostatek" style="width:200px; height:240px; object-fit:cover; object-position:center top;">
       <div>
         <p class="section-label">Studio</p>
         <h2 class="section-title">Design rooted in <em>intention</em></h2>
@@ -106,12 +130,12 @@
   </section>
 
   <!-- SERVICES STRIP -->
-  <section style="padding: 100px 48px;">
+  <section class="home-services-strip" style="padding: 100px 48px;">
     <div class="fade-in" style="margin-bottom: 64px;">
       <p class="section-label">What I Do</p>
       <h2 class="section-title">Services</h2>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;">
+    <div class="home-services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;">
       <div class="service-card fade-in">
         <div class="service-number">01</div>
         <h3>Architecture</h3>
@@ -134,11 +158,11 @@
   </section>
 
   <!-- ART BASEL STRIP -->
-  <section style="padding: 0; background: #1a1a1a; display: grid; grid-template-columns: 1fr 1fr;">
+  <section class="home-artbasel-strip" style="padding: 0; background: #1a1a1a; display: grid; grid-template-columns: 1fr 1fr;">
     <a href="art-basel.html" style="display:block; overflow:hidden; position:relative;">
       <img src="images/art-1.jpg" alt="Art Basel 2024 — digital art series" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; transition:transform 0.6s ease;">
     </a>
-    <div class="fade-in" style="display:flex; flex-direction:column; justify-content:center; padding:64px 56px;">
+    <div class="home-artbasel-text fade-in" style="display:flex; flex-direction:column; justify-content:center; padding:64px 56px;">
       <p class="section-label" style="color:var(--accent);">Art Basel Miami Beach 2024</p>
       <h2 class="section-title" style="color:#fff; margin:12px 0 20px;">Nature. Woman.<br><em>The Unseen World.</em></h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.6); line-height:1.8; margin-bottom:36px; max-width:400px;">
@@ -152,8 +176,8 @@
   </section>
 
   <!-- MEXICO STRIP -->
-  <section style="padding: 0; display: grid; grid-template-columns: 1fr 1fr; min-height: 500px;">
-    <div class="fade-in" style="background:#f0ede8; display:flex; flex-direction:column; justify-content:center; padding:64px 56px;">
+  <section class="home-mexico-strip" style="padding: 0; display: grid; grid-template-columns: 1fr 1fr; min-height: 500px;">
+    <div class="home-mexico-text fade-in" style="background:#f0ede8; display:flex; flex-direction:column; justify-content:center; padding:64px 56px;">
       <p class="section-label">Land · Villas · Properties</p>
       <h2 class="section-title">Live where the world<br>comes to <em>dream</em></h2>
       <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:36px; max-width:420px;">
@@ -161,7 +185,7 @@
       </p>
       <a href="mexico.html" class="btn">Explore Properties</a>
     </div>
-    <a href="mexico.html" style="display:block; overflow:hidden;">
+    <a class="home-mexico-img" href="mexico.html" style="display:block; overflow:hidden;">
       <img src="images/jj-villas.jpg" alt="Jaal Ja — beachfront villas, Costa Maya" style="width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block; transition:transform 0.6s ease;">
     </a>
   </section>
