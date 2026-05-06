@@ -648,6 +648,22 @@ footer {
 
 .fade-in.visible { opacity: 1; transform: none; }
 
+/* ─── GHOST BUTTON ─── */
+
+.btn-ghost {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.btn-ghost:hover { border-color: var(--text); color: var(--text); }
+
 /* ─── RESPONSIVE ─── */
 
 @media (max-width: 960px) {
@@ -682,4 +698,136 @@ footer {
   .form-row { grid-template-columns: 1fr; }
 
   .footer-links { flex-direction: column; gap: 16px; align-items: center; }
+}
+
+/* ─── MOBILE GLOBAL ─── */
+
+html, body { overflow-x: hidden; }
+
+/* Hamburger → X when menu open */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Touch-friendly tap targets */
+.btn, .btn-ghost, .btn-accent, .btn-light {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nav overlay close button */
+.nav-overlay-close {
+  position: absolute;
+  top: 24px; right: 24px;
+  background: none; border: none;
+  font-size: 28px; color: var(--muted);
+  cursor: pointer; line-height: 1;
+}
+
+@media (max-width: 768px) {
+
+  /* ── Project page hero overlays ── */
+  [class$="-hero-overlay"],
+  [class*="-hero-overlay"] {
+    padding: 32px 20px !important;
+  }
+
+  /* ── Shared section padding resets ── */
+  [class$="-intro-text"],
+  [class$="-stats"],
+  [class$="-split-text"],
+  [class$="-section-head"],
+  [class$="-investment"],
+  [class$="-enquiry"],
+  [class$="-text-2"],
+  [class$="-location-text"],
+  [class$="-caption"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* ── Enquiry / investment padding top+bottom ── */
+  [class$="-investment"],
+  [class$="-enquiry"] {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  /* ── Section heads ── */
+  [class$="-section-head"] {
+    padding-top: 48px !important;
+    padding-bottom: 36px !important;
+  }
+
+  /* ── Stats ── */
+  [class$="-stats"] {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    gap: 32px !important;
+  }
+
+  /* ── Stat numbers ── */
+  [class$="-stat-num"] {
+    font-size: 42px !important;
+  }
+
+  /* ── 2-col grids → stack ── */
+  [class$="-intro"],
+  [class$="-split"],
+  [class$="-investment"],
+  [class$="-enquiry"],
+  [class$="-text-2"],
+  [class$="-location"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Borders: right → bottom when stacking ── */
+  [class$="-intro-text"] {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+
+  /* ── Gallery → single col ── */
+  [class$="-gallery-2"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Split image min-height ── */
+  [class$="-split-img"] img {
+    min-height: 280px !important;
+  }
+
+  /* ── Location dark panel ── */
+  [class$="-location-text"] {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* ── Full-cover heights ── */
+  [class$="-full-cover"] img,
+  .cdp-full-cover img,
+  .lula-full-cover img {
+    height: 50vh !important;
+  }
+
+  /* ── Footer back link ── */
+  [style*="justify-content: space-between"][style*="padding: 36px"] {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 32px 20px !important;
+    text-align: center !important;
+  }
+
+  /* ── Form inputs ── */
+  input, textarea, select {
+    font-size: 16px !important; /* prevents iOS zoom on focus */
+  }
+
+  /* ── Detail rows ── */
+  [class$="-detail-value"] {
+    font-size: 16px !important;
+    text-align: right;
+  }
 }

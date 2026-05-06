@@ -8,15 +8,22 @@ window.addEventListener('scroll', () => {
 const hamburger = document.querySelector('.nav-hamburger');
 const overlay = document.querySelector('.nav-overlay');
 if (hamburger && overlay) {
+  const closeMenu = () => {
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  };
   hamburger.addEventListener('click', () => {
-    overlay.classList.toggle('open');
-    document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+    const isOpen = overlay.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
   overlay.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    a.addEventListener('click', closeMenu);
+  });
+  // Close on backdrop tap (outside links)
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeMenu();
   });
 }
 
